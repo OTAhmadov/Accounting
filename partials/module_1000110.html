@@ -1,0 +1,661 @@
+<div style="display: none; padding-right: 17px;" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" id="exportModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-pdf col-md-4">
+                        <a class="export" data-value="pdf" href="#"><img class="a-export" src="assets/img/pdf-icon.png" width="150" height="150" alt="pdf"></a>
+                    </div>
+                    <div class="modal-excel col-md-4">
+                        <a class="export"  data-value="xls" href="#"><img class="a-export" src="assets/img/excel-icon.png" width="150" height="150" alt="xls"></a>
+                    </div>
+                    <div class="modal-html col-md-4">
+                        <a class="export" data-value="html" href="#"><img class="a-export" src="assets/img/html-icon.png" width="150" height="150" alt="html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- <div class="modal fade search-pincode-teacher-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="search_teacher" class="modal-title">Search teacher</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="teacher-pincode-div-first">
+                    <label data-i18n="pincode">Pincode</label>
+                    <input class= "search-pincode" type="text" placeholder="#########" maxlength="7" />
+                </div>
+                <div class="teacher-pincode-div-second hidden">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-lg-8">
+                            <div><label data-i18n="pincode" >Pincode:</label>&nbsp;<b><label class="teacher-pincode"></label></b></div>
+                            <div><label class="teacher-pincode-label"></label></div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-lg-4 iamas-search ">
+                            <div class="form-group">
+                                <div class="radio">
+                                    <label>
+                                        <input name="form-field-radio2" class="check-iamas-input" checked="checked" type="checkbox">
+                                        <span data-i18n="iamas" class="text">IAMAS </span>
+                                    </label>
+                                </div>
+                                <div class="radio" >
+                                    <label>
+                                        <input name="form-field-radio2"  type="checkbox" disabled="disabled">
+                                        <span data-i18n="myi" class="text">Müvəqqəti Yaşayış İcazəsi - Seriya</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button data-i18n="back" type="submit" class="btn btn-primary btn-block teacher-pincode-button-back hidden">Back</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button data-i18n="next" type="submit" class="btn btn-primary btn-block teacher-pincode-button-next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="employees" placeholder="Tələbələr" class="hed-title"></span><span  class="head-total"> <span data-teacher-count></span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search" id="teacher_search" type="search" placeholder="Search">
+    
+        </div>
+        <button  type="button" class="btn btn-default btn-teacher-advanced-search-foreign clear_search_button">
+            <span data-i18n="advanced_search">Advanced search</span>
+            
+        </button>
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+                <li><a id="registration" href="student_add.html">Item 1</a></li>
+                <li><a id="second-registration" href="#">Item 2</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="filters-block module_1000113">
+    <form class="teacher-search-form">
+      <div class="btn-group">
+          <select class="form-control " id="org_uni_filter" multiple="multiple" name="universities">
+
+          </select>
+      </div>
+
+      <div class="btn-group">
+
+          <select class="form-control teacher-status-foreign" name="statusId">
+
+          </select>
+      </div>
+
+      <div class="btn-group">
+
+          <select class="form-control select-with-search" id="citizenship" name="citizenshipId">
+
+          </select>
+      </div>
+      <input type="hidden" name="keyword">
+</form>
+
+
+
+
+
+
+</div>
+
+<!--             <form class="teacher-search-form">
+                <input type="hidden" name="genderId" />
+                <input type="hidden" name="orgId" />
+                <input type="hidden" name="statusId" />
+                <input type="hidden" name="staffType" />
+                <input type="hidden" name="keyword" />
+            </form> -->
+<div class="row">
+<div class="col-sm-12 data" style="width: 100%;padding-right: 15px">
+    <div class="panel panel-white table-scroll">
+
+        <div class="table-responsive">
+            <table id="teacher_list" class="table table-celled table-hover">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th data-i18n="fullname"></th>
+                        <th data-i18n="citizenship"></th>
+                        <th>ATM</th>
+
+                        <th>Fəaliyyətə başladığı tarix</th>
+                        <th>Azərbaycanda yaşadığı ünvan</th>
+                        <th data-i18n="contact_info"></th>
+                        <th data-i18n="passport_number"></th>
+                        <th data-i18n="status">Status</th>
+                        <!-- <th></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="space-for-footer">
+            <div id="load_more_div" class="flex-input">
+                <button data-i18n="load.more"  data-i18n="load.more" data-table="teachers" class="btn loading-margins btn-load-more">Load more</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-sm-4 info">
+    <div class="panel panel-white">
+        <div class="panel-heading">
+            <h3 data-i18n="info" class="panel-title">Info</h3>
+            <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+            <div class="type_2_btns"></div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12 flex-img">
+                <img id="teacherphoto" src="assets/img/guest.png" alt="" width="150" height="150">
+            </div>
+            <div class="col-xs-12 definition-list">
+                <dl class="dl-horizontal">
+                    <dt ><span data-i18n="name">Name</span>:</dt>
+                    <dd data-firstname></dd>
+                    <dt ><span data-i18n="surname">Surname</span>:</dt>
+                    <dd data-lastname></dd>
+                    <dt ><span data-i18n="structure">Structure</span>:</dt>
+                    <dd data-orgname></dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div> -->
+</div>
+
+<!--tree modal-->
+<div class="modal tree-modal">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="structure" class="modal-title">Structures</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="structures-tree">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new-upd">
+    <div class="search-scroll">
+        <div class="text-right">
+          <button data-i18n="close" type="submit" class="btn btn-primary btn-block new-close ">CLose</button>
+          
+        </div>
+        <h2 data-i18n="search_teacher" class="panel-title">Search teacher</h2>
+    
+        <div class="teacher-pincode-div-first">
+            <label data-i18n="pincode">Pincode</label>
+            <input class= "search-pincode" type="text" placeholder="#########" maxlength="7" />
+        </div>
+        <div class="teacher-pincode-div-second hidden">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <div><label data-i18n="pincode" >Pincode:</label>&nbsp;<b><label class="teacher-pincode"></label></b></div>
+                    <div><label class="teacher-pincode-label"></label></div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 iamas-search ">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input name="form-field-radio2" class="check-iamas-input" checked="checked" type="checkbox">
+                                <span data-i18n="iamas" class="text">IAMAS </span>
+                            </label>
+                        </div>
+                        <div class="radio" >
+                            <label>
+                                <input name="form-field-radio2"  type="checkbox" disabled="disabled">
+                                <span data-i18n="myi" class="text">Müvəqqəti Yaşayış İcazəsi - Seriya</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button data-i18n="back" type="submit" class="btn btn-primary btn-block teacher-pincode-button-back hidden">Back</button>
+            </div>
+            <div class="col-md-6">
+                <button data-i18n="next" type="submit" class="btn btn-primary btn-block teacher-pincode-button-next">Next</button>
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+
+
+
+<div class="add-new">
+    <div class="search-scroll"></div>
+</div>
+
+<script src="assets/js/modal_drag.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $('body').find('.table-scroll').slimScroll();
+        Hsis.i18n(Hsis.lang);
+        if (sessionStorage.teacherSearch != undefined) {
+            $('.clear_search').removeClass('hidden');
+        }
+
+        $('.tree-modal .modal-content').draggable({
+            cancel: '.scrollable'
+        });
+
+        $('#main-div .sub_modules_div').remove();
+ // $('.module-list').find('.sub-module-con').remove();
+  // $('.module-list').find('li[data-id=1000010].sub-module-con').fadeIn();
+
+
+ Hsis.Proxy.loadForeignTeachers('', $('.main-content-upd .teacher-search-form').serialize())
+ $('#org_uni_filter').select2({
+     placeholder: Hsis.dictionary[Hsis.lang]["university"],
+     language: {
+         noResults: function () {
+             return Hsis.dictionary[Hsis.lang]["no_information"];
+         }
+     }
+ });
+
+ Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+     if (citizenship) {
+         var html = '';
+         $.each(citizenship, function (i, v) {
+             html += '<li data-id ="' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>';
+         });
+     }
+
+     $('#citizenship').html(html);
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Hsis.Proxy.getStructureListByFilter(0, 0,function(data) {
+     if(data && data.data) {
+         var html = '';
+         var uni = data.data.universityList;
+         var faculty = data.data.facultyList;
+         var spec = data.data.specialityList;
+         var uniCount = data.data.universityList.length;
+         var facultyCount = data.data.facultyList.length;
+         var specCount = data.data.specialityList.length;
+         
+         if(uniCount <= 1) {
+             $('#org_uni_filter').attr('disabled', 'disabled')
+             $.each(uni, function(i, v){
+                 html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+             })
+             $('#org_uni_filter').html(html)
+         } else {
+             html = '<option value = "0">Universitet</option>'
+             $.each(uni, function(i, v){
+                 html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+             })
+             $('#org_uni_filter').html(html)
+         }
+         if(facultyCount <= 1) {
+             html = '';
+             $('#org_faculty_filter').attr('disabled', 'disabled')
+             // $.each(faculty, function(i, v){
+             //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+             // })
+             $('#org_faculty_filter').html(html)
+         }else {
+             html = '<option value = "0">Fakültə</option>'
+             // $.each(faculty, function(i, v){
+             //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+             // })
+             $('#org_faculty_filter').html(html)
+         }
+         if(specCount <= 1) {
+             html = '';
+             $('#org_spec_filter').attr('disabled', 'disabled')
+             // $.each(spec, function(i, v){
+             //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+             // })
+             $('#org_spec_filter').html(html)
+         } else {
+             html = '<option value = "0">İxtisas</option>'
+             // $.each(spec, function(i, v){
+             //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+             // })
+             $('#org_spec_filter').html(html)
+         }
+         
+         
+         
+     }
+     
+ });
+
+
+
+
+
+
+
+
+
+
+
+ // $('#org_uni_filter').on('change', function() {
+ //     var id = $(this).val();
+ //     var text = $(this).find('option:selected').text();
+ //     var levelId = $('#org_spec_level_filter').val();
+     
+ //     Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+ //         if(data && data.data) {
+ //             var html = '';
+ //             var faculty = data.data.facultyList;
+ //             var spec = data.data.specialityList;
+ //             var departmentList = data.data.departmentList;
+             
+ //             html = '<option value = "0">Fakültə</option>'
+ //             $.each(faculty, function(i, v){
+ //                 html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+ //             })
+ //             $('#org_faculty_filter').html(html)
+
+
+ //             html = '<option value = "0">İxtisas səviyyəsi</option>'
+ //             $.each(spec, function(i, v){
+ //                 html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+ //             })
+ //             $('#org_spec_filter').html(html)
+
+ //             html = '<option value = "0">Kafedra</option>'
+ //             $.each(departmentList, function(i, v){
+ //                 html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+ //             })
+ //             $('#org_kafedra_filter').html(html)
+
+ //             if (id != 1000001 || id != 0) {
+ //                 $('.main-content-upd .teacher-search-form input[name="orgId"]').val(id);
+ //                 $('.main-content-upd .teacher-search-form input[name="uniOrg"]').val(id);
+ //                 $('.main-content-upd .teacher-search-form input[name="uniName"]').val(text);
+ //             }
+ //             else {
+ //                 $('.main-content-upd .teacher-search-form input[name="orgId"]').val('');
+ //                 $('.main-content-upd .teacher-search-form input[name="uniOrg"]').val('');
+ //                 $('.main-content-upd .teacher-search-form input[name="uniName"]').val('');
+ //             }
+             
+ //             $('.btn-load-more').removeAttr('data-page');
+ //             var queryparams = $('.main-content-upd .teacher-search-form').serialize();
+ //             console.log(queryparams)
+ //             Hsis.Proxy.loadForeignTeachers('', queryparams);
+
+ //         }
+ //     })
+     
+ // });
+
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#structures-tree').jstree('search', searchString);
+        });
+
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#structures-tree li[aria-selected="true"]').attr('id');
+                var text = $('#structures-tree li[aria-selected="true"]').find('a:first').text();
+
+                if (text.length > 0) {
+                    $('.btn.tree-modal').text(text);
+                    $('.btn.tree-modal').attr('data-id', id);
+                    if (window.matchMedia('(min-width: 1300px)').matches) {
+                        var length = $('.tree-modal.btb-group').width();
+                        if (length > 442) {
+                            $('.btn-group.top').addClass('m-t-5');
+                        }
+                        else {
+                            $('.btn-group.top').removeClass('m-t-5');
+                        }
+                    }
+                    if (id != 1000001) {
+                        $('.main-content-upd .teacher-search-form input[name="orgId"]').val(id);
+                        //Hsis.Proxy.loadForeignTeachers('',$('.main-content-upd .teacher-search-form').serialize());
+                    }
+                    else {
+                        $('.main-content-upd .teacher-search-form input[name="orgId"]').val('');
+                    }
+                    $('.tree-modal-container .modal-content').addClass('hidden');
+                    Hsis.Proxy.loadForeignTeachers('', $('.main-content-upd .teacher-search-form').serialize());
+                    $('.modal.tree-modal').modal('hide');
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+
+
+
+            }
+            catch (err) {
+
+            }
+
+
+        });
+
+        $('.modal-content').draggable();
+
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000003, 0, function (gender) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+            $.each(gender, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.teacher-gender-foreign').html(html);
+
+        });
+
+
+
+        // Hsis.Proxy.loadDictionariesByTypeId(1000044, 0, function (status) {
+        //     var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+        //     $.each(status, function (i, v) {
+        //         html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+        //     });
+        //     $('.teacher-status-foreign').html(html);
+        // });
+
+        // Hsis.Proxy.loadDictionariesByTypeId(1000023, 0, function (staffType) {
+        //     var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+        //     $.each(staffType, function (i, v) {
+        //         html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+        //     });
+        //     $('.teacher-staff-type-foreign').html(html);
+        // });
+
+        $('.datepicker').datepicker();
+
+        $('#main-div').on('click', '.clear_search', function (e) {
+            if (sessionStorage.teacherSearch != undefined) {
+                sessionStorage.removeItem('teacherSearch');
+                $(this).addClass('hidden');
+                var params = $('.teacher-search-form').serialize();
+                sessionStorage.removeItem('teacherSubModules');
+                Hsis.Proxy.loadForeignTeachers('', params);
+            }
+        });
+
+        $('body').on('click', '.teacher-staff-type-foreign li', function () {
+            try {
+                var id = $(this).attr('data-id');
+                if (id != 0) {
+                    $('.main-content-upd .teacher-search-form input[name="staffType"]').val($(this).attr('data-id'));
+
+                }
+                else {
+                    $('.main-content-upd .teacher-search-form input[name="staffType"]').val('');
+                }
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('.main-content-upd .teacher-search-form').serialize() ;
+                Hsis.Proxy.loadForeignTeachers('', params);
+
+            }
+            catch (err) {
+                console.error(err)
+            }
+
+        });
+        $('body').on('click', '.teacher-status-foreign li', function () {
+            try {
+                var id = $(this).attr('data-id');
+                if (id != 0) {
+                    $('.main-content-upd .teacher-search-form input[name="statusId"]').val($(this).attr('data-id'));
+
+                }
+                else {
+                    $('.main-content-upd .teacher-search-form input[name="statusId"]').val('');
+                }
+                $('.btn-load-more').removeAttr('data-page');
+                var params = $('.main-content-upd .teacher-search-form').serialize();
+                Hsis.Proxy.loadForeignTeachers('', params);
+
+            }
+            catch (err) {
+                console.error(err)
+            }
+
+        })
+        $('.main-content-upd ').on('click', '.teacher-gender-foreign li', function () {
+            try {
+                var id = $(this).attr('data-id');
+                if (id != 0) {
+                    $('.main-content-upd .teacher-search-form input[name="genderId"]').val($(this).attr('data-id'));
+
+                }
+                else {
+                    $('.main-content-upd .teacher-search-form input[name="genderId"]').val('');
+                }
+                $('.btn-load-more').removeAttr('data-page');
+                Hsis.Proxy.loadForeignTeachers('', $('.main-content-upd .teacher-search-form').serialize());
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000004', '',  function (citizenship) {
+            if (citizenship) {
+                var html = '<option value="">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>';
+                $.each(citizenship, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#citizenship').html(html);
+                $('#citizenship').find('option[value="1000118"]').remove();
+
+            }
+        });
+        Hsis.Proxy.loadDictionariesByTypeId('1000044', '',  function (citizenship) {
+            if (citizenship) {
+                var html = '<option value="">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>';
+                $.each(citizenship, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('.teacher-status-foreign').html(html);
+            }
+        });
+        $('.select-with-search').select2();
+
+        $('body').on('change', '#org_uni_filter, .teacher-status-foreign, #citizenship', function(){
+            var params = $('.teacher-search-form').serialize();
+            sessionStorage.removeItem('teacherSubModules');
+            Hsis.Proxy.loadForeignTeachers('', params);
+        });
+
+        $('body').on('keyup', '#teacher_search', function(){
+            var thisVal = $(this).val();
+            $('body').find('input[name="keyword"]').val(thisVal);
+            var params = $('.teacher-search-form').serialize();
+            sessionStorage.removeItem('teacherSubModules');
+            Hsis.Proxy.loadForeignTeachers('', params);
+        })
+    });
+
+</script>

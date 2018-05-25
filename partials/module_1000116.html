@@ -1,0 +1,258 @@
+<div style="display: none; padding-right: 17px;" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" id="exportModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-pdf col-md-4">
+                        <a class="export" data-value="pdf" href="#"><img class="a-export" src="assets/img/pdf-icon.png" width="150" height="150" alt="pdf"></a>
+                    </div>
+                    <div class="modal-excel col-md-4">
+                        <a class="export"  data-value="xls" href="#"><img class="a-export" src="assets/img/excel-icon.png" width="150" height="150" alt="xls"></a>
+                    </div>
+                    <div class="modal-html col-md-4">
+                        <a class="export" data-value="html" href="#"><img class="a-export" src="assets/img/html-icon.png" width="150" height="150" alt="html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<form class="sabah-form">
+    <input name="educationPaymentTypeId" class="hidden" />
+    <input name="searchAttr" class="hidden" />
+</form>
+
+<div class="content-header">
+    <div class="con-head-left">
+        <span class="hed-title">Beynəlxalq əlaqələr</span><span  class="head-total"> <span class="data-foreign-relation-count"></span></span>
+    </div>
+    <div class="con-head-right">
+<!--        <div class="prepend-icon">
+            <input data-i18n="placeholder.search" id="student_search" type="search" placeholder="Search">
+
+        </div>-->
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="filters-block module_1000011">
+    
+
+    
+    <form class="foreign-relation-form">
+        <div class="btn-group">
+            <select class="form-control " id="company_filter" name="companyId">
+
+            </select>
+        </div>
+
+        <div class="btn-group">
+            <select class="form-control " id="country_filter" name="countryId">
+
+            </select>
+        </div>
+    </form>
+    
+</div>
+<div class="row">
+    <div class="col-sm-12 data">
+        <div  class="panel panel-white table-scroll">
+
+            <div class="table-responsive">
+
+                <table id="foreign_relation_list" class="table table-celled table-hover">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Ölkə</th>
+                            <th>Təşkilatın Adı</th>
+                            <th>Başlama tarixi</th>
+                            <th>Bitmə tarixi</th>
+                            <!-- <th></th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>        
+            <div class="space-for-footer">
+                <div id="load_more_div" class="flex-input">
+                    <button  data-i18n="load.more" data-table="foreignRelations" class="btn loading-margins btn-load-more">Load more</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-4 info te">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+                <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+                <div class="type_2_btns"></div>
+            </div>
+            <div class="panel-body">
+                
+                <div class="col-xs-12 definition-list">
+                    <dl class="dl-horizontal">
+                    
+                    <dt ><span>Ölkə</span>:</dt>
+                    <dd class="label-country-name"></dd>
+                    <dt ><span>Təşkilat</span>:</dt>
+                    <dd class="label-company-name"></dd>
+                    <dt ><span>Başlama tarixi</span>:</dt>
+                    <dd class="label-start-date"></dd>
+                    <dt ><span>Bitmə tarixi</span>:</dt>
+                    <dd class="label-end-date"></dd>
+                    <dt ><span>Haqqında</span>:</dt>
+                    <dd class="label-note"></dd>
+                </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="add-new">
+    <div class="search-scroll">
+        <div class="">
+            <div class="search-butons" style="margin: 0;">
+                <a data-i18n="ok" class="add-foreign-relation-submit" >OK</a>
+                <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+            </div>
+            <form class="add-foreign-relation-form">
+                <div class="">
+
+                    <h3 class="panel-title">Beynəlxalq əlaqə əlavə et</h3>
+                </div>
+                <div class="">
+                    
+                    <div class="form-group">
+                        <label for="add-serial">Təşkilat</label>
+                        <div class="prepend-icon">
+                            <select foreign-relation-required class="form-control foreign-relation-company no-padding" name="companyId">
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Ölkə</label>
+                        <div class="prepend-icon">
+                            <select foreign-relation-required class="form-control foreign-relation-country no-padding" name="countryId">
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Başlama tarixi</label>
+                        <div class="prepend-icon">
+                            <input type="text" foreign-relation-required class="form-control foreign-relation-start-date no-padding datepicker" data-date-format="dd/mm/yyyy" name="startDate"/>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Bitmə tarixi</label>
+                        <div class="prepend-icon">
+                            <input type="text" class="form-control foreign-relation-end-date no-padding datepicker" data-date-format="dd/mm/yyyy" name="endDate"/>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Haqqinda</label>
+                        <div class="prepend-icon">
+                            <textarea class="form-control foreign-relation-note no-padding" name="note"></textarea>
+
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="assets/js/modal_drag.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+        $('body').find('.table-scroll').slimScroll();
+        $('.search-scroll').slimScroll();
+        
+        $('body').on('click', '.new-close', function () {
+            $('body').find('.new-upd').css('right', '-100%');
+        });
+        if (sessionStorage.studentSearch != undefined) 
+            $('.clear_search').removeClass('hidden');
+
+       
+
+        $('.tree-modal .modal-content').draggable({
+            cancel: '.scrollable'
+        });
+
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+            
+            Hsis.Proxy.getForeignRelationList();
+
+        });
+
+        $('#main-div .sub_modules_div').remove();
+        $('.module-list').find('.sub-module-con').remove();
+
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000080, 0, function (company) {
+            if (company) {
+                var html = '<option value="0">Seçin</option>';
+                $.each(company, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('.foreign-relation-company').html(html);
+                $('#company_filter').html(html);
+
+            }
+        });
+        
+        Hsis.Proxy.getAllCountry(function (country) {
+            if (country) {
+                var html = '<option value="0">Seçin</option>';
+                $.each(country, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('.foreign-relation-country').html(html);
+                $('#country_filter').html(html);
+
+            }
+        });
+
+
+        $('body').on('change', '#company_filter, #country_filter', function() {
+            $('body').find('.col-sm-4.info').fadeOut(1).css('right', '-100%');
+            $('body').find('.col-sm-8.data').removeClass('col-sm-8').addClass('col-sm-12');
+            var params = $('.foreign-relation-form').serialize();
+            $('.btn-load-more').removeAttr('data-page');
+            
+            Hsis.Proxy.getForeignRelationList('', params);
+        })
+
+        $('.modal-content').draggable();
+
+        $('.datepicker').datepicker();
+
+    });
+</script>

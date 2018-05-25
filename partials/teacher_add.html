@@ -1,0 +1,2149 @@
+<style>
+    .search-scroll {
+        height: 100vh !important;
+        padding-bottom: 140px;
+    }
+</style>
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok" id="confirmTeacher" >OK</a>
+        <a href="" data-i18n="close" class="close-teacher-add" placeholder="Bağla">Bağla</a>
+    </div>
+    <div class="col-md-12">
+        <div class="">
+            <div class="">
+                <h3 data-i18n="main_info" class="panel-title">  Main info</h3>
+                <!--<a href="#" class="save-button"><img src="assets/img/save-icon.png" alt="Save" width="20" height="20">-->
+                </a>
+            </div>
+            <div class="flex-panel">
+                <div class="col-md-6">
+                    <div class="input-file-con">
+                        <input type="file" accept="image/*" id="inputImage">
+                        <div class="fake-input"><em class="fa fa-user"></em></div>
+                        <div class="new-img-con"><img src="" alt="" class="img-responsive"></div>
+                    </div>
+                    <div><button class="btn btn-primary get-iamas-photo">Iamasdan gətir</button></div>
+                </div>
+
+                <div class="col-md-6 user-forms">
+
+                    <div class="form-group">
+                        <label data-i18n="name" for="firstname">First name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="name" data-required class="form-control" id="firstname" placeholder="First name">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="surname" for="lastname">Last name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="surname" data-required class="form-control" id="lastname" placeholder="Last name">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="middlename" for="firstname">Middle name</label>
+                        <div class="prepend-icon ">
+                            <input data-i18n="middlename" data-required class="form-control" id="middlename" placeholder="Middle name">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body" style="padding: 0">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="citizenship" for="citizenship">Citizenship</label>
+                        <div class="prepend-icon">
+                            <select data-required id="citizenship" class="form-control">
+                                <option data-i18n="citizenship" value="" selected>Citizenship</option>
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                            </select>
+                            <i class="fa fa-street-view"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="pincode" for="firstname">Pin code</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="pincode" data-required type="text" class="form-control" id="pincode" placeholder="Pin code">
+                            <i class="fa fa-lock circular"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="three-tabs col-md-12 panel-title">
+    <ul class="nav  col-md-12">
+        <li  class="col-sm-6 active">
+            <a data-toggle="tab" href="#tab1"  class=" first-tab">
+                <span data-i18n="personal_info" class="panel-body" style="padding: 0">Personal info</span>
+            </a>
+        </li>
+        <li class="col-sm-6">
+            <a data-toggle="tab" href="#tab2" class=" second-tab">
+                <span data-i18n="academic_info" class="panel-body" style="padding: 0">Academic info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="tab-content col-md-12">
+    <div id ="tab1" class="tab-pane fade in active">
+        <div class="first-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="common_info" class="panel-title">Common info</h3>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="gender" for="gender">Gender</label>
+                                <div class="prepend-icon">
+                                    <select data-required id="gender" name="gender" class="form-control">
+
+                                    </select>
+                                    <i class="fa fa-venus-mars"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="marital_status" for="marital_status">Marital status</label>
+                                <div class="prepend-icon">
+                                    <select data-required id="marital_status" name="" class="form-control">
+
+                                    </select>
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="social_status" for="social_status">Social status</label>
+                                <div class="prepend-icon">
+                                    <select id="social_status" name="" class="form-control">
+                                    </select>
+                                    <i class="fa fa-group"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="disability_degree" for="disability_degree">Disability degree</label>
+                                <div class="prepend-icon">
+                                    <select id="disability_degree" name="" class="form-control" >
+
+                                    </select>
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="birthdate" for="birthdate">Birthdate</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="birthdate" data-required id="birthdate" type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Birthdate">
+                                    <i class="fa fa-birthday-cake"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="nationality" for="nationality">Nationality</label>
+                                <div class="prepend-icon">
+                                    <select  id="nationality" name="" class="form-control">
+
+                                    </select>
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="military_service" for="military_status">Military status</label>
+                                <div class="prepend-icon">
+                                    <select id="military_status" name="" class="form-control">
+
+                                    </select>
+                                    <i class="fa fa-binoculars"></i>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="contact_info" class="panel-title">Contact info</h3>
+                        <div class="add-new"><img id="add_contact" src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div id="append_contact" class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="address-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div  class="">
+                        <h3 class="panel-title" data-i18n="address_info">Address info</h3>
+                        <!--<div class="add-new"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>-->
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="col-md-12 for-align">
+                            <div class="col-md-3 explanation">
+                                <p class="col-sm-12"><span data-i18n="birth_place">Birth place</span>: </p>
+                                <p class="col-sm-12"><span data-i18n="permanent_address">Permanent place of residence</span>:</p>
+                                <p class="col-sm-12"><span data-i18n="temporary_address" >Temporary residence</span>: </p>
+
+                            </div>
+                            <div class="col-md-9 org-tree">
+                                <div birth-place class="form-group tree-modal-container">
+                                    <button data-i18n="birth_place" data-type-id="1000199" data-address id="birth_place" type="button" class="btn btn-default tree-modal btn-block">Birth place</button>
+                                    <div class="modal-content specialities hidden">
+                                        <div class="modal-header header-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                        </div>
+                                        <div class="modal-body scrollable">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="search-bar">
+                                                        <div class="prepend-icon">
+                                                            <input data-i18n="placeholder.search" data-tree-id="birth_place_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">
+                                                            <i class="fa fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="birth_place_tree">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer flex-img">
+                                            <button data-i18n="ok" id="get_birth_place" type="button" class="btn btn-primary">OK</button>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div permanent-address class="form-group tree-modal-container">
+                                    <button data-i18n="permanent_address" data-type-id="1000178" data-address id="permanent_address" type="button" class="btn btn-default tree-modal btn-block">Permanent place of residence</button>
+                                    <div class="modal-content specialities hidden">
+                                        <div class="modal-header header-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                        </div>
+                                        <div class="modal-body scrollable">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="search-bar">
+                                                        <div class="prepend-icon">
+                                                            <input data-i18n="placeholder.search" data-tree-id="permanent_address_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">
+                                                            <i class="fa fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="permanent_address_tree">
+
+                                                    </div>
+                                                    <input data-i18n="street_address" id="permanent_street" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer flex-img">
+                                            <button data-i18n="ok"  id="get_permanent_address" type="button" class="btn btn-primary">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div temporary-address class="form-group tree-modal-container">
+                                    <button data-required="" data-i18n="temporary_address" data-type-id="1000198" data-address id="temporary_address" type="button" class="btn btn-default tree-modal btn-block">Temporary residence</button>
+                                    <div class="modal-content specialities hidden">
+                                        <div class="modal-header header-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                        </div>
+                                        <div class="modal-body scrollable">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="search-bar">
+                                                        <div class="prepend-icon">
+                                                            <input data-i18n="placeholder.search" data-tree-id="temporary_address_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">
+                                                            <i class="fa fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="temporary_address_tree">
+
+                                                    </div>
+                                                    <input data-i18n="street_address" id="temporary_street" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer flex-img">
+                                            <button data-i18n="ok" id="get_temporary_address" type="button" class="btn btn-primary">OK</button>
+                                        </div>
+                                    </div>
+                                </div> 
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="docs-row1 add-doc-block">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="doc_info" class="panel-title">Doc info</h3>
+                        <div data-type-id ="1000029" data-doc-type="personal" class="add-new add-new-document"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div class="panel-body" style="padding: 0" data-doc-type="personal">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="tab2" class="tab-pane fade">
+        <div class="second-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class=" acad_act">
+                        <h3 data-i18n="academic_activity" class="panel-title">Academic Activity</h3>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class=" edu_info">
+                            <div class=" act_name">
+                                <h3 data-i18n="edu_info" class="panel-title">Education info</h3>
+                                <div class="add-new add-new-edu-info"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                            </div>
+                            <div class="panel-body edu-info-block">
+                                <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                            </div>
+                        </div>
+
+                        <div class=" activity_name">
+                            <div class=" act_name">
+                                <h3  data-i18n="work_info" class="panel-title">Work info</h3>
+                                <div class="add-new add-new-work-lifecycle"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                            </div>
+                            <div id="work_action_block" class="panel-body" style="padding: 0">
+
+                            </div>
+
+                            <div class=" doc_panel add-doc-block">
+                                <div class="">
+                                    <h3 data-i18n="related_documents"  class="panel-title">Related Documents</h3>
+                                    <div data-type-id ="1000041" data-doc-type="academic" class="add-new add-new-document"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                                </div>
+                                <div class="panel-body" style="padding: 0" data-doc-type="academic">
+                                    <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" subjects_panel">
+                    <div class="">
+                        <h3 data-i18n="subjects"  class="panel-title">Subjects</h3>
+                        <div class="add-new "><img  src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div id="append_subjects" class="panel-body " style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                        <div class="select-container hidden">
+                            <select id="subjects" class="combo" multiple="true">
+
+                            </select>
+                            <div data-i18n="ok" class="btn btn-success submit-subject">OK</div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" languages_panel">
+                    <div class="">
+                        <h3 data-i18n="languages" class="panel-title">Languages</h3>
+                        <div class="add-new add-new-language"><img  src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div id="append_languages" class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                        <div class="select-container hidden">
+                            <select id="teacher_languages" class="combo" multiple="multiple">
+
+                            </select>
+                            <div data-i18n="ok" class="btn btn-success submit-language">OK</div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" academic-degree-info">
+                    <div class=" text-center">
+                        <h3 data-i18n="academic_degree" class="panel-title">Academic degrees</h3>
+                        <div class="add-new add-new-academic-degree"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div class="panel-body academic-degree-info-block">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+                <div class=" research-history-info">
+                    <div class=" text-center">
+                        <h3 data-i18n="researches" class="panel-title">Research history</h3>
+                        <div class="add-new add-new-research-history"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div class="panel-body research-history-block">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="buttons-row col-md-12">
+    <div class="col-md-6">
+        <a data-i18n="ok" id="confirmTeacher" class="btn btn-block btn-success">OK</a>
+    </div>
+    <div class="col-md-6">
+        <a data-i18n="close" class="btn btn-block btn-danger" href="index.html">Close</a>
+    </div>
+</div>
+-->
+
+
+<!-- Here must be located all modals (it is important, it must be done  to prevent backdrop problem )  contact modal -->
+<div id="add_contact_modal" class="modal " >
+    <div class="modal-dialog" >
+        <div  class="modal-content">
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="contacts" class="modal-title">Contacts</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label data-i18n="contact_type" for="contact_type">Contact type</label>
+                    <div class="prepend-icon">
+                        <select contact-required id="contact_type" class="form-control">
+
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact" for="contact">Contact</label>
+                    <div class="prepend-icon">
+                        <input data-i18n="contact" contact-required id="contact" class="form-control" placeholder="contact">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" confirm type="button" class="btn btn-primary">OK</button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--document  modal-->
+<div class="modal add-document-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="add-doc-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="documents" class="modal-title">Documents</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label data-i18n="doc_type">Document type</label>
+                        <div class="prepend-icon">
+                            <select document-required name="add-document-type" class="form-control">
+
+                            </select>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="serial_number" for="add-serial">Serial number</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="serial_number" document-required id="add-serial" name="add-document-serial" class="form-control" placeholder="Serial number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="doc_number" for="add-number">Document number</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="doc_number" document-required id="add-number" name="add-document-number" class="form-control" placeholder="Document number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="issue_date" for="start-date">Start date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="issue_date" document-required id="start-date" name="add-document-start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="end_date" for="end-date">End date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="end_date" id="end-date" name="add-document-end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="End date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" doc-confirm type="button" class="btn btn-primary ">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--  Edu info modal  -->
+<div id="edu_info_modal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="edu_info" class="modal-title"> Edu Info</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label data-i18n="graduated_university_name" for="university_id">University</label>
+                    <div class="prepend-icon">
+                        <select   id="university_id"  class="form-control " > </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="foreign_university" for="foreign_university">University</label>
+                    <div class="prepend-icon">
+                        <select   id="foreign_university_id"  class="form-control " > </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="edu_level" for="edu_level">Edu level</label>
+                    <div class="prepend-icon">
+                        <select education-required id="teach_edu_level"  class="form-control " > </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="action_type" for="start-date">Start action type</label>
+                    <div class="prepend-icon">
+                        <select education-required id="start_action_type"  class="form-control "></select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label data-i18n="start_date" for="start-date">Start date</label>
+                    <div class="prepend-icon">
+                        <input data-i18n="start_date"  education-required id="edu-start-date" name="start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="action_type" for="start-date">End action type</label>
+                    <div class="prepend-icon">
+                        <select education-required id="end_action_type"  class="form-control "></select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="end_date" for="end-date">End date</label>
+                    <div class="prepend-icon">
+                        <input data-i18n="end_date" education-required id="edu-end-date"  class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="End date">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="edu_lang" for="start-date">Edu Lang</label>
+                    <div class="prepend-icon">
+                        <select data-i18n="edu_lang" id="edu_lang" name="edu_lang" class="form-control ">
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" edu-info-confirm type="button" class="btn btn-primary ">OK</button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Academic degree info modal -->
+<div class="modal academic-degree-info-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="academic_degree" class="modal-title">Academic degree</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label data-i18n="academic_level">Academic type</label>
+                    <div class="prepend-icon">
+                        <select academic-required id="academic_type" class="form-control academic-degree-name">
+                            <option data-i18n="select" value="0">Select</option>
+                            <option data-i18n="academic_degree" value="1000020">Academic degree</option>
+                            <option data-i18n="academic_name" value="1000021">Academic name</option>
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="academic_degree" class="academic-type">Academic degree</label>
+                    <div class="prepend-icon">
+                        <select academic-required id="academic_degree" class="form-control academic-degree-name">
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="issue_date">Date</label>
+                    <div class="prepend-icon">
+                        <input academic-required id="academic_info_date" type="text" data-date-format="dd/mm/yyyy" class="form-control datepicker academic-degree-date"/> 
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+                <!--                <div class="form-group">
+                                    <label data-i18n="current_status" >Current status</label>
+                                    <div class="prepend-icon">
+                                        <select default-required id="current_academic_status" class="form-control academic-degree-status">
+                                            <option data-i18n="select" value="">Select</option>
+                                            <option data-i18n="active" value="1">Active</option>
+                                            <option data-i18n="inactive" value="0">Inactive</option>
+                                        </select>
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </div>
+                                </div>-->
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok"  class="btn btn-primary academic-degree-modal-submit">OK</button>
+                <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Research history info modal -->
+<div class="modal research-history-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="researches" class="modal-title">Research history</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label data-i18n="research_type">Research type</label>
+                    <div class="prepend-icon">
+                        <select research-required id="research_type" class="form-control ">
+
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label data-i18n="publish_date" >Publish date</label>
+                    <div class="prepend-icon">
+                        <input research-required id="publish_date" type="text" class="form-control datepicker " data-date-format="dd/mm/yyyy" />
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="research_name">Research name</label>
+                    <div class="prepend-icon">
+                        <input data-i18n="research_name" research-required id="research_name" type="text" class="form-control  research-history-name" /> 
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok"  class="btn btn-primary research-history-modal-submit">OK</button>
+                <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Work lifecycle info modal -->
+<div class="modal work-lifecycle-modal"  role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="work_info" class="modal-title">Research history</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label  data-i18n="start_date" for="start_date">Start date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="date" work-required id="action_date" type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div org-id class="form-group">
+                            <label  data-i18n="start_action_type" for="start_action_type">Start action type</label>
+                            <select work-required id ="work_in_actions" class="form-control no-margin no-padding"></select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label  data-i18n="end_date" for="end_date">End date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="date"  id="end_action_date" type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div org-id class="form-group">
+                            <label  data-i18n="end_action_type_reason" for="end_action_type">End action type</label>
+                            <select  id ="work_out_actions" class="form-control no-margin no-padding"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label  data-i18n="employee.card_number" for="teacher_card_no">Teacher card number</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="employee.card_number"  id="teacher_card_no" type="text" class="form-control " placeholder="Teacher card number">
+                                <i class="fa fa-credit-card"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="teaching" for="teaching">Teaching</label>
+                            <select default-teaching-required data-default-value="0"  id="teaching" class="form-control no-padding">
+                                <option data-i18n="select" value="">Select</option>
+                                <option data-i18n="no"  value="0">No</option>
+                                <option data-i18n="yes"  value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 org-tree">
+                        <div org-id class="form-group">
+                            <label  data-i18n="structure_type" for="teacherOrgTypeId">Struktur növü</label>
+                            <select  id ="teacherOrgTypeId" class="form-control no-margin no-padding"></select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 org-tree">
+                        <div org-id class="form-group">
+                            <label  data-i18n="structure_sector" for="orgId">Structure</label>
+                            <select work-required id ="orgId" class="form-control no-margin no-padding"></select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group ">
+                            <label data-i18n="staff_type"  for="staff_type">Staff type</label>
+                            <select work-required id="staff_type" class="form-control no-padding">
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group ">
+                            <label data-i18n="teacher.position"  for="staff_type">Position</label>
+                            <select work-required id="staff-position" class="form-control no-padding">
+                                <option data-i18n="select" value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="note" for="note">Note</label>
+                            <textarea id="note" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok"  class="btn btn-primary work-lifecycle-modal-submit">OK</button>
+                <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="crop-modal" tabindex="-1" role="dialog" aria-labelledby="crop-modal">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Şəkil</h4>
+         </div>
+         <div class="modal-body crop-con">
+           <div class="row">
+              <div class="col-lg-12">
+                 <div class=" mb-lg">
+                    <img src="../assets/img/mb-sample.jpg" alt="Picture" id="image">
+                 </div>
+              </div>
+           </div>
+        
+         </div>
+         <div class="modal-footer">
+           
+           <button type="button" class="btn btn-primary crop" data-dismiss="modal">Yadda saxla</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        try {
+            $('#orgId').select2({
+                placeholder: Hsis.dictionary[Hsis.lang]["select"],
+                allowClear: true,
+                language: {
+                    noResults: function () {
+                        return Hsis.dictionary[Hsis.lang]["no_information"];
+                    }
+                },
+                
+            });
+        
+            
+            Hsis.i18n(Hsis.lang);
+            cropForm = new FormData();
+            $('.progress-backdrop').removeClass('hidden');
+            $('.datepicker').datepicker();
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+                var html = Hsis.Service.parseDictionaryForSelect(citizenship);
+                $('#main-div #citizenship').html(html);
+            });
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000002', 0, function (orgType) {
+                var html = Hsis.Service.parseDictionaryForSelect(orgType);
+                $('#main-div #teacherOrgTypeId').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000016', 0, function (eduLevel) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+                $('#main-div #teach_edu_level').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000006', 0, function (nationality) {
+                var html = Hsis.Service.parseDictionaryForSelect(nationality);
+                $('#main-div #nationality').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+                var html = Hsis.Service.parseDictionaryForSelect(gender);
+                $('#main-div #gender').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(maritalStatus);
+                $('#main-div #marital_status').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000039', 0, function (researchTypes) {
+                var html = Hsis.Service.parseDictionaryForSelect(researchTypes);
+                $('#research_type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000022', 0, function (researchTypes) {
+                var html = Hsis.Service.parseDictionaryForSelect(researchTypes);
+                $('#staff-position').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLang);
+                $('#main-div #edu_lang').html(html);
+            });
+
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000008', 0, function (militaryStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(militaryStatus);
+                var militaryStatus = $('#main-div #military_status');
+                militaryStatus.html(html);
+                militaryStatus.find('option[value="0"]').prop('selected', true);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000009', 0, function (socialStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(socialStatus);
+                var socialStatus = $('#main-div #social_status');
+                socialStatus.html(html);
+                socialStatus.find('option[value="0"]').prop('selected', true);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000011', 0, function (contactType) {
+                var html = Hsis.Service.parseDictionaryForSelect(contactType);
+                $('#main-div #contact_type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (teacherLanguages) {
+                var html = Hsis.Service.parseDictionaryForSelect(teacherLanguages);
+                $('#teacher_languages').html(html);
+                $('#main-div #teacher_languages option[value="0"]').remove();
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000038', 0, function (subjects) {
+                var html = Hsis.Service.parseDictionaryForSelect(subjects);
+                $('#subjects').html(html);
+                $('#subjects option[value="0"]').remove();
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000010', 0, function (disabilityDegree) {
+                var html = Hsis.Service.parseDictionaryForSelect(disabilityDegree);
+                $('#main-div #disability_degree').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000023', 0, function (staffType) {
+                var html = Hsis.Service.parseDictionaryForSelect(staffType);
+                $('#staff_type').html(html);
+            });
+
+            Hsis.Proxy.loadAddressTree(function (addressTree) {
+                Hsis.Service.commonParseTree(addressTree, 'permanent_address_tree');
+                Hsis.Service.commonParseTree(addressTree, 'temporary_address_tree');
+                Hsis.Service.commonParseTree(addressTree, 'birth_place_tree');
+            });
+
+            var typeId = 1000073;
+            var addressTreeId = 0;
+            Hsis.Proxy.getFilteredStructureList(Hsis.structureId, typeId, addressTreeId, function (structures) {
+                var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                $.each(structures, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                });
+                $('#university_id').html(html);
+            }, 1);
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000025', '1000258', function (startActionType) {
+                var html = Hsis.Service.parseDictionaryForSelect(startActionType);
+                $('#start_action_type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000025', '1000259', function (endActionType) {
+                var html = Hsis.Service.parseDictionaryForSelect(endActionType);
+                $('#end_action_type').html(html);
+            })
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000033', '1000258', function (inActions) {
+                var html = Hsis.Service.parseDictionaryForSelect(inActions);
+                $('#work_in_actions').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000033', '1000259', function (outActions) {
+                var out = Hsis.Service.parseDictionaryForSelect(outActions);
+                $('#work_out_actions').html(out);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeCode(Hsis.Codes.FOREIGN_UNIVERSITY, function (foreignUniversities) {
+                if (foreignUniversities) {
+                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>';
+                    $.each(foreignUniversities, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                    });
+                    $('#foreign_university_id').html(html);
+                }
+
+            });
+
+
+            $("#main-div #permanent_address_tree").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#permanent_address').attr('data-node-id', data.node.id);
+                    $('#permanent_address').attr('data-node-text', path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#get_permanent_address', function (e) {
+                try {
+                    var street = $('#permanent_street').val().trim();
+                    if ($('#permanent_address').get(0).hasAttribute("data-node-id")) {
+                        var nodeText = $('#permanent_address').attr('data-node-text');
+                        if (street.length > 0) {
+                            $('#permanent_address').text(nodeText + ',' + street);
+                            $('#permanent_address').attr('data-street', street);
+                            $('.tree-modal-container .modal-content').addClass('hidden');
+                        }
+                        else {
+                            $.notify(Hsis.dictionary[Hsis.lang]['fill_street'], {
+                                type: 'warning'
+                            });
+                            return false;
+                        }
+                    }
+                    else {
+                        $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#main-div #temporary_address_tree").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#temporary_address').attr('data-node-id', data.node.id);
+                    $('#temporary_address').attr('data-node-text', path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#get_temporary_address', function (e) {
+                try {
+                    var street = $('#temporary_street').val().trim();
+                    if ($('#temporary_address').get(0).hasAttribute("data-node-id")) {
+                        var nodeText = $('#temporary_address').attr('data-node-text');
+                        if (street.length > 0) {
+                            $('#temporary_address').text(nodeText + ',' + street);
+                            $('#temporary_address').attr('data-street', street);
+                            $('.tree-modal-container .modal-content').addClass('hidden');
+                            $('#temporary_address').removeClass('blank-required-field');
+                            $('#temporary_address').removeAttr('data-required');
+                        }
+                        else {
+                            $.notify(Hsis.dictionary[Hsis.lang]['fill_street'], {
+                                type: 'warning'
+                            });
+                            return false;
+                        }
+                    }
+                    else {
+                        $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#birth_place_tree").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#birth_place').attr('data-node-id', data.node.id);
+                    $('#birth_place').attr('data-node-text', path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#get_birth_place', function (e) {
+                try {
+                    if ($('#birth_place').get(0).hasAttribute("data-node-id")) {
+                        var nodeText = $('#birth_place').attr('data-node-text');
+                        $('#birth_place').text(nodeText);
+                        $('.tree-modal-container .modal-content').addClass('hidden');
+                    }
+                    else {
+                        $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#permanent_address', function (event) {
+                try {
+                    $('[permanent-address] .modal-content').toggleClass('hidden');
+                    $('[permanent-address] .close').on('click', function (e) {
+                        $('[permanent-address] .modal-content').addClass('hidden');
+                    });
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#temporary_address', function (event) {
+                try {
+                    $('[temporary-address] .modal-content').toggleClass('hidden');
+                    $('[temporary-address] .close').on('click', function (e) {
+                        $('[temporary-address] .modal-content').addClass('hidden');
+                    });
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#birth_place', function (event) {
+                try {
+                    $('[birth-place] .modal-content').toggleClass('hidden');
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('[birth-place] .close').on('click', function (e) {
+                $('[birth-place] .modal-content').addClass('hidden');
+            });
+
+            $(".tree-search1").keyup(function () {
+                try {
+                    var searchString = $(this).val();
+                    var inputId = $(this).attr('data-tree-id');
+                    $('#' + inputId).jstree('search', searchString);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+
+            //Img upload 'close-button' events
+            $('.user-photo .fa.fa-close').on('click', function (e) {
+                var thumbImg = $(this).closest('.user-photo').find('.thumbnail img')[0];
+                if (thumbImg) {
+                    thumbImg.src = 'assets/img/guest.png';
+                }
+                else {
+                    $(this).closest('.user-photo').find('.thumbnail').html('<img src="assets/img/guest.png">');
+                }
+                $(this).closest('.user-photo').find('.fileinput.fileinput-exists').removeClass('fileinput-exists').addClass('fileinput-new');
+            });
+
+
+            //"No information available" message
+            $(document).ajaxStop(function (e) {
+                var tabs = $('.tab-content').children();
+                tabs.each(function (i, v) {
+                    var panels = $(v).children();
+                    panels.each(function (i, v) {
+                        if ($(v).find('.panel-body').children().length == 0 || ($(v).find('.panel-body').children().length == 1 && $(v).find('.panel-body').children().is('.modal')))
+                            $(v).find('.panel-body').append('<div class="blank-panel"><h3>' + Hsis.dictionary[Hsis.lang]['no_information'] + '</h3></div>');
+                    });
+                })
+            });
+
+
+
+            $(document).on('change', '.for-align.doc-item label input', function (e) {
+                var fileNames = '';
+                var self = this;
+                console.dir(self.files);
+
+                $.each(self.files, function (i, v) {
+                    if (i != self.files.length - 1)
+                        fileNames += self.files[i].name + ', ';
+                    else
+                        fileNames += self.files[i].name;
+                });
+                $(this).closest('label').find('span').text(fileNames);
+            });
+
+
+
+
+            //$('#lang_skills').select2();
+
+            Hsis.Proxy.getFilteredStructureList(Hsis.structureId, '1000074', 0, function (specialities) {
+                if (specialities) {
+                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                    $.each(specialities, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                    })
+                }
+                $('#orgId').html(html);
+            });
+
+            $('.combo').select2();
+
+            $('.second-info').on('click', '.add-new', function (e) {
+
+                try {
+                    //  console.log($(this).parents('.panel').has('.select-container'));
+                    if ($(this).parents('.subjects_panel').has('.select-container').length != 0) {
+
+                        $(this).parents('.subjects_panel').find('.select-container').removeClass('hidden');
+                        $(this).parents('.subjects_panel').find('.blank-panel').addClass('hidden');
+                        $('body').find('#subjects').select2('destroy');
+                        $('body').find('#subjects').select2();
+                    }
+                }
+                catch (err) {
+
+                }
+
+            });
+            $('.second-info').on('click', '.add-new.add-new-language', function (e) {
+
+                try {
+                    //  console.log($(this).parents('.panel').has('.select-container'));
+                    if ($(this).parents('.languages_panel').has('.select-container').length != 0) {
+
+                        $(this).parents('.languages_panel').find('.select-container').removeClass('hidden');
+                        $(this).parents('.languages_panel').find('.blank-panel').addClass('hidden');
+                        $('body').find('#teacher_languages').select2('destroy');
+                        $('body').find('#teacher_languages').select2();
+                    }
+                }
+                catch (err) {
+
+                }
+
+            });
+
+            $('.second-info').on('click', '.select-container .btn-success', function (e) {
+                $(this).closest('.panel').find('.select-container').addClass('hidden');
+                //   console.log($(this).closest('.panel').find('.select-container'));
+            });
+
+            $('#main-div').on('click', '.submit-subject', function (e) {
+                try {
+                    var subjects = $('#subjects').val();
+
+                    if (subjects) {
+                        var html = '';
+                        $.each(subjects, function (i, v) {
+                            if (v > 0) {
+                                var name = $('#subjects').find('option[value="' + v + '"]').text();
+                                html += '<div data-id="' + v + '" class="simple-panel subject-item">' +
+                                        '<p>' + name + '</p>' +
+                                        '<div class="remove-button fa fa-remove remove-subject"></div>' +
+                                        '</div>';
+                            }
+
+                        });
+                        $('#append_subjects').prepend(html);
+                        $('#subjects').select2('val', ' ');
+                        $(this).parents('.subjects_panel').find('.select-container').addClass('hidden');
+                        if($('body').find('.subject-item').length == 0){
+                            $(this).parents('.subjects_panel').find('.blank-panel').removeClass('hidden');
+                        }
+                        
+
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.submit-language', function (e) {
+                try {
+                    var languages = $('#teacher_languages').val();
+                    if (languages) {
+                        var html = '';
+                        $.each(languages, function (i, v) {
+                            if (v > 0) {
+                                var name = $('#teacher_languages').find('option[value="' + v + '"]').text();
+                                html += '<div data-id ="' + v + '" class="simple-panel language-item">' +
+                                        '<p>' + name + '</p>' +
+                                        '<div class="remove-button fa fa-remove remove-language"></div>' +
+                                        '</div>';
+                            }
+
+                        });
+                        $('#append_languages').prepend(html);
+                        $('#teacher_languages').select2('val', ' ');
+                        $(this).parents('.languages_panel').find('.select-container').addClass('hidden');
+                        if($('body').find('.language-item').length == 0){
+                            $(this).parents('.languages_panel').find('.blank-panel').removeClass('hidden');
+                        }
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.remove-subject', function (e) {
+                try {
+                    var parent = $(this).parents('.panel-body');
+                    $(this).parents('.subject-item').remove();
+                    if (parent.has('.subject-item').length == 0) {
+                        parent.append('<div class="blank-panel"><h3>' + Hsis.dictionary[Hsis.lang]['no_information'] + '</h3></div>');
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.remove-language', function (e) {
+                try {
+                    var parent = $(this).parents('.panel-body');
+                    $(this).parents('.language-item').remove();
+                    if (parent.has('.language-item').length == 0) {
+                        parent.append('<div class="blank-panel"><h3>' + Hsis.dictionary[Hsis.lang]['no_information'] + '</h3></div>');
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.add-new-edu-info', function () {
+                try {
+                    $('#edu_info_modal .blank-required-field').removeClass('blank-required-field');
+                    $('#edu_info_modal [edu-info-confirm]').removeClass("edit-edu-info-submit").addClass("add-edu-info-submit");
+                    $('#edu_info_modal select').find('option[value="0"]').prop('selected', true);
+                    $('#edu_info_modal input').val('');
+                    $('#edu_info_modal').modal();
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.add-edu-info-submit', function () {
+                try {
+                    var universityId = $('#university_id').find('option:selected').val();
+                    var universityName = universityId == 0 ? "" : $('#university_id').find('option:selected').text();
+                    var foreignUniId = $('#foreign_university_id').find('option:selected').val();
+                    var foreignUniName = foreignUniId == 0? "" : $('#foreign_university_id').find('option:selected').text();
+                    var startActionType = $('#start_action_type').find('option:selected').val();
+                    var startActionName = startActionType == 0 ? "" : $('#start_action_type').find('option:selected').text();
+                    var startDate = $('#edu-start-date').val().trim();
+                    var endDate = $('#edu-end-date').val().trim();
+                    var endActiontype = $('#end_action_type').find('option:selected').val();
+                    var endActionName = endActiontype == 0 ? "" : $('#end_action_type').find('option:selected').text();
+                    var edulevelId = $('#teach_edu_level').find('option:selected').val();
+                    var eduLevelName = edulevelId == 0 ? "" : $('#teach_edu_level').find('option:selected').text();
+                    var eduLang = $('#edu_lang').val();
+
+                    var html = '<div class="col-md-12 for-align edu-info-item" foreign-org-name="' + foreignUniName + '" foreign-org-id="' + foreignUniId + '" data-edu-lang="' + eduLang + '" data-org-id="' + universityId + '" data-start-action-type="' + startActionType + '" data-end-action-type="' + endActiontype + '" data-start-date="' + startDate + '" data-end-date="' + endDate + '" data-edu-level="' + edulevelId + '" >' +
+                            '<table class="table-block col-md-12">' +
+                            '<thead>' +
+                            '<tr>' +
+                            '<th style="width:145px;">' + Hsis.dictionary[Hsis.lang]['university_name'] + '</th>' +
+                            '<th>' + Hsis.dictionary[Hsis.lang]['edu_level'] + '</th>' +
+                            '<th>' + Hsis.dictionary[Hsis.lang]['action_type'] + '</th>' +
+                            '<th>' + Hsis.dictionary[Hsis.lang]['issue_date'] + '</th>' +
+                            '<th>' + Hsis.dictionary[Hsis.lang]['action_type'] + '</th>' +
+                            '<th>' + Hsis.dictionary[Hsis.lang]['end_date'] + '</th>' +
+                            '</tr>' +
+                            '</thead>' +
+                            '<tbody>' +
+                            '<tr>' +
+                            '<td>' + (universityName != "" ? universityName : foreignUniName) + '</td>' +
+                            '<td>' + eduLevelName + '</td>' +
+                            '<td>' + startActionName + '</td>' +
+                            '<td>' + startDate + '</td>' +
+                            '<td>' + endActionName + '</td>' +
+                            '<td>' + endDate + '</td>' +
+                            '</tr>' +
+                            '</tbody>' +
+                            '</table>' +
+                            '<div class="operations-button">' +
+                            '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span></div>' +
+                            '<ul class="dropdown-menu">' +
+                            '<li><a class="edit-edu-info" href="#">' + Hsis.dictionary[Hsis.lang]['edit'] + '</a></li>' +
+                            '<li><a class="erase" href="#">' + Hsis.dictionary[Hsis.lang]['erase'] + '</a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>';
+
+                    if (Hsis.Validation.validateRequiredFields('education-required')) {
+                        if ((universityId == 0 && foreignUniId == 0) || (universityId > 0 && foreignUniId > 0)) {
+                            $.alert({
+                                title: Hsis.dictionary[Hsis.lang]['warning'],
+                                content: Hsis.dictionary[Hsis.lang]['select_uni_or_foreign_uni'],
+                                theme: 'material'
+                            });
+                            return false;
+                        }
+                        
+                        
+                        
+                        $('.edu-info-block').append(html);
+                        $('#edu_info_modal').modal('hide');
+                        $('.edu-info-block').has('.blank-panel').children('.blank-panel').remove();
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+
+            });
+
+            $('#main-div').on('click', '.edit-edu-info', function () {
+                try {
+                    $('#edu_info_modal .blank-required-field').removeClass('blank-required-field');
+                    $('.edu-info-item').removeClass('selected');
+                    var parent = $(this).parents('.edu-info-item');
+                    parent.addClass('selected');
+                    var universityId = parent.attr('data-org-id');
+                    var foreignUniId = parent.attr('foreign-org-id');
+                    var foreignUniName = parent.attr('foreign-org-name');
+                    var startActionType = parent.attr('data-start-action-type');
+                    var startDate = parent.attr('data-start-date');
+                    var endDate = parent.attr('data-end-date');
+                    var endActiontype = parent.attr('data-end-action-type');
+                    var eduLevelId = parent.attr('data-edu-level');
+                    var eduLang = parent.attr('data-edu-lang');
+                    $('#university_id').find('option[value="' + universityId + '"]').prop('selected', true);
+                    $('#foreign_university_id').find('option[value="' + foreignUniId + '"]').prop('selected', true);
+                    $('#start_action_type').find('option[value="' + startActionType + '"]').prop('selected', true);
+                    $('#edu-start-date').val(startDate);
+                    $('#edu-end-date').val(endDate);
+                    $('#end_action_type').find('option[value="' + endActiontype + '"]').prop('selected', true);
+                    $('#teach_edu_level').find('option[value="' + eduLevelId + '"]').prop('selected', true);
+                    $('#edu_info_modal [edu-info-confirm]').removeClass("add-edu-info-submit").addClass("edit-edu-info-submit");
+                    $('#edu_lang').val(eduLang);
+                    $('#edu_info_modal').modal();
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.edit-edu-info-submit', function () {
+                try {
+                    var universityId = $('#university_id').find('option:selected').val();
+                    var universityName = universityId == 0 ? "": $('#university_id').find('option:selected').text();
+                    var foreignUniId = $('#foreign_university_id').find('option:selected').val();
+                    var foreignUniName = foreignUniId == 0? "" : $('#foreign_university_id').find('option:selected').text();
+                    var startActionType = $('#start_action_type').find('option:selected').val();
+                    var startActionName = $('#start_action_type').find('option:selected').text();
+                    var startDate = $('#edu-start-date').val().trim();
+                    var endDate = $('#edu-end-date').val().trim();
+                    var endActiontype = $('#end_action_type').find('option:selected').val();
+                    var endActionName = $('#end_action_type').find('option:selected').text();
+                    var eduLevelId = $('#teach_edu_level').find('option:selected').val();
+                    var eduLevelName = $('#teach_edu_level').find('option:selected').text();
+                    var item = $('.edu-info-item.selected');
+                    item.attr('data-org-id', universityId);
+                    item.attr('data-start-action-type', startActionType);
+                    item.attr('data-end-action-type', endActiontype);
+                    item.attr('data-start-date', startDate);
+                    item.attr('data-end-date', endDate);
+                    item.attr('data-edu-level', eduLevelId);
+                    item.attr('foreign-org-id',foreignUniId);
+                    item.attr('foreign-org-name',foreignUniName);
+                    var html = '<td>' + (universityName != ""? universityName :  foreignUniName) + '</td>' +
+                            '<td>' + eduLevelName + '</td>' +
+                            '<td>' + startActionName + '</td>' +
+                            '<td>' + startDate + '</td>' +
+                            '<td>' + endActionName + '</td>' +
+                            '<td>' + endDate + '</td>';
+
+                    if (Hsis.Validation.validateRequiredFields('education-required')) {
+                        item.find('tbody tr').html(html);
+                        $('#edu_info_modal').modal('hide');
+                    }
+
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+
+            });
+
+
+
+
+            $('#main-div').on('click', '#confirmTeacher', function (e) {
+
+                try {
+                    var allValid = true;
+                    
+                    if(Hsis.Validation.validateRequiredFields('data-required') && Hsis.begin) {
+                        Hsis.begin = false;
+                        var teacher = {
+                            pinCode: $('#pincode').val().trim(),
+                            firstName: $('#firstname').val().trim(),
+                            lastName: $('#lastname').val().trim(),
+                            middleName: $('#middlename').val().trim(),
+                            birthDate: $('body #birthdate').val().trim(),
+    //                        birthDate: 'orxan',
+                            genderId: $('#gender').find('option:selected').val(),
+                            citizenshipId: $('#citizenship').find('option:selected').val(),
+                            socialStatusId: $('#social_status').find('option:selected').val(),
+                            maritalStatusId: $('#marital_status').find('option:selected').val(),
+                            orphanDegreeId: 0,
+                            militaryServiceId: $('#military_status').find('option:selected').val(),
+                            nationalityId: $('#nationality').find('option:selected').val(),
+                            disabilityDegree: $('#disability_degree').find('option:selected').val(),
+                            addresses: [],
+                            contacts: [],
+                            documents: [],
+                            relations: [],
+                            workLifeCycle: [],
+                            eduLifeCycle: [],
+                            languages: [],
+                            subjects: [],
+                            academicActions: [],
+                            academicInfo: [],
+                            researchs: [],
+                            token: Hsis.token,
+                        };
+
+    //                    var work = {
+    //                        actionDate: $('#action_date').val(),
+    //                        orgId: $('#orgId').find('option:selected').val(),
+    //                        orgName: $('#org_name').val(),
+    //                        teaching: $('#teaching').find('option:selected').val() == '' ? $('#teaching').attr('data-default-value') : $('#teaching').find('option:selected').val(),
+    //                        cardNo: $('#teacher_card_no').val().trim(),
+    //                        staffTypeId: $('#staff_type').find('option:selected').val(),
+    //                        workBlock: 'academic',
+    //                        actionTypeId: 1000243,
+    //                        positionId: $('#staff-position').val(),
+    //                        status: 1000341,
+    //                        note: $('#note').val()
+    //                    };
+    //                    teacher.workLifeCycle.push(work);
+
+                        if ($('#work_action_block .work-action').length == 0) {
+                            $.alert({
+                                title: Hsis.dictionary[Hsis.lang]['warning'],
+                                content: Hsis.dictionary[Hsis.lang]['add_work_info'],
+                                theme: 'material'
+                            });
+                            return false;
+                        }
+                        else {
+                            $('#work_action_block .work-action').each(function () {
+                                var item = $(this);
+                                var work = {
+                                    id: item.attr('data-id'),
+                                    actionDate: item.attr('start-date'),
+                                    orgId: item.attr('org'),
+                                    orgName: '',
+                                    teaching: item.attr('teaching').length > 0 ? item.attr('teaching') : 0,
+                                    cardNo: item.attr('card-no').trim(),
+                                    staffTypeId: item.attr('staff-type'),
+                                    workBlock: 'academic',
+                                    actionTypeId: item.attr('start-action'),
+                                    positionId: item.attr('position'),
+                                    status: 1000341,
+                                    note: item.attr('note'),
+                                    endActionTypeId: item.attr('end-action').length > 0 ? item.attr('end-action') : 0,
+                                    endActionDate: item.attr('end-date')
+                                };
+                                teacher.workLifeCycle.push(work);
+                            });
+                        }
+
+
+
+
+                        var index = 1;
+
+                        if ($('.add-doc-block').has('.doc-item')) {
+                            $('.add-doc-block .doc-item').each(function (e) {
+
+                                teacher.documents.push({
+                                    id: $(this).attr('doc-id').length > 0 ? $(this).attr('doc-id') : index,
+                                    type: $(this).find('.add-doc-type').attr('data-id'),
+                                    serial: $(this).find('.add-doc-serial').text(),
+                                    number: $(this).find('.add-doc-number').text(),
+                                    startDate: $(this).find('.add-doc-start-date').text(),
+                                    endDate: $(this).find('.add-doc-end-date').text(),
+                                    documentType: $(this).parents('.panel-body').attr('data-doc-type'),
+                                });
+
+
+                                if ($(this).find('.new-add-doc-file')[0].files) {
+                                    var wrongFiles = '';
+                                    var length = $(this).find('.new-add-doc-file')[0].files.length;
+                                    if (length <= 5) {
+                                        for (var i = 0; i < length; i++) {
+                                            var files = $(this).find('.new-add-doc-file')[0].files;
+                                            if (Hsis.Validation.checkFile(files[i].type, fileTypes.FILE_CONTENT_TYPE)) {
+
+                                                if (files[i].size > 5 * 1024 * 1024) {
+
+                                                    $.notify(files[i].name + Hsis.dictionary[Hsis.lang]['exceed_volume'], {
+                                                        type: 'warning'
+                                                    });
+                                                    allValid = false;
+                                                }
+                                                else {
+                                                    cropForm.append('doc_' + index, $(this).find('.new-add-doc-file')[0].files[i]);
+                                                }
+                                            }
+                                            else {
+                                                wrongFiles += wrongFiles != '' ? ', ' + files[i].name : files[i].name;
+
+                                            }
+                                        }
+                                        if (wrongFiles != '') {
+                                            $.notify(Hsis.dictionary[Hsis.lang]['wrong_format'] + wrongFiles, {
+                                                type: 'warning'
+                                            });
+                                            allValid = false;
+                                        }
+                                    }
+                                    else {
+                                        $.notify(Hsis.dictionary[Hsis.lang]['file_limit'], {
+                                            type: 'warning'
+                                        });
+                                        allValid = false;
+                                    }
+
+                                }
+
+                                index++;
+                            });
+                        }
+
+                        if ($('.edu-info-block').has('.edu-info-item')) {
+                            $('.edu-info-block .edu-info-item').each(function () {
+                                var item = $(this);
+                                var orgId = item.attr('data-org-id');
+                                var foreignOrgId = item.attr('foreign-org-id');
+                                var edu = {
+                                    actionTypeId: item.attr('data-start-action-type'),
+                                    actionDate: item.attr('data-start-date'),
+                                    orgId: orgId,
+                                    orgName: '',
+                                    applyScore: '',
+                                    eduLineId: 0,
+                                    eduTypeId: 0,
+                                    eduPayTypeId: 0,
+                                    eduLangId: 0,
+                                    eduLevelId: item.attr('data-edu-level'),
+                                    note: '',
+                                    status: 1000380,
+                                    endActionTypeId: item.attr('data-end-action-type'),
+                                    endActionDate: item.attr('data-end-date'),
+                                    eduLangId: item.attr('data-edu-lang'),
+                                    foreignOrgId: foreignOrgId
+                                };
+
+                                teacher.eduLifeCycle.push(edu);
+
+                            });
+                        }
+
+
+                        if ($('#append_subjects').has('.subject-item')) {
+                            $('#append_subjects .subject-item').each(function () {
+                                var subjectId = $(this).attr('data-id');
+                                teacher.subjects.push(subjectId);
+                            });
+                        }
+
+                        if ($('#append_languages').has('.language-item')) {
+                            $('#append_languages .language-item').each(function () {
+                                var langId = $(this).attr('data-id');
+                                teacher.languages.push(langId);
+                            });
+                        }
+
+                        if ($('#append_contact').has('.contact-item')) {
+                            $('#append_contact table').each(function () {
+                                var contact = {};
+                                contact.typeId = $(this).find('tbody tr').attr('data-type-id');
+                                contact.contact = $(this).find('tbody tr').attr('data-contact');
+                                teacher.contacts.push(contact);
+                            });
+                        }
+
+
+                        if ($('.academic-degree-info-block').has('.academic-degree-info-item')) {
+                            $('.academic-degree-info-item').each(function () {
+                                var div = $(this);
+                                var academic = {
+                                    id: div.attr('data-academic-degree-id'),
+                                    startDate: div.attr('data-date'),
+                                    status: div.attr('data-status'),
+                                };
+                                teacher.academicInfo.push(academic);
+                            });
+                        }
+
+                        if ($('.research-history-block').has('.research-history-item')) {
+                            $('.research-history-item').each(function () {
+                                var div = $(this);
+                                var research = {
+                                    researchTypeId: div.attr('data-research-type'),
+                                    researchName: div.attr('data-research-name'),
+                                    publishDate: div.attr('data-publish-date')
+                                };
+                                teacher.researchs.push(research);
+                            });
+                        }
+
+
+                        $('button[data-address]').each(function () {
+                            if (this.hasAttribute('data-node-id')) {
+                                var address = {};
+                                address.typeId = $(this).attr('data-type-id');
+                                address.treeId = $(this).attr('data-node-id');
+                                address.address = this.hasAttribute('data-street') ? $(this).attr('data-street') : '';
+                                teacher.addresses.push(address);
+                            }
+                        });
+
+                        cropForm.append('teacher', new Blob([JSON.stringify(teacher)], {
+                            type: "application/json"
+
+                        }));
+
+                        //Validation
+
+
+                        if (allValid) {
+                            console.log(teacher);
+                            Hsis.Proxy.addTeacher(cropForm);
+                            Hsis.begin = true;
+                        } else {
+
+                            Hsis.begin = true;
+
+                        }
+
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', ' .add-new-academic-degree', function (e) {
+                try {
+                    $('.academic-degree-info-modal .blank-required-field').removeClass('blank-required-field');
+                    $('.academic-degree-modal-submit').addClass('add-new-academic-degree-info').removeClass('edit-new-academic-degree-info');
+                    $('.academic-degree-info-modal input').val('');
+                    $('.academic-degree-info-modal select').not('#current_academic_status').find('option[value="0"]').prop('selected', true);
+//                    $('#current_academic_status').find('option:first').prop('selected', true);
+                    $('.academic-degree-info-modal').modal('show');
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', ' .add-new-academic-degree-info', function (e) {
+                var academicType = $('#academic_type').find('option:selected').val();
+                var academicTypeName = academicType == 0 ? '' : $('#academic_type').find('option:selected').text();
+                var academicDegreeId = $('#academic_degree').find('option:selected').val();
+                var academicDegreeName = academicDegreeId == 0 ? '' : $('#academic_degree').find('option:selected').text();
+                var date = $('#academic_info_date').val().trim();
+//                var statusId = $('#current_academic_status').find('option:selected').val().trim();
+//                if (statusId == 1) {
+//                    var inactive = $('#current_academic_status').find('option[value="0"]').text();
+//                    $('.academic-degree-info-item[data-academic-type="' + academicType + '"]').find('.academic_status').html(inactive);
+//                    $('.academic-degree-info-item[data-academic-type="' + academicType + '"]').attr('data-status', 0);
+//                }
+//                var statusName = statusId == '' ? '' : $('#current_academic_status').find('option:selected').text();
+                var html = '<div class="col-md-12 for-align academic-degree-info-item" data-academic-type="' + academicType + '"  data-academic-degree-id ="' + academicDegreeId + '" data-date="' + date + '"  >' +
+                        '<table class="table-block col-md-12">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th>' + Hsis.dictionary[Hsis.lang]['academic_level'] + '</th>' +
+                        '<th>' + Hsis.dictionary[Hsis.lang]['issue_date'] + '</th>' +
+//                        '<th>' + Hsis.dictionary[Hsis.lang]['status'] + '</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>' +
+                        '<tr>' +
+                        '<td>' + academicDegreeName + '</td>' +
+                        '<td>' + date + '</td>' +
+//                        '<td class="academic_status">' + statusName + '</td>' +
+                        '</tr>' +
+                        '</tbody>' +
+                        '</table>' +
+                        '<div class="operations-button">' +
+                        '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span></div>' +
+                        '<ul class="dropdown-menu">' +
+                        '<li><a class="edit-in-academic-degree-info" href="#">' + Hsis.dictionary[Hsis.lang]['edit'] + '</a></li>' +
+                        '<li><a class="erase" href="#">' + Hsis.dictionary[Hsis.lang]['erase'] + '</a></li>' +
+                        '</ul>' +
+                        '</div>' +
+                        '</div>';
+
+                if (Hsis.Validation.validateRequiredFields('academic-required') & Hsis.Validation.validateRequiredFields('default-required')) {
+                    $('.academic-degree-info-block').append(html);
+                    $('.academic-degree-info-modal').modal('hide');
+                    $('.academic-degree-info-block').has('.blank-panel').children('.blank-panel').remove();
+                }
+            });
+
+            $('#main-div').on('click', ' .edit-in-academic-degree-info', function () {
+                try {
+                    $('.academic-degree-info-modal .blank-required-field').removeClass('blank-required-field');
+                    $('.academic-degree-info-item.selected').removeClass('selected');
+                    $(this).parents('.academic-degree-info-item').addClass('selected');
+                    var div = $('.academic-degree-info-item.selected');
+                    var academicType = div.attr('data-academic-type');
+                    var academicDegreeId = div.attr('data-academic-degree-id');
+                    Hsis.Proxy.loadDictionariesByTypeId(academicType, 0, function (academicDegrees) {
+                        var html = Hsis.Service.parseDictionaryForSelect(academicDegrees);
+                        $('#academic_degree').html(html);
+                        $('#academic_degree').find('option[value="' + academicDegreeId + '"]').prop('selected', true);
+                        var date = div.attr('data-date');
+//                        var status = div.attr('data-status');
+                        $('#academic_type').find('option[value="' + academicType + '"]').prop('selected', true);
+//                        $('#current_academic_status').find('option[value="' + status + '"]').prop('selected', true);
+                        $('#academic_info_date').val(date);
+                        $('.academic-degree-modal-submit').addClass('edit-new-academic-degree-info').removeClass('add-new-academic-degree-info');
+                        $('.academic-degree-info-modal').modal('show');
+
+                    });
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.edit-new-academic-degree-info', function (e) {
+                try {
+                    var academicType = $('#academic_type').find('option:selected').val();
+                    var academicTypeName = academicType == 0 ? '' : $('#academic_type').find('option:selected').text();
+                    var academicDegreeId = $('#academic_degree').find('option:selected').val();
+                    var academicDegreeName = academicDegreeId == 0 ? '' : $('#academic_degree').find('option:selected').text();
+                    var date = $('#academic_info_date').val().trim();
+//                    var statusId = $('#current_academic_status').find('option:selected').val().trim();
+//                    if (statusId == 1) {
+//                        var inactive = $('#current_academic_status').find('option[value="0"]').text();
+//                        $('.academic-degree-info-item[data-academic-type="' + academicType + '"]').find('.academic_status').html(inactive);
+//                        $('.academic-degree-info-item[data-academic-type="' + academicType + '"]').attr('data-status', 0);
+//                    }
+//                    var statusName = statusId == '' ? '' : $('#current_academic_status').find('option:selected').text();
+                    var div = $('.academic-degree-info-item.selected');
+                    div.attr('data-date', date);
+                    //div.attr('data-status', statusId);
+                    div.attr('data-academic-degree-id', academicDegreeId);
+                    div.attr('data-academic-type', academicType);
+                    var html = '<td>' + academicDegreeName + '</td>' +
+                            '<td>' + date + '</td>';
+                    //'<td class="academic_status">' + statusName + '</td>';
+
+                    var tr = div.find('tbody tr');
+
+                    if (Hsis.Validation.validateRequiredFields('academic-required')) {
+                        tr.html(html);
+                        $('.academic-degree-info-modal').modal('hide');
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+
+            $('#main-div').on('click', '.add-new-research-history', function (e) {
+                try {
+                    $('.research-history-modal .blank-required-field').removeClass('blank-required-field');
+                    $('.research-history-modal-submit').addClass('confirm-add-research-history').removeClass('confirm-edit-research-history');
+                    $('.research-history-modal input').val('');
+                    $('.research-history-modal select').find('option[value="0"]').prop('selected', true);
+                    $('.research-history-modal').modal('show');
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#academic_type').on('change', function (e) {
+                try {
+                    var academicType = $('#academic_type').find('option:selected').val();
+                    var academicTypeName = academicType == 0 ? '' : $('#academic_type').find('option:selected').text();
+                    if (academicTypeName == '') {
+                        $('#academic_degree').html('');
+                        $('label.academic-type').html('');
+                    }
+                    else {
+                        $('label.academic-type').html(academicTypeName);
+                    }
+                    if (academicType > 0) {
+                        Hsis.Proxy.loadDictionariesByTypeId(academicType, 0, function (academicDegrees) {
+                            var html = Hsis.Service.parseDictionaryForSelect(academicDegrees);
+                            $('#academic_degree').html(html);
+                        });
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.confirm-add-research-history', function () {
+                try {
+                    var researchType = $('#research_type').find('option:selected').val();
+                    var researchTypeName = researchType == 0 ? '' : $('#research_type').find('option:selected').text();
+                    var publishDate = $('#publish_date').val().trim();
+                    var researchName = $('#research_name').val().trim();
+
+                    var html = '<div class="col-md-12 for-align research-history-item" data-research-type ="' + researchType + '" data-publish-date="' + publishDate + '" data-research-name="' + researchName + '" >' +
+                            '<table class="table-block col-md-12">' +
+                            '<thead>' +
+                            '<tr>' +
+                            '<th>' + Hsis.dictionary[Hsis.lang]['research_type'] + '</th>' +
+                            // '<th>' + Hsis.dictionary[Hsis.lang]['publish_date'] + '</th>' +
+                            '<th> ' + Hsis.dictionary[Hsis.lang]['research_name'] + '(' + Hsis.dictionary[Hsis.lang]['publish_date'] + ')' + '</th>' +
+                            '</tr>' +
+                            '</thead>' +
+                            '<tbody>' +
+                            '<tr>' +
+                            '<td>' + researchTypeName + '</td>' +
+                            // '<td>' + publishDate + '</td>' +
+                            '<td>' + researchName + '(' + publishDate + ')' + '</td>' +
+                            '</tr>' +
+                            '</tbody>' +
+                            '</table>' +
+                            '<div class="operations-button">' +
+                            '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span></div>' +
+                            '<ul class="dropdown-menu">' +
+                            '<li><a class="edit-new-research-hsitory" href="#">' + Hsis.dictionary[Hsis.lang]['edit'] + '</a></li>' +
+                            '<li><a class="erase" href="#">' + Hsis.dictionary[Hsis.lang]['erase'] + '</a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>';
+
+                    if (Hsis.Validation.validateRequiredFields('research-required')) {
+                        $('.research-history-block').append(html);
+                        $('.research-history-modal').modal('hide');
+                        $('.research-history-block').has('.blank-panel').children('.blank-panel').remove();
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.edit-new-research-hsitory', function () {
+                try {
+                    $('.research-history-block .research-history-item').removeClass('selected');
+                    var div = $(this).parents('.research-history-item').addClass('selected');
+                    var researchType = div.attr('data-research-type');
+                    var publishDate = div.attr('data-publish-date');
+                    var researchName = div.attr('data-research-name');
+                    $('#research_type').find('option[value="' + researchType + '"]').prop('selected', true);
+                    $('#publish_date').val(publishDate);
+                    $('#research_name').val(researchName);
+                    $('.research-history-modal-submit').addClass('confirm-edit-research-history').removeClass('confirm-add-research-history');
+                    $('.research-history-modal').modal('show');
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.confirm-edit-research-history', function () {
+                try {
+                    var researchType = $('#research_type').find('option:selected').val();
+                    var researchTypeName = researchType == 0 ? '' : $('#research_type').find('option:selected').text();
+                    var publishDate = $('#publish_date').val().trim();
+                    var researchName = $('#research_name').val().trim();
+                    var div = $('.research-history-item.selected');
+                    div.attr('data-research-type', researchType);
+                    div.attr('data-research-name', researchName);
+                    div.attr('data-publish-date', publishDate);
+                    var html = '<td>' + researchTypeName + '</td>' +
+                            '<td>' + publishDate + '</td>' +
+                            '<td>' + researchName + '</td>';
+                    var tr = div.find('tbody tr');
+
+                    if (Hsis.Validation.validateRequiredFields('research-required')) {
+                        tr.html(html);
+                        $('.research-history-modal').modal('hide');
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('change', '#staff-position', function (e) {
+                var position = $('#staff-position').find('option:selected').val();
+                var teaching = $('#teaching').find('option:selected').val();
+                if (teaching == '' && position != 0) {
+                    if (position == '1000242') {
+                        $('#teaching').attr('data-default-value', '1');
+                    }
+                    else {
+                        $('#teaching').attr('data-default-value', '0');
+                    }
+                }
+            });
+
+            $('#main-div').on('click', '.work-lifecycle-modal-submit', function () {
+                try {
+                    var startDate = $('#action_date').val();
+                    var startAction = $('#work_in_actions').find('option:selected').val();
+                    var startActionName = $('#work_in_actions').find('option:selected').text();
+                    var endDate = $('#end_action_date').val();
+                    var out = $('#work_out_actions').find('option:selected');
+                    var endAction = out.val();
+                    var endActionName = endAction > 0 ? out.text() : '';
+                    var cardNo = $('#teacher_card_no').val();
+                    var org = $('#orgId').find('option:selected').val();
+                    var orgName = $('#orgId').find('option:selected').text();
+                    var teaching = $('#teaching').find('option:selected').val();
+                    var teachingName = $('#teaching').find('option:selected').text();
+                    var staffType = $('#staff_type').find('option:selected').val();
+                    var staffName = $('#staff_type').find('option:selected').text();
+                    var position = $('#staff-position').find("option:selected").val();
+                    var positionName = $('#staff-position').find("option:selected").text();
+                    var note = $('#note').val();
+                    var count = $('div.work-action').length;
+
+                    if (Hsis.Validation.validateRequiredFields('work-required') & Hsis.Validation.validateRequiredFields('default-teaching-required')) {
+                        var dataAction = $(this).attr('data-action');
+                        if (dataAction == "add") {
+                            var html = '<div class="col-md-12 for-align work-action" data-status-id="1000341" data-id="' + (++count + 1000000) + '" start-action="' + startAction + '" start-date="' + startDate + '" end-date="' + endDate + '" end-action ="' + endAction + '" card-no="' + cardNo + '" org="' + org + '" teaching="' + teaching + '" staff-type="' + staffType + '" position="' + position + '" note="' + note + '" >' +
+                                    '<table class="table-block col-md-12">' +
+                                    '<thead>' +
+                                    '<tr>' +
+                                    '<th style="width:145px;">' + Hsis.dictionary[Hsis.lang]["university"] + '</th>' +
+                                    '<th>' + Hsis.dictionary[Hsis.lang]["start_action_type"] + ' </th>' +
+                                    '<th>' + Hsis.dictionary[Hsis.lang]["start_date"] + ' </th>' +
+                                    '<th>' + Hsis.dictionary[Hsis.lang]["end_action_type"] + ' </th>' +
+                                    '<th>' + Hsis.dictionary[Hsis.lang]["end_date"] + ' </th>' +
+                                    '<th></th>' +
+                                    '</tr>' +
+                                    '</thead>' +
+                                    '<tbody>' +
+                                    '<tr>' +
+                                    '<td org-name="" style="width:145px;">' + orgName + '</td>' +
+                                    '<td start-action="">' + startActionName + '</td>' +
+                                    '<td start-date="">' + startDate + '</td>' +
+                                    '<td end-action="">' + endActionName + '</td>' +
+                                    '<td end-date="">' + endDate + '</td>' +
+                                    '<td></td>' +
+                                    '</tr>' +
+                                    '</tbody>' +
+                                    '</table>' +
+                                    '<div class="operations-button">' +
+                                    '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+                                    '<span class="glyphicon glyphicon-list"></span>' +
+                                    '</div>' +
+                                    '<ul class="dropdown-menu">' +
+                                    '<li><a class="edit-work-action"  href="#">' + Hsis.dictionary[Hsis.lang]["edit"] + '</a></li>' +
+                                    //'<li><a class="show-work-action"  href="#" start-action-name="'+startActionName+'" teaching-name="'+teachingName+'" end-action-name="'+endActionName+'" org-name="'+orgName+'" position-name="'+positionName+'" staff-name="'+staffName+'">' + Hsis.dictionary[Hsis.lang]["show"] + '</a></li>' +
+                                    '<li><a class="erase-work-action" data-page="add">' + Hsis.dictionary[Hsis.lang]["erase"] + '</a></li>' +
+                                    '</ul>' +
+                                    '</div>' +
+                                    '</div>';
+                            $('#work_action_block').append(html);
+
+                        }
+                        else if (dataAction == "edit") {
+                            var selectedPwlc = $('table.selected').parent('.work-action');
+                            selectedPwlc.attr('start-action', startAction);
+                            selectedPwlc.attr('start-date', startDate);
+                            selectedPwlc.attr('end-date', endDate);
+                            selectedPwlc.attr('end-action', endAction);
+                            selectedPwlc.attr('card-no', cardNo);
+                            selectedPwlc.attr('org', org);
+                            selectedPwlc.attr('teaching', teaching);
+                            selectedPwlc.attr('staff-type', staffType);
+                            selectedPwlc.attr('position', position);
+                            selectedPwlc.attr('note', note);
+                            var table = $('table.selected');
+                            table.find('td[org-name]').html(orgName);
+                            table.find('td[start-action]').html(startActionName);
+                            table.find('td[start-date]').html(startDate);
+                            table.find('td[end-action]').html(endActionName);
+                            table.find('td[end-date]').html(endDate);
+                        }
+
+                        $('.work-lifecycle-modal').modal('hide');
+
+                    }
+                }
+                catch (err) {
+
+                }
+
+            });
+            
+            $('#main-div').on('click', '.close-teacher-add', function() {
+                $('ul.module').find('.module-item[data-id="' + Hsis.currModule + '"]').click();
+            });
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+        
+
+
+
+
+
+
+    });
+</script> 
+<!-- -->
+<script>
+    $('.search-scroll').slimScroll();
+
+</script>

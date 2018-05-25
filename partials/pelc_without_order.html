@@ -1,0 +1,375 @@
+<style>
+    .edit-new .search-scroll{
+        padding-bottom: 100px;
+    }
+</style>
+
+<div class="">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok"  id="confirmOrder" operation-type="edit" data-role-id="1000020">OK</a>
+        <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+    </div>
+
+    <div class="row">
+        <div class="">
+            <div class="row no-margin panel-heading">
+                <h3 class="panel-title"><span data-i18n="students" placeholder="Tələbələr">Tələbələr</span>: <span data-student-count="">13762</span> </h3>
+            </div>
+
+            <div class="  panel-body ss">
+                <div class="three-tabs panel-title">
+                    <ul class="nav  ">
+                        <li  class="col-sm-6 active" style="padding-left: 0 !important">
+                            <a data-toggle="tab" href="#tab1"  class=" first-tab">
+                                <span data-i18n="personal_info" class="panel-body" >Bərkidilməmiş</span>
+                            </a>
+                        </li>
+                        <li class="col-sm-6" style="padding-right: 0 !important">
+                            <a data-toggle="tab" href="#tab2" class=" second-tab">
+                                <span data-i18n="academic_info" class="panel-body" >Bərkidilmiş</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="tab-content col-md-12">
+                    <div id ="tab1" class="tab-pane fade in active">
+                        <form action="" class="students-without-order-filter ">
+                            <div class="btn-group">
+                                <select class="form-control " id="org_spec_level_filter" >
+
+                                </select>
+                            </div>
+                            <div class="btn-group">
+                                <select class="form-control " id="org_spec_level_filter-2" >
+
+                                </select>
+                            </div>
+                        </form>
+                        <form id="students_without_order">
+
+
+                            <table id="student_list_without" class="table table-celled table-hover mini">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th data-i18n="table.orgName" placeholder="Strukturun adı">Strukturun adı</th>
+                                        <th data-i18n="fullname" placeholder="S.A.A">S.A.A</th>
+                                        <th data-i18n="status" placeholder="Status">Status</th<th data-i18n="group" placeholder="Qrup">Qrup</th>
+                                        <th>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="" id="checkAll"> <label data-i18n="" for="checkAll"></label>
+                                </div>
+                                </th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <div class="space-for-footer">
+                                <div id="load_more_div" class=" flex-input" style="margin-top: 8px;">
+                                    <button data-i18n="load.more" data-table="students-without-order" class="btn loading-margins btn-load-more" placeholder="Daha çox">Daha çox</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="tab2" class="tab-pane fade">
+                        <form action="" class="students-without-order-filter">
+                            <div class="btn-group">
+                                <select class="form-control " id="org_spec_level_filter-with" >
+
+                                </select>
+                            </div>
+                            <div class="btn-group">
+                                <select class="form-control " id="org_spec_level_filter-2-with" >
+
+                                </select>
+                            </div>
+                        </form>
+                        <form id="students_with_order">
+
+
+                            <table id="student_list-with" class="table table-celled table-hover mini">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th data-i18n="table.orgName" placeholder="Strukturun adı">Strukturun adı</th>
+                                        <th data-i18n="fullname" placeholder="S.A.A">S.A.A</th>
+                                        <th data-i18n="status" placeholder="Status">Status</th<th data-i18n="group" placeholder="Qrup">Qrup</th>
+                                        <th>
+   
+                                </th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <div class="space-for-footer">
+                                <div id="load_more_div" class=" flex-input" style="margin-top: 8px;">
+                                    <button data-i18n="load.more" data-table="students-with-order" class="btn loading-margins btn-load-more" placeholder="Daha çox">Daha çox</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+<!--                <div class="space-for-footer">
+                    <div id="load_more_div" class="col-sm-12 flex-input">
+                        <button data-i18n="load.more" data-table="students" class="btn loading-margins btn-load-more" placeholder="Daha çox">Daha çox</button>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+
+    </div>
+
+<!--     <div class="">
+        <div class="col-lg-4 col-lg-offset-2">
+            <button data-i18n="buttons.ok" id="confirmOrder" type="button" class="btn btn-success btn-block" placeholder="Təsdiq et" operation-type="edit" data-role-id="1000020">Təsdiq et</button>
+        </div>
+        <div class="col-lg-4 cancel-button">
+            <button data-i18n="buttons.back" id="btn_cancel" type="button" class="btn btn-danger btn-block" placeholder="Geri">Geri</button>
+        </div>
+    </div> -->
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+            if(eduLevel) {
+             var html = '<option value="0">Filter ixtisas səviyyəsi</option>'; 
+                $.each(eduLevel, function (i, v) {
+                     html += '<option value="'+ v.id +'">' + v.value[Hsis.lang] + '';
+                });
+                $('#main-div #org_spec_level_filter, #main-div #org_spec_level_filter-with').html(html);
+
+            }
+        });
+
+        $('body').on('change', '#org_spec_level_filter', function(){
+            var id = $(this).val();
+            var orgId = $('body').find('#student_list_without').attr('org-id');
+            var parentId = $('body').find('#student_list_without').attr('type-parent-id');
+            var orderTypeId = $('body').find('#student_list_without').attr('type-id');
+            var orderId = $('body').find('#student_list_without').attr('order-id');
+            var specId = $('body').find('#org_spec_level_filter-2').val();
+            Hsis.Proxy.getStructureListByFilter(orgId, id, function (specLevel) {
+                if(specLevel) {
+                     var html = '<option value="0">Filter ixtisas səviyyəsi</option>'; 
+                        $.each(specLevel.data.specialityList, function (i, v) {
+                             html += '<option value="'+ v.id +'">' + v.name[Hsis.lang] + '';
+                        });
+                        $('#main-div #org_spec_level_filter-2').html(html);
+
+                }
+
+            });
+            var form = {
+                orderTypeId:orderTypeId,
+                orderTypeParentId:parentId,
+                orgId:orgId,
+                orderId:orderId,
+                specId: specId,
+                specTypeId: id
+            };
+            Hsis.Proxy.getStudentsWithoutOrder(form,function(students) {
+                Hsis.Service.parseStudentsWithoutOrder(students);
+                
+            });
+        });
+
+        $('body').on('change', '#org_spec_level_filter-2', function(){
+            var id = $('body').find('#org_spec_level_filter').val();
+            var orgId = $('body').find('#student_list_without').attr('org-id');
+            var parentId = $('body').find('#student_list_without').attr('type-parent-id');
+            var orderTypeId = $('body').find('#student_list_without').attr('type-id');
+            var orderId = $('body').find('#student_list_without').attr('order-id');
+            var specId = $(this).val();
+            var form = {
+                orderTypeId:orderTypeId,
+                orderTypeParentId:parentId,
+                orgId:orgId,
+                orderId:orderId,
+                specId: specId,
+                specTypeId: id
+            };
+            Hsis.Proxy.getStudentsWithoutOrder(form,function(students) {
+                Hsis.Service.parseStudentsWithoutOrder(students);
+                
+            });
+        });
+
+        $('body').on('change', '#org_spec_level_filter-with', function(){
+            var id = $(this).val();
+            var orgId = $('body').find('#student_list_without').attr('org-id');
+            var parentId = $('body').find('#student_list_without').attr('type-parent-id');
+            var orderTypeId = $('body').find('#student_list_without').attr('type-id');
+            var orderId = $('body').find('#student_list_without').attr('order-id');
+            var specId = $('body').find('#org_spec_level_filter-2-with').val();
+            Hsis.Proxy.getStructureListByFilter(orgId, id, function (specLevel) {
+                if(specLevel) {
+                     var html = '<option value="0">Filter ixtisas səviyyəsi</option>'; 
+                        $.each(specLevel.specialityList, function (i, v) {
+                             html += '<option value="'+ v.id +'">' + v.name[Hsis.lang] + '';
+                        });
+                        $('#main-div #org_spec_level_filter-2-with').html(html);
+
+                }
+
+            });
+            var form = {
+                orderTypeId:orderTypeId,
+                orderTypeParentId:parentId,
+                orgId:orgId,
+                orderId:orderId,
+                specId: specId,
+                specTypeId: id
+            };
+            Hsis.Proxy.getStudentsWithOrder(form,function(students) {
+                Hsis.Service.parseStudentsWithOrder(students);
+                
+            });
+        });
+
+
+        $('body').on('change', '#org_spec_level_filter-2-with', function(){
+            var id = $('body').find('#org_spec_level_filter-with').val();
+            var orgId = $('body').find('#student_list-with').attr('org-id');
+            var parentId = $('body').find('#student_list-with').attr('type-parent-id');
+            var orderTypeId = $('body').find('#student_list-with').attr('type-id');
+            var orderId = $('body').find('#student_list-with').attr('order-id');
+            var specId = $(this).val();
+            var form = {
+                orderTypeId:orderTypeId,
+                orderTypeParentId:parentId,
+                orgId:orgId,
+                orderId:orderId,
+                specId: specId,
+                specTypeId: id
+            };
+            Hsis.Proxy.getStudentsWithoutOrder(form,function(students) {
+                Hsis.Service.parseStudentsWithoutOrder(students);
+                
+            });
+        });
+
+        $('#main-div').on('change', '#checkAll', function (e) {
+            try {
+                var checked = $(this).is(':checked');
+
+                if (checked) {
+                    $('#student_list_without tbody :checkbox').prop('checked', true);
+                }
+                else {
+                    $('#student_list_without tbody :checkbox').prop('checked', false);
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        $('#main-div').on('click', '#confirmOrder', function (e) {
+            try {
+               
+               var form = $('#students_without_order').serialize();
+                if (form.length == 0) {
+                    $.alert({
+                        title: Hsis.dictionary[Hsis.lang]['warning'],
+                        content: Hsis.dictionary[Hsis.lang]['select_information'],
+                        theme: 'material'
+                    });
+                    return false;
+                }
+                var orderId = $('#student_list_without').attr('order-id');
+                var orgId = $('#student_list_without').attr('org-id');
+                var parentId = $('#student_list_without').attr('type-parent-id');
+                var orderTypeId = $('#student_list_without').attr('type-id');
+                
+                Hsis.Proxy.addOrderToStudents(form+'&orderId='+orderId, function () {
+                    
+                    var form_without = {
+                        orderTypeId: $('body').find('#student_list_without').attr('type-id'),
+                        orderTypeParentId:$('body').find('#student_list_without').attr('type-parent-id'),
+                        orgId:$('body').find('#student_list_without').attr('org-id'),
+                        orderId:$('body').find('#student_list_without').attr('order-id'),
+                        specId: $('body').find('#org_spec_level_filter-2').val(),
+                        specTypeId: $('body').find('#org_spec_level_filter').val()
+                    };
+                    Hsis.Proxy.getStudentsWithoutOrder(form_without,function(students) {
+                        Hsis.Service.parseStudentsWithoutOrder(students);
+                        
+                    });
+                    var form_with = {
+                        orderTypeId: $('body').find('#student_list-with').attr('type-id'),
+                        orderTypeParentId:$('body').find('#student_list-with').attr('type-parent-id'),
+                        orgId:$('body').find('#student_list-with').attr('org-id'),
+                        orderId:$('body').find('#student_list-with').attr('order-id'),
+                        specId: $('body').find('#org_spec_level_filter-2-with').val(),
+                        specTypeId: $('body').find('#org_spec_level_filter-with').val()
+                    };
+                    Hsis.Proxy.getStudentsWithOrder(form_with,function(students) {
+                        Hsis.Service.parseStudentsWithOrder(students);
+                        
+                    });
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('body').on('click', '.removeStudent', function(){
+            var pelcId = $(this).parents('tr').attr('data-id');
+            var orderId = $('body').find('#student_list-with').attr('order-id');
+
+            Hsis.Proxy.removeStudentFromOrder(pelcId, orderId, function(students){
+                var form_without = {
+                    orderTypeId: $('body').find('#student_list_without').attr('type-id'),
+                    orderTypeParentId:$('body').find('#student_list_without').attr('type-parent-id'),
+                    orgId:$('body').find('#student_list_without').attr('org-id'),
+                    orderId:$('body').find('#student_list_without').attr('order-id'),
+                    specId: $('body').find('#org_spec_level_filter-2').val(),
+                    specTypeId: $('body').find('#org_spec_level_filter').val()
+                };
+                Hsis.Proxy.getStudentsWithoutOrder(form_without,function(students) {
+                    Hsis.Service.parseStudentsWithoutOrder(students);
+                    
+                });
+                var form_with = {
+                    orderTypeId: $('body').find('#student_list-with').attr('type-id'),
+                    orderTypeParentId:$('body').find('#student_list-with').attr('type-parent-id'),
+                    orgId:$('body').find('#student_list-with').attr('org-id'),
+                    orderId:$('body').find('#student_list-with').attr('order-id'),
+                    specId: $('body').find('#org_spec_level_filter-2-with').val(),
+                    specTypeId: $('body').find('#org_spec_level_filter-with').val()
+                };
+                Hsis.Proxy.getStudentsWithOrder(form_with,function(students) {
+                    Hsis.Service.parseStudentsWithOrder(students);
+                    
+                });
+            });
+
+            return false
+        });
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+          var count = $(e.target).attr("data-count") // activated tab
+          $('[data-student-count]').html(count);
+        });
+
+    });
+</script>

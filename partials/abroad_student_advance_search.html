@@ -1,0 +1,963 @@
+<div class="search-basic-info">
+    <div class="search-content">
+        <!-- <div class="panel panel-white"> -->
+            <!-- <div class="panel-heading"> -->
+                <h2 data-i18n="advanced_search" class="panel-title">Ətraflı axtarış</h2>
+                <div class="search-butons">
+                    <a href="" id="clear-abroad-filters">Filterləri təmizlə</a>
+                    <a href="" data-i18n="close" id="close-search">Bağla</a>
+                    <a href="" id="search-abroad-student-form" data-i18n="search">Axtar</a>
+                </div>
+                <!--<a href="#" class="save-button"><img src="assets/img/save-icon.png" alt="Save" width="20" height="20">-->
+                <!--</a>-->
+            <!-- </div> -->
+        <!-- </div> -->
+    </div>
+</div>
+
+<form class="abroad-student-advanced-search-form">
+    <div class="tab-content search-content">
+
+    
+                    <h3 data-i18n="personal_info" class="panel-title">Şəxsi məlumatlar</h3>
+
+                <div class=" ">
+
+                    <div class="">
+
+                        <div class="row">
+                            <div class="">
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="surname" for="lastname">Last name</label>
+                                    <input class="form-control last-name" name="lastName" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="name"  for="firstname">First name</label>
+                                    <input class="form-control first-name" name="firstName" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="middlename" for="firstname">Middle name</label>
+                                    <input class="form-control middle-name" name="middleName" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="gender" for="gender">Gender</label>
+                                    <select class="form-control gender no-padding" name="genderId"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="birthdate" for="exampleInputEmail1">Birth date</label>
+                                    <input type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" name="birthdate"/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="age_interval" for="exampleInputEmail1">Yaş intervalı</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control form-inline start-age" name="startAge" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control form-inline end-age" name="endAge" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="marital_status" for="exampleInputEmail1">Marital status</label>
+                                    <select class="form-control marital-status no-padding" name="maritalStatusId"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="military_service" for="exampleInputEmail1">Hərbi mükəlləfiyyəti</label>
+                                    <select class="form-control military-service no-padding" name="militaryServiceId"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="temporary_address" for="citizenship"></label>
+                                    <button class="adres-modal-btn " data-modal-type="temporaryAddressId"></button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="permanent_address" for="citizenship"></label>
+                                    <button class="adres-modal-btn " data-modal-type="permanentAddressId"></button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="birth_place" for="citizenship"></label>
+                                    <button class="adres-modal-btn " data-modal-type="birthPlaceId"></button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+ 
+    </div>
+    <div class="tab-content search-content">
+        <div class=" " >
+            <div class="">
+                <div class="">
+                    <h3 data-i18n="edu_info" class="panel-title">Təhsil məlumatları</h3>
+                </div>
+                <div class=" ">
+                        <div class="">
+                                         <div class="row">
+                                             <div class="">
+                                                 <div class="form-group col-md-6">
+                                                     <label data-i18n="" for="exampleInputEmail1">ATM ünvanı</label>
+                                                     <button class="adres-modal-btn " data-modal-type="atmCountryId"></button>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label data-i18n="atm"></label>
+                                                     <select   class="form-control university no-padding" name="orgId" id="atm_id">
+                                                         <option data-i18n="select" value="0"></option>
+                                                     </select>
+                                                     
+                                                 </div>
+                                                 
+                                                 <div class="form-group col-md-6">
+                                                     <div class="form-group-for-select  structure-name-filter">
+                                                         <label>Nailiyyət</label>
+                                                         <select id="achievement_type" name="achievementId"  class="form-control no-padding">
+                           
+                                                         </select>
+                                                     </div>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <div class="form-group-for-select  structure-name-filter">
+                                                         <label>İxtisas İstiqaməti</label>
+                                                         <select id="spec_direction" name="specDirectionId"  class="form-control no-padding">
+                           
+                                                         </select>
+                                                     </div>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <div class="form-group-for-select  structure-name-filter">
+                                                         <label>İxtisas</label>
+                                                         <select id="speciality" name="specId"  class="form-control no-padding">
+                           
+                                                         </select>
+                                                     </div>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <div class=" form-group-for-select  structure-name-filter">
+                                                         <label for="sminput">Şəxsi iş nömrəsi</label>
+                                                         <input type="text" class="form-control" name="abroadNumber" />
+                                                     </div> 
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label data-i18n="edu_lang" for="exampleInputEmail1">Education language</label>
+                                                     <select class="form-control edu-lang no-padding" name="educationLanguageId"></select>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label data-i18n="edu_level" for="exampleInputEmail1">Education level</label>
+                                                     <select class="form-control abroad-edu-level no-padding" name="educationLevelId"></select>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label for="exampleInputEmail1">Status</label>
+                                                     <select class="form-control abroad-status no-padding" name="abroadStatusId"></select>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label data-i18n="score" class = "action-date-label" for="exampleInputEmail1"></label>
+                                                     <div class="row">
+                                                         <div class="col-md-6">
+                                                             <input class="form-control  "  name="minScore" />
+                                                         </div>
+                                                         <div class="col-md-6">
+                                                             <input  class="form-control  "  name="maxScore" />
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label class = "action-date-label" for="exampleInputEmail1">Qeydiyyat tarixi üzrə</label>
+                                                     <div class="row">
+                                                         <div class="col-md-6">
+                                                             <input class="form-control datepicker" data-date-format="dd/mm/yyyy"  name="startRegistrationDate" />
+                                                         </div>
+                                                         <div class="col-md-6">
+                                                             <input  class="form-control datepicker" data-date-format="dd/mm/yyyy"  name="endRegistrationDate" />
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label class = "action-date-label" for="exampleInputEmail1">Qəbul olduğu tarix üzrə</label>
+                                                     <div class="row">
+                                                         <div class="col-md-6">
+                                                             <input class="form-control datepicker" data-date-format="dd/mm/yyyy"  name="startActionDate" />
+                                                         </div>
+                                                         <div class="col-md-6">
+                                                             <input  class="form-control datepicker" data-date-format="dd/mm/yyyy"  name="endActionDate" />
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 <div class="form-group col-md-6">
+                                                     <label class = "action-date-label" for="exampleInputEmail1">Məzunluq tarixi üzrə</label>
+                                                     <div class="row">
+                                                         <div class="col-md-6">
+                                                             <input class="form-control datepicker" data-date-format="dd/mm/yyyy"  name="startGraduateDate" />
+                                                         </div>
+                                                         <div class="col-md-6">
+                                                             <input  class="form-control datepicker" data-date-format="dd/mm/yyyy"  name="endGraduateDate" />
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                                                     
+
+                                             </div>
+                            
+                                         </div>
+                        </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+         <!--<input class="hidden" name="educationLineId" />--> 
+
+
+
+        <input class="hidden search-student" name="searchAttr" />
+        
+        <input class="hidden " name="permanentAddressId" />
+        <input class="hidden " name="temporaryAddressId" />
+        <input class="hidden " name="birthPlaceId" />
+        <!--<input class="hidden " name="orgId" />-->
+        <input class="hidden " name="atmCountryId" />
+        <input type="hidden" name="tempOrgId">
+        <input type="hidden" name="tempAtmCountyName">
+        <input type="hidden" name="globalTtemporaryAddressId">
+        <input type="hidden" name="globalTpermanentAddressId">
+        <input type="hidden" name="globalTbirthPlaceId">
+
+    </div>
+</form>
+
+<div class="modal fade" id="adres-change-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">ATM ünvanı</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <div class="form-group-for-select structure-name-filter">
+                <label data-i18n="country"></label>
+                <select id="advanced-search-city" class="form-control no-padding">
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group-for-select structure-name-filter">
+                <label data-i18n="administrative_division"></label>
+                <select class="form-control no-padding" id="advanced-search-district">
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group-for-select structure-name-filter">
+                <label data-i18n="city_and_district"></label>
+                <select  class="form-control no-padding" id="advanced-search-street">
+
+                </select>
+            </div>
+        </div>
+        <input type="hidden" id="modal-adres-input">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Bağla</button>
+        <button type="button" class="btn btn-primary adreses-modal-submit">Təsdiq et</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+
+    $(function () {
+        try {
+            Hsis.i18n(Hsis.lang);
+            $('.datepicker').datepicker();
+
+            Hsis.Proxy.loadOrgTree(function (tree) {
+                Hsis.Service.commonParseTree(tree, 'structure-accordion');
+            });
+            $('.modal-content').draggable();
+
+
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+                var html = Hsis.Service.parseDictionaryForSelect(citizenship);
+                $('#main-div .citizenship').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000006', 0, function (nationality) {
+                var html = Hsis.Service.parseDictionaryForSelect(nationality);
+                $('#main-div .nationality').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+                var html = Hsis.Service.parseDictionaryForSelect(gender);
+                $('#main-div .gender').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(maritalStatus);
+                $('#main-div .marital-status').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000008', 0, function (militaryStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(militaryStatus);
+                var militaryStatus = $('#main-div .military_status');
+                militaryStatus.html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000009', 0, function (socialStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(socialStatus);
+                var socialStatus = $('#main-div .social-status');
+                socialStatus.html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000013', 0, function (orphanDegree) {
+                var html = Hsis.Service.parseDictionaryForSelect(orphanDegree);
+                var orphanDegree = $('#main-div .orphan-degree');
+                orphanDegree.html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000037', 0, function (actionType) {
+                var html = Hsis.Service.parseDictionaryForSelect(actionType);
+                $('#main-div .action-type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduForm) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduForm);
+                $('#main-div #education_form').html(html);
+            });
+
+            // Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduForm) {
+            //     var html = Hsis.Service.parseDictionaryForSelect(eduForm);
+            //     $('#main-div #speciality_levels').html(html);
+            // });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+                if(eduLevel) {
+                    var html = '<option value="0">İxtisas səviyyəsi</option>';
+                    $.each(eduLevel, function (i, v) {
+                        html += '<option parent="' + v.parentId + '" code="' + v.code + '" value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                    });
+                    $('#main-div #speciality_levels').html(html);
+                }
+                    
+            });
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000090', 0, function (archivement) {
+                var html = Hsis.Service.parseDictionaryForSelect(archivement);
+                $('#main-div #achievement_type').html(html);
+            });
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000091', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div #spec_direction').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000092', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div #speciality').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000093', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div .abroad-status').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div .abroad-edu-level').html(html);
+        });
+            Hsis.Proxy.loadDictionariesByTypeId('1000032', 0, function (eduLine) {
+                try {
+                    var html = Hsis.Service.parseDictionaryForSelect(eduLine);
+                    $('#main-div .edu-line').html(html);
+                    $('#main-div .edu-line').select2({
+                        placeholder: Hsis.dictionary[Hsis.lang]["select"],
+                        allowClear: true,
+                        language: {
+                            noResults: function () {
+                                return Hsis.dictionary[Hsis.lang]["no_information"];
+                            }
+                        }
+                    });
+
+                    $('.edu-line').on('change', function (e) {
+                        try {
+                            var select2Instance = $(this).data('select2');
+                            var resetOptions = select2Instance.options.options;
+                            $(this).select2("destroy").select2(resetOptions);
+                            var uldiv = $(this).siblings('span.select2').find('ul');
+                            var count = $(this).val().length;
+                            var html = '<li class="modified">' + Hsis.dictionary[Hsis.lang]["selected_count"] + ': ' + count + '</li>';
+                            uldiv.html(html);
+                        }
+                        catch (err) {
+                            console.error(err);
+
+                        }
+                    });
+
+                    $('.edu-line').on('select2:unselecting', function (e) {
+
+                        var val = e.params.args.data.id;
+
+                    });
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduType) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduType);
+                $('#main-div .edu-type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLang);
+                $('#main-div .edu-lang').html(html);
+                $('#main-div .edu-lang').find('option[value="1000025"]').prop('selected', true);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000028', 0, function (eduPaytype) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduPaytype);
+                $('#main-div .edupay-type').html(html);
+            });
+            Hsis.Proxy.loadDictionariesByTypeId('1000008', 0, function (eduPaytype) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduPaytype);
+                $('#main-div .military-service').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000025', 1000258, function (actionStartDate) {
+                var html = Hsis.Service.parseDictionaryForSelect(actionStartDate);
+                $('#main-div #action_start_date').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000025', 1000259, function (actionStartDate) {
+                var html = Hsis.Service.parseDictionaryForSelect(actionStartDate);
+                $('#main-div #action_end_date').html(html);
+            });
+
+
+            Hsis.Proxy.getEduYears(function (years) {
+                if (years) {
+                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["edu_start_year"] + '</option>';
+                    $.each(years, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                    });
+                    $('.edu_start_year_search').html(html);
+                }
+
+                if (sessionStorage.abroadStudentSearch != undefined) {
+                    var obj = JSON.parse(sessionStorage.abroadStudentSearch);
+        
+                    var tempOrgId;
+                    
+                    var found = false;
+
+                    var tempAtmCountryId;
+
+                    $.each(obj, function(i, v){
+
+                        $('body').find('.abroad-student-advanced-search-form [name="'+ v.name +'"]').val(v.value);
+
+                        if (v.name == 'atmCountryId') {
+                            found = true;
+
+                            tempAtmCountryId = v.value;
+
+                            if(found !== true || v.value !== ''){
+                               
+                            }
+                        }
+
+                        if (v.name == 'tempAtmCountyName') {
+
+                            $('body').find('button.adres-modal-btn[data-modal-type="atmCountryId"]').html(v.value);
+
+                        }
+
+                        if (v.name == 'globalTtemporaryAddressId') {
+
+                            $('body').find('button.adres-modal-btn[data-modal-type="temporaryAddressId"]').html(v.value);
+
+                        }
+
+                        if (v.name == 'globalTpermanentAddressId') {
+
+                            $('body').find('button.adres-modal-btn[data-modal-type="permanentAddressId"]').html(v.value);
+
+                        }
+
+                        if (v.name == 'globalTbirthPlaceId') {
+
+                            $('body').find('button.adres-modal-btn[data-modal-type="birthPlaceId"]').html(v.value);
+
+                        }
+
+
+                        if (v.name == 'tempOrgId') {
+                            
+                            tempOrgId = v.value.split(',')
+
+                            if(tempOrgId.length == 3){
+
+                              
+                                Hsis.Proxy.getStructureListByAdress(tempAtmCountryId, function(data) {
+                                    
+                                    if(data && data.data) {
+                                        var html = '';
+                                        
+                                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] +'</option>'
+                                        $.each(data.data, function(i, v){
+                                            html += '<option value = "'+v.id+'">'+v.value[Hsis.lang]+'</option>'
+                                        })
+                                       
+                                        $('#atm_id').html(html)
+                                        $('#atm_id').val(tempOrgId[0])
+                                    }
+                                })
+
+                                Hsis.Proxy.getStructureListByFilter(tempOrgId[0], 0 ,function(data) {
+                                    if(data && data.data) {
+                                        var html = '';
+                                        var faculty = data.data.facultyList;
+                                        
+                                        html = '<option value = "0">Fakültə</option>'
+                                        $.each(faculty, function(i, v){
+                                            html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                                        })
+                                        $('#advanced_faculty').html(html)
+                                        $('#advanced_faculty').val(tempOrgId[1]);
+
+                                        var spec = data.data.specialityList;
+                                        
+                                        specHtml = '<option value = "0">İxtisas adı</option>'
+                                        $.each(spec, function(i, v){
+                                            specHtml += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                                        })
+                                        $('#org_name_select_advanced').html(specHtml);
+                                        $('#org_name_select_advanced').val(tempOrgId[2]);
+
+                                    }
+                                })
+                            
+
+
+                            }
+
+                        }
+
+
+                       
+                    });
+                    
+
+                  
+                }
+            });
+
+            $("#main-div #permanent-address-accordion").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#headingOne').attr('data-node-id', data.node.id);
+                    $('#headingOne').attr('data-node-text', path);
+                    $('#permanent-address-h6').text(path);
+                    $('#permanent-address-h6').siblings('div.clear_jstree').removeClass('hidden');
+                    $('#main-div .permanent').val(data.node.id);
+                    $('#main-div input[name=permanentName]').val(path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#main-div #university-address-accordion").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#headingUniversity').attr('data-node-id', data.node.id);
+                    $('#headingUniversity').attr('data-node-text', path);
+                    $('#university-address-h6').text(path);
+                    $('#university-address-h6').siblings('div.clear_jstree').removeClass('hidden');
+                    $('#structure-h6').siblings('div.clear_jstree').addClass('hidden');
+                    $('#collapseUniversity').removeClass('in');
+                    $('#main-div input[name=uniAddressId]').val(data.node.id);
+
+                    var structureId = Hsis.structureId ? Hsis.structureId : 0;
+
+                    Hsis.Proxy.getFilteredStructureList(structureId, 1000418, data.node.id, function (result) {
+
+                        if (result) {
+                            if ($('#structure-accordion:jstree').length > 0) {
+                                $('#structure-h6').text('');
+                                $('#main-div .structure-acc-filter').val('');
+                                $('#main-div input[name=orgName]').val('');
+                            }
+                            var array = [];
+                            $.each(result, function (i, v) {
+                                var obj = {
+                                    id: v.id.toString(),
+                                    parent: (v.parent.id == 0) ? "#" : v.parent.id.toString(), text: v.name[Hsis.lang]
+                                };
+                                array.push(obj);
+                            });
+
+                            $('#structure-accordion').jstree(true).settings.core.data = array;
+                            $('#structure-accordion').jstree(true).refresh();
+
+
+                            setTimeout(function () {
+                                var uniId = $('#headingFirst').attr('data-id');
+                                if (uniId != undefined && $('#structure-accordion:jstree').length > 0) {
+                                    $('#structure-accordion').jstree('select_node', '#' + uniId);
+                                }
+                            }, 1000);
+                        }
+                    }, 0, 1);
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#main-div #temporary-address-accordion").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#headingOne').attr('data-node-id', data.node.id);
+                    $('#headingOne').attr('data-node-text', path);
+                    $('#temporary-address-h6').text(path);
+                    $('#temporary-address-h6').siblings('div.clear_jstree').removeClass('hidden');
+                    $('#main-div .temporary').val(data.node.id);
+                    $('#main-div input[name=temporaryName]').val(path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#main-div #birth-place-accordion").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#headingOne').attr('data-node-id', data.node.id);
+                    $('#headingOne').attr('data-node-text', path);
+                    $('#birth-place-h6').text(path);
+                    $('#birth-place-h6').siblings('div.clear_jstree').removeClass('hidden');
+                    $('#main-div .birth-place').val(data.node.id);
+                    $('#main-div input[name=birthName]').val(path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#main-div #structure-accordion").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#headingOne').attr('data-node-id', data.node.id);
+                    $('#headingOne').attr('data-node-text', path);
+                    $('#structure-h6').text(path);
+                    $('#structure-h6').siblings('div.clear_jstree').removeClass('hidden');
+                    $('#main-div .structure-acc-filter').val(data.node.id);
+                    $('#main-div input[name=orgName]').val(path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000035', 0, function (specialityTypes) {
+                var html = Hsis.Service.parseDictionaryForSelect(specialityTypes);
+                $('#speciality_types').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId(1000050, 1000260, function (reasons) {
+                if (reasons) {
+                    var html = Hsis.Service.parseDictionaryForSelect(reasons);
+                    $('#reasonId').html(html);
+                }
+            });
+
+            $('#main-div').on('change', '.action-type', function (e) {
+                try {
+                    var actType = $(this).find('option:selected').val();
+                    if (actType == 0) {
+                        $('#main-div .sub-action-type').html('<option value="0">'+Hsis.dictionary[Hsis.lang]['select']+'</option>');
+                    }
+                    else {
+                        Hsis.Proxy.loadDictionariesByTypeId('1000025', actType, function (actionType) {
+                            var html = Hsis.Service.parseDictionaryForSelect(actionType);
+                            $('#main-div .sub-action-type').html(html);
+                        });
+                    }
+
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '.clear_jstree', function (e) {
+                try {
+                    var jstreeDiv = $(this).parents('div.panel-default').find('div.jstree');
+                    jstreeDiv.jstree('deselect_all');
+                    $(this).siblings('h6').text('');
+                    $(this).addClass('hidden');
+                    var divId = jstreeDiv.attr('id');
+                    $('input[data-parent="' + divId + '"]').val('');
+                    if (divId == "university-address-accordion") {
+                        Hsis.Proxy.loadOrgTree(function (tree) {
+                            if (tree) {
+                                var array = [];
+                                $.each(tree, function (i, v) {
+                                    var obj = {
+                                        id: v.id.toString(),
+                                        parent: (v.parent.id == 0) ? "#" : v.parent.id.toString(), text: v.name[Hsis.lang]
+                                    };
+                                    array.push(obj);
+                                });
+                                $('#structure-h6').siblings('div.clear_jstree').addClass('hidden');
+                                $('#structure-accordion').jstree(true).settings.core.data = array;
+                                $('#structure-accordion').jstree(true).refresh();
+                            }
+                        });
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+
+        $('body').on('click', '.adres-modal-btn', function(){
+            var name = $(this).attr('data-modal-type');
+            $('#adres-change-modal').modal('show');
+            $('body').find('.adreses-modal-submit').attr('data-adres-type', name);
+            $('#adres-change-modal select').html('')
+            Hsis.Proxy.loadAdressTypes('1000051', function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #advanced-search-city').html(html);
+            });
+
+            return false
+        });
+
+        $('body').on('change', '#advanced-search-city', function(){
+            var id = $(this).val();
+            Hsis.Proxy.loadAdressTypes(id, function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #advanced-search-district').html(html);
+            });
+        });
+
+        $('body').on('change', '#advanced-search-district', function(){
+            var id = $(this).val();
+            Hsis.Proxy.loadAdressTypes(id, function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #advanced-search-street').html(html);
+            });
+        });
+
+
+
+
+
+
+
+        $('#atm_id').on('change', function() {
+            var id = $(this).val();
+            var levelId = $('body').find('#speciality_levels').val();
+            var startTypeId = $('body').find('#action_start_date').val();
+            var endTypeId = $('body').find('#action_end_date').val();
+            var startEduYearId = $('body').find('#edu_start_year_search').val();
+            var endEduYearId = $('body').find('#edu_end_year_search').val();
+            var text = $(this).find('option:selected').text();
+
+            $('body').find('input[name="orgId"]').val(id);
+
+            Hsis.Proxy.getStructureListByFilter(id, 0 ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var faculty = data.data.facultyList;
+                    
+                    html = '<option value = "0">Fakültə</option>'
+                    $.each(faculty, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#advanced_faculty').html(html)
+
+                    var spec = data.data.specialityList;
+                    
+                    specHtml = '<option value = "0">İxtisas adı</option>'
+                    $.each(spec, function(i, v){
+                        specHtml += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_name_select_advanced').html(specHtml);
+
+                }
+            })
+
+            if(startTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(startTypeId, id, startEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+            if(endTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(endTypeId, id, endEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+
+            
+        });
+
+        $('#action_start_date, #action_end_date, #edu_start_year_search, #edu_end_year_search').on('change', function() {
+            var orgId = $('body').find('#atm_id').val();
+            var startTypeId = $('body').find('#action_start_date').val();
+            var endTypeId = $('body').find('#action_end_date').val();
+            var startEduYearId = $('body').find('#edu_start_year_search').val();
+            var endEduYearId = $('body').find('#edu_end_year_search').val();
+            
+            if(startTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(startTypeId, orgId, startEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+            if(endTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(endTypeId, orgId, endEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+
+            
+        });
+
+
+
+        $('body').on('change', '#speciality_levels', function() {
+            var levelId = $(this).val();
+            var uniId = $('#atm_id').val();
+            var facultyId = $('#advanced_faculty').val();
+            
+            var id = facultyId == 0 ? uniId : facultyId;
+            
+            Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+                    
+                    html = '<option value = "0">İxtisas adı</option>'
+                    $.each(spec, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_name_select_advanced').html(html);
+                }
+            })
+            
+        });
+
+        $('body').on('change', '#advanced_faculty', function() {
+            var levelId = $('body').find('#speciality_levels').val();
+            var uniId = $('#atm_id').val();
+            var facultyId = $(this).val();
+            
+            var id = facultyId == 0 ? uniId : facultyId;
+
+            $('body').find('input[name="orgId"]').val(id);
+            
+            Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+                    
+                    html = '<option value = "0">İxtisas adı</option>'
+                    $.each(spec, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_name_select_advanced').html(html);
+                }
+            })
+            
+        });
+        $('body').on('change', '#org_name_select_advanced', function() {
+            var levelId = $('body').find('#speciality_levels').val();
+            var uniId = $('#atm_id').val();
+            var facultyId = $('body').find('#advanced_faculty').val();
+            var specId = $(this).val();
+            
+            var id = (specId && specId > 0) ? specId : ( (facultyId && facultyId > 0) ? facultyId : (uniId ? uniId : 0) );
+
+            $('body').find('input[name="orgId"]').val(id);
+
+            
+        });
+        $('body').on('keydown', '.student-advanced-search-form', function(event){
+           if(event.keyCode == 13) {
+             event.preventDefault();
+             return false;
+           }
+        });
+
+    });
+</script>
+
+
+

@@ -1,0 +1,214 @@
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="jjj" placeholder="Tələbələr" class="hed-title">Soraqçalar</span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search" id="student_search" type="search" placeholder="Search">
+    
+        </div>
+
+
+    </div>
+</div>
+<div class="filters-block module_1000094">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span  id="orgTypeName"><span data-i18n="filter.org_type">Org type</span></span><i class="fa fa-angle-down"></i>
+        </button>
+        <ul id="orgType" class="dropdown-menu">
+
+        </ul>
+    </div>
+<!--     <div class="btn-group">
+        <button data-i18n="open" class="btn btn-default org-button-sort open-modal" data-type = "tree">
+            Open
+        </button>
+    </div> -->
+</div>
+
+<!-- <div class="col-sm-12 content-filters">
+
+<div class="">
+    <div class="col-sm-9 select-bar">
+        <div class="form-group">
+
+        </div>
+    </div>
+    <div class="col-sm-2 search-bar">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search"  type="search" class="form-control input-sm m-l-10 search-tree" placeholder="search">
+            <i class="fa fa-search m-l-10"></i>
+        </div>
+
+    </div>
+    <div class="col-sm-1 button-bar">
+        <div id="buttons_div" class="btn-group dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </div>
+            <ul id="module_operations" class="dropdown-menu plus special">
+
+            </ul>
+        </div>
+    </div>
+    </div>
+
+
+
+</div> -->
+
+<div class="row row-table no-margin top-row">
+    <div class="col-md-4 middle-area-top p-l-0 p-r-0">
+        <div class="panel panel-white" style="min-height: 300px">
+
+            <div class="panel-body" style="padding: 0">
+                <table id="dic-type-table" class="table table-celled table-hover">
+                    <thead>
+                        <tr>
+                            <th data-i18n="dictionary.type.code" placeholder="Kod">Kod</th>
+                            <th data-i18n="dictionary.type.name" placeholder="Soraqça tipi">Soraqça tipi</th>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div class="col-sm-12 flex-input">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 middle-area-top p-r-0">
+        <div class="panel panel-white table-scroll">
+
+            <div class="panel-body" style="padding: 0">
+                <table id="users-table" class="table table-celled table-hover long-last-td">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th class="hidden" data-i18n="dictionary.table.id">Parent ID</th>
+                            <th data-i18n="dictionary.name" placeholder="Soraqça">Soraqça</th>
+                            <th data-i18n="update_date" placeholder="Dəyişilmə tarixi">Dəyişilmə tarixi</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div class="col-sm-12 flex-input">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row main-row no-margin hidden org-list-main-div" style="top: -70px;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 top p-l-0">
+        <div class="panel panel-white table-scroll">
+
+            <div class="panel-body ss div-org">
+
+                <table id="tree_list_table" class="table table-hover table-celled" style="display:table;table-layout:fixed;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Adı</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-sm-8 top p-r-0">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+            </div>
+            <div class="panel-body ss ">
+
+
+                <table id="tree_list_child_table" class="table table-hover table-celled">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Adı</th>
+                            <th>Tipi</th>
+                            <!--<th>Asılılıq</th>-->
+                            <th>Kod</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    $(function (e) {
+        $('body').find('.table-scroll').slimScroll();
+        Hsis.i18n(Hsis.lang);
+
+        $('#main-div .sub_modules_div').remove();
+        var timeCode = setInterval(function () {
+            if ($('#jstree li').length != 0) {
+                $('#jstree').jstree("deselect_all");
+                clearInterval(timeCode);
+            }
+
+        }, 5);
+
+        try {
+            Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+
+                var tree = $('#jstree');
+                Hsis.Proxy.loadOrgTree(function (tree) {
+                    Hsis.Service.parseOrgTree(tree);
+
+                }, tree);
+
+            });
+
+            Hsis.Proxy.getDictionaryStructureTypes(function (types) {
+                if (types && types.code == Hsis.statusCodes.OK && types.data) {
+                    var html = '<li>' +
+                            '<a  data-id="0" href="#">' + Hsis.dictionary[Hsis.lang]['filter.org_type'] + '</a>' +
+                            '</li>';
+                    $.each(types.data, function (i, v) {
+                        html += '<li><a data-id="' + v.id + '" href="#">' + v.value[Hsis.lang] + '</a></li>';
+                    });
+
+                    // $('body').find('#orgType').html(html);
+                }
+            });
+
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+        $('body').on('click', '.open-modal', function(){
+            $('.settings-password-modal').modal('show');
+        });
+    });
+
+</script>
+
+

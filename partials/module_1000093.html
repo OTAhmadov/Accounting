@@ -1,0 +1,656 @@
+
+<!-- Bootstrap modal -->
+
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="asda" placeholder="Tələbələr" class="hed-title">ƏMRLƏR</span><span  class="head-total"> <span data-group-count></span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search" id="order_number_search" type="search" placeholder="Search">
+    
+        </div>
+
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+                <li><a id="registration" href="student_add.html"></a></li>
+                <li><a id="second-registration" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="filters-block module_1000093">
+    <div class="btn-group">
+        <div permanent-address class="tree-modal-container">
+            <button  id="org-list" type="button" class="btn btn-default group-tree-modal  btn-block"><span data-i18n="structure">Structure</span></button>
+
+        </div>
+    </div>
+
+    <!--            <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+                        <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="edu_level">Təhsil pilləsi</span> <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu edu-level-list-filter">
+    
+                    </ul>
+                </div>-->
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+            <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="action_type">Hərəkət tipi</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul class="dropdown-menu order_type">
+
+        </ul>
+    </div>
+    <div class="btn-group">
+
+        <input type="text" class="form-control datepicker order-start-date" data-date-format="dd/mm/yyyy" placeholder="Verilmə tarixi"/>
+    </div>
+
+    <form class="order-search-form">
+        <input type="hidden" name="orgId" />
+        <input type="hidden" name="type" />
+        <input type="hidden" name="startDate" />
+        <input type="hidden" name="number" />
+    </form>
+</div>
+<div class="row">
+<div class="col-sm-12 data">
+    <div class="panel panel-white table-scroll">
+
+        <div class=" table-responsive">
+            <table id="order-list" class="table table-celled table-hover">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th data-i18n="university">Universitet</th>
+                        <th>Tipi</th>
+                        <th>Seriya</th>
+                        <th>Nömrəsi</th>
+                        <th>Tarix</th>
+                        <th>Status</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="space-for-footer">
+            <div id="load_more_div" class=" flex-input">
+                <button data-i18n="load.more" data-table="order_module" class="btn loading-margins btn-load-more">Daha çox yüklə</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-4 info">
+    <div class="panel panel-white">
+        <div class="panel-heading">
+            <h3  class="panel-title">Ətraflı</h3>
+            <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+            <div class="type_2_btns"></div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12  about-order">
+                <dl class="dl-horizontal">
+                    <p>ATM: <label class="label-atm-name"></label></p>
+                    <p>Tipi: <label class="label-order-type"></label></p>
+                    <p>Seriya: <label class="label-order-serial"></label></p>
+                    <p>Nömrə: <label class="label-order-number"></label></p>
+                    <p>Tarix: <label class="label-order-date"></label></p>
+
+                    <div class="view-file-list-div form-group">
+
+                    </div>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--tree modal-->
+<div id="academicGroupTree" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="university" class="modal-title">Ali təhsil müəssisəsi</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="add-new">
+    <div class="search-scroll">
+        <div class="">
+            <div class="search-butons" style="margin: 0;">
+                <a data-i18n="ok"  class="add-order-document-submit">OK</a>
+                <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+            </div>
+            <form class="add-doc-form">
+                <div class="r">
+                    <h3 data-i18n="add_documents" class="panel-title">Add documents</h3>
+                </div>
+                <div class="">
+                    <!--                    <div class="form-group tree-modal-container">
+                                            <button data-i18n="orgtree.organizations" id="org-list" type="button" class="btn btn-default tree-modal btn-block in" placeholder="Təşkilati struktur" check="1" style="padding-right: 17px;">Təşkilati struktur</button>
+                                            
+                                        </div>-->
+                    <input order-required class="structure-id hidden"/>
+                    <div class="form-group">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="">
+                                <div class="" role="tab" id="headingUniversity">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUniversity" aria-expanded="false" aria-controls="collapseUniversity">
+                                            Təşkilati struktur
+                                        </a>
+                                        <h6 id="university-list-h6"></h6>
+                                    </h4>
+                                </div>
+                                <div id="collapseUniversity" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUniversity">
+                                    <div class="panel-body scrollable tree-max-height org-list-accordion" id="org-list-accordion">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="action_type" for="action_type">Hərəkət tipi</label>
+                        <div class="prepend-icon">
+                            <select order-required class="form-control order-type">
+
+                            </select>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="serial_number" for="add-serial">Serial number</label>
+                        <div class="prepend-icon">
+                            <input order-required data-i18n="serial_number" document-required id="add-order-serial" name="add-order-document-serial" class="form-control" placeholder="Serial number" data-inputmask-regex="[a-zA-Z0-9]+">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="doc_number" for="add-number">Document number</label>
+                        <div class="prepend-icon">
+                            <input order-required data-i18n="doc_number" document-required id="add-order-number" name="add-order-document-number" class="form-control" placeholder="Document number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="issue_date" for="start-date">Start date</label>
+                        <div class="prepend-icon">
+                            <input order-required data-i18n="issue_date" document-required id="order-start-date" name="add-order-document-start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <label><p>Faylı seçin:</p><span class="file-span"></span><input class="new-order-doc-file hidden" type="file"></label>
+                </div>
+<!--                 <div class="modal-footer flex-img">
+                    <button data-i18n="ok" doc-confirm type="button" class="btn btn-primary add-order-document-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="edit-new">
+    <div class="search-scroll">
+        <div class="">
+            <div class="search-butons" style="margin: 0;">
+                <a data-i18n="ok"  class="edit-order-document-submit">OK</a>
+                <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+            </div>
+            <form class="add-doc-form">
+                <div class="">
+
+                    <h3 data-i18n="add_documents" class="modal-title">Add documents</h3>
+                </div>
+                <div class="">
+                    <!--                    <div class="form-group tree-modal-container">
+                                            <button data-i18n="orgtree.organizations" id="org-list" type="button" class="btn btn-default tree-modal btn-block in" placeholder="Təşkilati struktur" check="1" style="padding-right: 17px;">Təşkilati struktur</button>
+                                            
+                                        </div>-->
+                    <input edit-order-required class="edit-structure-id hidden"/>
+                    <div class="form-group">
+                        <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                            <div class="">
+                                <div class="" role="tab" id="headingUniversity1">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseUniversity1" aria-expanded="false" aria-controls="collapseUniversity1">
+                                            Təşkilati struktur
+                                        </a>
+                                        <h6 id="university-list-h6"></h6>
+                                    </h4>
+                                </div>
+                                <div id="collapseUniversity1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUniversity1">
+                                    <div class="panel-body scrollable tree-max-height org-list-accordion" id="org-list-accordion1">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="action_type" for="action_type">Hərəkət tipi</label>
+                        <div class="prepend-icon">
+                            <select edit-order-required class="form-control edit-order-type">
+
+                            </select>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="serial_number" for="add-serial">Serial number</label>
+                        <div class="prepend-icon">
+                            <input edit-order-required data-i18n="serial_number" document-required id="edit-order-serial" name="add-order-document-serial" class="form-control" placeholder="Serial number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="doc_number" for="add-number">Document number</label>
+                        <div class="prepend-icon">
+                            <input edit-order-required data-i18n="doc_number" document-required id="edit-order-number" name="add-order-document-number" class="form-control" placeholder="Document number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="issue_date" for="start-date">Start date</label>
+                        <div class="prepend-icon">
+                            <input edit-order-required data-i18n="issue_date" document-required id="edit-order-start-date" name="add-order-document-start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="file-list-div form-group">
+
+                    </div>
+                </div>
+<!--                 <div class="modal-footer flex-img">
+                    <button data-i18n="ok" doc-confirm type="button" class="btn btn-primary edit-order-document-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+<div class="new-upd">
+    <div class="search-scroll" style="width: 955px !important">
+
+    </div>
+</div>  
+<script src="assets/js/modal_drag.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $('body').find('.table-scroll').slimScroll();
+        Hsis.i18n();
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+            Hsis.Proxy.getOrderList();
+
+        });
+        $('.search-scroll').slimScroll();
+        // $('.modal').on('shown.bs.modal', function(){
+        //     $('body').find("#edit-order-number").inputmask("99-9999999")
+        // });
+        
+        $('body').find("#add-order-serial, #add-order-number").keyup(function() {
+            console.log('ss')
+               var n = $(this).val();
+               if ( n.match("^[a-zA-Z0-9 ]*$") == null ) {
+                   $(this).val(n.slice(0,-1));
+               }
+        });
+        $('body').on('click', '.close-student-search', function(){
+            $('.edit-new, .new-upd').css('right', '-100%');
+        });
+
+        $('#main-div .sub_modules_div').remove();
+      // $('.module-list').find('li[data-id=1000093].sub-module-con').fadeIn();
+        $('.module-list').find('.sub-module-con').remove();
+      Hsis.Proxy.loadSubModules(1000093, function (data) {
+          var html = '<div class="sub_modules_div"><div class="sub_modules" >';
+
+          if (data) {
+              if (data.code == Hsis.statusCodes.OK) {
+                  if (data.data) {
+                    var testArray = [];
+                    var testHtml;
+                    var curH;
+                    $('.module-list').find('li.active').append('<div class="sub-module-con"></div>')
+                    $.each(data.data, function(i, v){
+                        if($.inArray(v.typeId, testArray) == -1){
+                             testArray.push(v.typeId);
+                             testHtml = '<div data-type="'+ v.typeId +'" class="sub-module-group"></div>'
+                        
+                             $('.module-list').find('li.active .sub-module-con').append(testHtml)
+                           
+                             curH = $('body').find('div.sub-module-group[data-type="'+ v.typeId +'"]');
+                        
+                             curH.append('<div class="chekbox-con"><input type="checkbox" checked="checked" data-type-id="'+ v.typeId +'" value="'+ v.id +'" id="id_'+ v.id +'" data-type-id="'+ v.typeId +'"><label for="id_'+ v.id +'" data-parent="'+ v.parentId +'">'+ v.name.az +'</label></div>')
+                        
+                        }else{
+                            curH = $('body').find('div.sub-module-group[data-type="'+ v.typeId +'"]');
+                        
+                            curH.append('<div class="chekbox-con"><input type="checkbox" checked="checked" data-type-id="'+ v.typeId +'" value="'+ v.id +'" id="id_'+ v.id +'" data-type-id="'+ v.typeId +'"><label for="id_'+ v.id +'" data-parent="'+ v.parentId +'">'+ v.name.az +'</label></div>')
+                            
+
+
+                        }
+                        
+
+                    })
+                    
+                      var subModuleGroups = $('.module-list').find('li.active .sub-module-group');
+                      $.each(subModuleGroups, function(i, v){
+                          $(this).prepend('<p>Group '+ (++i) +'</p>')
+                          
+
+                      })
+
+                        $.each(data.data, function (i, v) {
+                            html += '<li data-parent="' + v.parentId + '"  data-id = "' + v.id + '" class="sub-module-item sub_module_' + v.id + '"><a href="#">' +
+                                    '<span class="state-icon radio-check"></span>' +
+                                    '<span class="m-l-10">' + v.name[Hsis.lang] + '</span>' +
+                                    '<input type-id="' + v.typeId + '" value="' + v.id + '" class="hidden" type="checkbox">' +
+                                    '</a></li>'
+
+                        })
+                        html += '</div></div>'
+                        $('#main-div .sidebar-menu .module .mod-con').append(html);
+
+                        var subModuleId = [];
+                        var params = $('.main-content-upd .group-search-form').serialize();
+
+                        if ($('.sub_modules :checkbox')) {
+                            $.each($('.sub_modules :checkbox'), function () {
+                                subModuleId.push($(this).val());
+
+                            });
+                            Hsis.subModuleId = subModuleId;
+
+                            if (subModuleId.length > 0) {
+                                $('.btn-load-more').removeAttr('data-page');
+                                var text = Hsis.tempData.form != "" ? Hsis.tempData.form : params + '&subModuleId=' + subModuleId;
+                                Hsis.Proxy.loadAcademicGroups('', text);
+                            }
+
+                        }
+                    }
+                }
+            }
+        })
+
+
+        $('#academicGroupTree .modal-content').draggable({
+            cancel: '.scrollable'
+        });
+
+
+        $('#main-div').on('click', '#org-list', function (event) {
+            try {
+                $('#academicGroupTree').modal({
+                    backdrop: false
+                });
+
+                var treeObj = $(':jstree').length;
+//                if (treeObj == 0) {
+                if ($('#org-list-tree').attr('data-check') !== '1') {
+                    Hsis.Proxy.loadOrgTreeByType(1000700, function (tree) {
+                        Hsis.Service.commonParseTree(tree, 'org-list-tree');
+                        $('.tree-preloader').remove();
+                    }, $('#org-list-tree'));
+                    var searchString = $('#main-div .tree-search').val();
+                    $('#org-list-tree').jstree('search', searchString);
+
+                }
+//                    
+//                }
+                ;
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        Hsis.Proxy.loadOrgTreeByType(1000074, function (tree) {
+            Hsis.Service.commonParseTree(tree, 'org-list-accordion');
+        }, $('#org-list-accordion'));
+
+        Hsis.Proxy.loadOrgTreeByType(1000074, function (tree) {
+                    Hsis.Service.commonParseTree(tree, 'org-list-accordion1');
+        }, $('#org-list-accordion1'));
+        
+        $("#main-div #org-list-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#university-list-h6').text(path);
+                $('#main-div .structure-id').val(data.node.id);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#main-div #org-list-accordion1").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#university-list-h6').text(path);
+                $('#main-div .edit-structure-id').val(data.node.id);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $(document).on('change', '.new-order-doc-file', function (e) {
+            var fileNames = '';
+            var self = this;
+
+            $.each(self.files, function (i, v) {
+                if (i != self.files.length - 1) {
+                    fileNames += self.files[i].name + ', ';
+                }
+                else {
+                    fileNames += self.files[i].name;
+                }
+
+            });
+            $(this).closest('label').find('span').text(fileNames);
+        });
+
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#org-list-tree').jstree('search', searchString);
+        });
+
+
+
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#org-list-tree li[aria-selected="true"]').attr('id');
+                var text = $('#org-list-tree li[aria-selected="true"]').find('a:first').text();
+                if (text.length > 0) {
+                    $('.btn.group-tree-modal').text(text);
+                    $('.btn.group-tree-modal').attr('data-id', id);
+                    $('#academicGroupTree').modal('hide');
+
+                    if (id !== 0) {
+                        $('.main-content-upd .order-search-form input[name="orgId"]').val(id);
+                    }
+                    else {
+                        $('.main-content-upd .order-search-form input[name="orgId"]').val('');
+                    }
+                    var params = $('.main-content-upd .order-search-form').serialize();
+                    Hsis.Proxy.getOrderList('', params);
+                    $('.btn-load-more').removeAttr('data-page');
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+            }
+            catch (err) {
+
+            }
+        });
+
+
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000025, 0, function (actionType) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+            $.each(actionType, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.order_type').html(html);
+        });
+        Hsis.Proxy.loadDictionariesByTypeId(1000025, 0, function (actionType) {
+             $('.order-type').html(Hsis.Service.parseDictionaryForSelect(actionType));
+             $('.edit-order-type').html(Hsis.Service.parseDictionaryForSelect(actionType));
+        });
+
+//        Hsis.Proxy.loadDictionariesByTypeId(1000057, 0, function (orderType) {
+//
+//            $('.order-type').html(Hsis.Service.parseDictionaryForSelect(orderType));
+//            $('.edit-order-type').html(Hsis.Service.parseDictionaryForSelect(orderType));
+//        });
+    });
+
+    $('#main-div').on('click', '.order_type li', function (e) {
+        try {
+            var orderType = $(this).attr('data-id');
+            if (orderType !== 0) {
+                $('.main-content-upd .order-search-form input[name="type"]').val(orderType);
+            }
+            else {
+                $('.main-content-upd .order-search-form input[name="type"]').val('');
+            }
+            $('.btn-load-more').removeAttr('data-page');
+            var keyword = $('#group_search').val();
+            var params = $('.main-content-upd .order-search-form').serialize()
+            Hsis.Proxy.getOrderList('', params);
+            $('.btn-load-more').removeAttr('data-page');
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+    });
+
+    $('.datepicker').datepicker();
+
+    $('.order-start-date').on('change', function () {
+        var startDate = $(this).val();
+        $('.btn-load-more').removeAttr('data-page');
+        $('.main-content-upd .order-search-form input[name="startDate"]').val(startDate);
+        var params = $('.main-content-upd .order-search-form').serialize()
+        Hsis.Proxy.getOrderList('', params);
+    })
+
+    $('#order_number_search').on('change', function () {
+        var number = $(this).val();
+        $('.btn-load-more').removeAttr('data-page');
+        $('.main-content-upd .order-search-form input[name="number"]').val(number);
+        var params = $('.main-content-upd .order-search-form').serialize()
+        Hsis.Proxy.getOrderList('', params);
+    });
+    
+    $('#main-div').on('click','#operation_1001311',function(e) {
+         e.stopPropagation();
+        try {
+            var tr = $(this).parents('.info');
+            var orgId = tr.attr('data-tr-orgId');
+            var parentId = tr.attr('data-tr-parentId');
+            var orderTypeId = tr.attr('data-tr-orderTypeId');
+            var orderId = tr.attr('data-tr-orderId');
+            $('body').find('.edit-new .search-scroll').load('partials/pelc_without_order.html',function() {
+                $('#main-div').find('#student_list_without').attr('order-id',orderId);
+                $('#main-div').find('#student_list_without').attr('org-id',orgId);
+                $('#main-div').find('#student_list_without').attr('type-parent-id',parentId);
+                $('#main-div').find('#student_list_without').attr('type-id',orderTypeId);
+
+                $('#main-div').find('#student_list-with').attr('order-id',orderId);
+                $('#main-div').find('#student_list-with').attr('org-id',orgId);
+                $('#main-div').find('#student_list-with').attr('type-parent-id',parentId);
+                $('#main-div').find('#student_list-with').attr('type-id',orderTypeId);
+                
+                var form = {
+                    orderTypeId:orderTypeId,
+                    orderTypeParentId:parentId,
+                    orgId:orgId,
+                    orderId:orderId
+                };
+                Hsis.Proxy.getStudentsWithoutOrder(form,function(students) {
+                    Hsis.Service.parseStudentsWithoutOrder(students);
+                    
+                });
+                Hsis.Proxy.getStudentsWithOrder(form,function(students) {
+                    Hsis.Service.parseStudentsWithOrder(students);
+                    
+                });
+            });
+            $('body').find('.edit-new').css('right', '0');
+        }
+        catch(err) {
+            console.error(err);
+        }
+        
+    });
+    
+    $('body').on('click', '#operation_1001330', function(){
+        var orderId = $('body').find('.info').attr('data-tr-orderid');
+        Hsis.Proxy.submitmOrder(orderId, function(response){
+            Hsis.Proxy.getOrderList();
+            return false;
+        });
+        
+    });
+
+
+</script>

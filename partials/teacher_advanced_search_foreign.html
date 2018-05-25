@@ -1,0 +1,1069 @@
+<div class="search-basic-info">
+    <div class="search-content">
+<!--         <div class="panel panel-white">
+            <div class="panel-heading"> -->
+                <h2 data-i18n="advanced_search" class="panel-title">Ətraflı axtarış</h2>
+                <div class="search-butons">
+                    <a href="" id="clear-filters">Filterləri təmizlə</a>
+                    <a href="" data-i18n="close" id="close-search">Bağla</a>
+                    <a href="" id="search-teacher-form" data-i18n="search">Axtar</a>
+                </div>
+                <!--<a href="#" class="save-button"><img src="assets/img/save-icon.png" alt="Save" width="20" height="20">-->
+                <!--</a>-->
+<!--             </div>
+        </div> -->
+    </div>
+</div>
+
+<form class="teacher-advanced-search-form">
+    <div class="tab-content search-content">
+
+
+            
+                    <h3 data-i18n="personal_info" class="panel-title">Şəxsi məlumatlar</h3>
+       
+                <div class="">
+
+                    <div class="">
+
+                        <div class="row">
+                            <div class="">
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="citizenship" for="citizenship">Vətəndaşlıq</label>
+                                    <select class="form-control citizenship no-padding" name="citizenshipId"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="surname" for="lastname">Last name</label>
+                                    <input class="form-control last-name" name="lastName" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="name"  for="firstname">First name</label>
+                                    <input class="form-control first-name" name="firstName" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="middlename" for="firstname">Middle name</label>
+                                    <input class="form-control middle-name" name="middleName" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="gender" for="gender">Gender</label>
+                                    <select class="form-control gender no-padding" name="genderId"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="birthdate" for="exampleInputEmail1">Birth date</label>
+                                    <input type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" name="birthdate"/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="age_interval" for="exampleInputEmail1">Yaş intervalı</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control form-inline start-age" name="startAge" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control form-inline end-age" name="endAge" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="marital_status" for="exampleInputEmail1">Marital status</label>
+                                    <select class="form-control marital-status no-padding" name="maritalStatusId"></select>
+                                </div>
+ <!--                                <div class="form-group col-md-6">
+                                    <label data-i18n="nationality" for="exampleInputEmail1">Nationality</label>
+                                    <select class="form-control nationality no-padding" name="nationality"></select>
+                                </div> -->
+<!--                                 <div class="form-group col-md-6">
+                                    <label data-i18n="military_service"  for="exampleInputEmail1">Military service</label>
+                                    <select class="form-control military-service no-padding" name="militaryServiceId"></select>
+                                </div> -->
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="document_serial_number" for="exampleInputEmail1">Sənədin seriya və nömrəsi</label>
+                                    <input class="form-control pasport-seriya" name="pasportSeriya"   />
+                                </div>
+<!--                                 <div class="form-group col-md-6">
+                                    <label data-i18n="social_status" for="exampleInputEmail1">Social status</label>
+                                    <select class="form-control social-status no-padding" name="socialStatusId"></select>
+                                </div> -->
+
+<!--                                 <div class="form-group col-md-6">
+                                    <label data-i18n="orphan_degree"  for="exampleInputEmail1">Orphan degree</label>
+                                    <select class="form-control orphan-degree no-padding" name="orphanDegreeId"></select>
+                                </div> -->
+
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="myi" for="exampleInputEmail1">MYİ-nin seriya və nömrəsi</label>
+                                    <input class="form-control myi-seriya" name="MYISeriya" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="myi_vd" for="exampleInputEmail1">MYİ-nin etibarlılıq müddəti</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control start-myi-validity-period datepicker" data-date-format="dd/mm/yyyy" name="startMYIValidityPeriod" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control end-myi-validity-period datepicker" data-date-format="dd/mm/yyyy" name="endMYIValidityPeriod" />
+                                        </div>
+                                    </div>
+                                </div>
+<!--                                 <div class="form-group col-md-6">
+                                    <label data-i18n="citizenship" for="citizenship">Vətəndaşlıq</label>
+                                    <select class="form-control citizenship no-padding" name="citizenshipId"></select>
+                                </div> -->
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="temporary_address" for="citizenship"></label>
+                                    <button class="adres-modal-btn " data-modal-type="temporaryAddressId"></button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label data-i18n="permanent_address" for="citizenship"></label>
+                                    <button class="adres-modal-btn " data-modal-type="permanentAddressId"></button>
+                                </div>
+<!--                                 <div class="form-group col-md-6">
+                                    <label data-i18n="birth_place" for="citizenship"></label>
+                                    <button class="adres-modal-btn " data-modal-type="birthPlaceId"></button>
+                                </div> -->
+
+
+                            </div>
+
+
+                        
+
+                        </div>
+
+
+                    </div>
+                </div>
+        
+        
+    </div>
+    <div class="tab-content search-content">
+        <div class="">
+            <div class="">
+                <div class="">
+                    <h3 data-i18n="edu_info" class="panel-title">Təhsil məlumatları</h3>
+                </div>
+                <div class="">
+                    <div class="">
+                        <form class="">
+                            <div class="">
+                                             <div class="row">
+                                                 <div class="">
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="" for="exampleInputEmail1">ATM ünvanı</label>
+                                                         <button class="adres-modal-btn " data-modal-type="atmCountryId"></button>
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="atm"></label>
+                                                         <select   class="form-control sub-action-type no-padding" name="" id="atm_id">
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="faculty"></label>
+                                                         <select name=""  class="form-control no-padding" id="advanced_faculty">
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="department"></label>
+                                                         <select name=""  class="form-control no-padding" id="advanced_kafedra">
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="study_lang" for="exampleInputEmail1"></label>
+                                                         <select class="form-control edu-lang no-padding" name="educationLanguageId"></select>
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="teacher.position" for="staff_type"></label>
+                                                         <select name=""  class="form-control no-padding" id="advanced_staff_position">
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="start_action_type"></label>
+                                                         <select name="inActionTypeId"  class="form-control  no-padding" name="" id="action_start_date">
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         
+                                                         <div class="row">
+                                                             <div class="col-md-6">
+                                                                 <label data-i18n="action_date" class = "action-date-label" for="edu_start_year_search">Hərəkət tarixi</label>
+                                                                 <select name="inActionEduYearId" class="form-control no-padding edu_start_year_search" id="edu_start_year_search">
+                                                                     <option value="0">Seçin</option>
+                                                                 </select>
+                                                             </div>
+                                                             <div class="col-md-6">
+                                                                 <label data-i18n="student.order" class = "action-date-label" for="exampleInputEmail1"></label>
+                                                                 <select name="inActionOrderId" class="form-control no-padding" id="start_order">
+                                                                     <option value="0">Seçin</option>
+                                                                 </select>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="end_action_type"></label>
+                                                         <select name="outActionTypeId"  class="form-control  no-padding" name="" id="action_end_date">
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                         
+                                                         <div class="row">
+                                                             <div class="col-md-6">
+                                                                <label data-i18n="action_date" class = "action-date-label" for="edu_end_year_search">Hərəkət tarixi</label>
+                                                                <select name="outActionEduYearId" class="form-control no-padding edu_start_year_search" id="edu_end_year_search">
+                                                                    <option value="0">Seçin</option>
+                                                                </select>
+                                                             </div>
+                                                             <div class="col-md-6">
+                                                                  <label data-i18n="student.order" class = "action-date-label" for="exampleInputEmail1"></label>
+                                                                 <select name="outActionOrderId" class="form-control no-padding" id="end_order">
+                                                                     <option value="0">Seçin</option>
+                                                                 </select>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+
+
+
+                                                     <div class="form-group col-md-6">
+                                                        <div class="form-group-for-select research-type-name-filter">
+                                                            <label data-i18n="materials_type" placeholder=""></label><br>
+                                                            <select id="teacher_research_type" class="form-control no-padding" name="researchType"><option value="0">Seçin</option></select>
+                                                        </div>
+                                                     </div>
+                                                     <div class="form-group  col-md-6">
+                                                         <label data-i18n="staff_type" for="staff_type" placeholder="Ştat növü">Ştat növü</label>
+                                                         <select  id="advanced_staff_type" class="form-control no-padding"><option value="0">Seçin</option></select>
+                                                     </div>
+                                                     <div class="form-group col-md-6">
+                                                        <div class="form-group-for-select research-name-filter">
+                                                            <label data-i18n="materials" style="height: 40px" ></label>
+                                                            <input id="research" class="form-control" name="researchName">
+                                                        </div>
+                                                     </div>    
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="academic_name" for="academic_name" placeholder="Elmi ad" style="height: 40px">Elmi ad</label>
+                                                         <select id="academic_name" class="form-control  no-padding" name="academicNameId"><option value="0">Seçin</option></select>
+                                                     </div>
+
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="academic_degree" class="academic-type" placeholder="Elmi dərəcə">Elmi dərəcə</label>
+                                                         <select academic-required="" id="advanced_academic_degree" class="form-control academic-degree-name"><option value="0">Seçin</option></select>
+                       
+                                                     </div>
+
+                                                     <div class="form-group col-md-6">
+                                                         <div class="form-group-for-select structure-name-filter">
+                                                             <label data-i18n="tuition_languages" ></label><br>
+                                                             <select id="teacher_languages" data-attr = "1" class="form-control combo" multiple="multiple" name="teacherLang">
+
+                                                             </select>
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="form-group col-md-6">
+                                                         <label data-i18n="">Tədris etdiyi fənn</label>
+                                                         <select name="outActionTypeId"  class="form-control  no-padding" >
+                                                             <option data-i18n="select" value="0"></option>
+                                                         </select>
+                                                         
+                                                     </div>
+
+
+                                             </div>
+
+
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <input class="hidden" name="socialName" />
+    <input class="hidden" name="nationalityName" />
+    <input class="hidden" name="maritalName" />
+    <input class="hidden" name="orphanName" />
+    <input class="hidden" name="militaryName" />
+    <input class="hidden" name="eduLangName" />
+    <input class="hidden" name="eduLevelName" />
+    <input class="hidden" name="speclevelName" />
+    <input class="hidden" name="uniName" />
+    <input class="hidden" name="orgName" />
+    <input class="hidden" name="permanentName" />
+    <input class="hidden" name="temporaryName" />
+    <input class="hidden" name="birthName" />
+    <input class="hidden" name="actionName" />
+    <input class="hidden" name="researchTypeName" />
+    <input class="hidden" name="teacherLang" />
+    <input class="hidden permanent" name="permanentAddressId" data-parent="permanent-address-accordion" />
+    <input class="hidden temporary" name="temporaryAddressId" data-parent="temporary-address-accordion" />
+    <input class="hidden birth-place" name="birthPlaceId" data-parent="birth-place-accordion" />
+    <input class="hidden structure-acc-filter" name="orgId"  data-parent="structure-accordion" />
+    <input class="hidden " name="uniAddressId" data-parent="university-address-accordion" />
+    <input class="hidden search-teacher" name="searchAttr" />
+    <input class="hidden citizenship-id" name="citizenshipId" />
+
+
+</form>
+
+
+
+<div class="modal fade" id="adres-change-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">ATM ünvanı</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <div class="form-group-for-select structure-name-filter">
+                <label data-i18n="country"></label>
+                <select id="advanced-search-city" class="form-control no-padding">
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group-for-select structure-name-filter">
+                <label data-i18n="administrative_division"></label>
+                <select class="form-control no-padding" id="advanced-search-district">
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group-for-select structure-name-filter">
+                <label data-i18n="city_and_district"></label>
+                <select  class="form-control no-padding" id="advanced-search-street">
+
+                </select>
+            </div>
+        </div>
+        <input type="hidden" id="modal-adres-input">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Bağla</button>
+        <button type="button" class="btn btn-primary adreses-modal-submit">Təsdiq et</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+
+
+
+
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+        $('.datepicker').datepicker();
+
+        Hsis.Proxy.loadOrgTree(function (tree) {
+            Hsis.Service.commonParseTree(tree, 'structure-accordion');
+
+        });
+
+        $('.modal-content').draggable();
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+            var html = Hsis.Service.parseDictionaryForSelect(citizenship);
+            $('#main-div .citizenship').html(html);
+        });
+
+        
+        Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+            var html = Hsis.Service.parseDictionaryForSelect(citizenship);
+            $('#main-div .citizenship').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000006', 0, function (nationality) {
+            var html = Hsis.Service.parseDictionaryForSelect(nationality);
+            $('#main-div .nationality').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+            var html = Hsis.Service.parseDictionaryForSelect(gender);
+            $('#main-div .gender').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+            var html = Hsis.Service.parseDictionaryForSelect(maritalStatus);
+            $('#main-div .marital-status').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000008', 0, function (militaryStatus) {
+            var html = Hsis.Service.parseDictionaryForSelect(militaryStatus);
+            var militaryStatus = $('#main-div .military_status');
+            militaryStatus.html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000009', 0, function (socialStatus) {
+            var html = Hsis.Service.parseDictionaryForSelect(socialStatus);
+            var socialStatus = $('#main-div .social-status');
+            socialStatus.html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000013', 0, function (orphanDegree) {
+            var html = Hsis.Service.parseDictionaryForSelect(orphanDegree);
+            var orphanDegree = $('#main-div .orphan-degree');
+            orphanDegree.html(html);
+
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000016', 0, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div .edu-level').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000033', 0, function (actionType) {
+            var html = Hsis.Service.parseDictionaryForSelect(actionType);
+            $('#main-div .action-type').html(html);
+        })
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000032', 0, function (eduLine) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLine);
+            $('#main-div .edu-line').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduType) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduType);
+            $('#main-div .edu-type').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLang);
+            $('#main-div .edu-lang').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000028', 0, function (eduPaytype) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduPaytype);
+            $('#main-div .edupay-type').html(html);
+        });
+        Hsis.Proxy.loadDictionariesByTypeId('1000008', 0, function (eduPaytype) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduPaytype);
+            $('#main-div .military-service').html(html);
+
+        });
+
+        // Hsis.Proxy.loadAddressTree(function (addressTree) {
+        //     Hsis.Service.commonParseTree(addressTree, 'permanent-address-accordion');
+        //     Hsis.Service.commonParseTree(addressTree, 'temporary-address-accordion');
+        //     Hsis.Service.commonParseTree(addressTree, 'birth-place-accordion');
+        //     Hsis.Service.commonParseTree(addressTree, 'university-address-accordion');
+        //     setTimeout(function () {
+        //         if (sessionStorage.teacherSearch != undefined) {
+        //             var obj = JSON.parse(sessionStorage.teacherSearch);
+        //             var specialityLevels;
+        //             var specialityTypes;
+        //             var specialityId;
+        //             if (sessionStorage.teacherSubModules != undefined) {
+        //                 var subArray = JSON.parse(sessionStorage.teacherSubModules);
+
+        //                 $.each($('.sub_modules :checkbox'), function () {
+        //                     if ($.inArray($(this).val(), subArray) >= 0) {
+        //                     }
+        //                     else {
+        //                         $(this).val("");
+        //                         //console.log($(this).parent('.sub-module-item'));
+        //                         var parent = $(this).parents('.sub-module-item').find('.state-icon');
+        //                         if (parent.hasClass('radio-check')) {
+        //                             parent.toggleClass("radio-check radio-uncheck");
+        //                         }
+
+        //                     }
+        //                 });
+        //             }
+        //             $.each(obj, function (i, v) {
+        //                 if (v.type == 'text') {
+        //                     switch (v.name) {
+        //                         case 'permanentAddressId':
+        //                             $('#permanent-address-accordion').jstree('select_node', '#' + v.value);
+        //                             break;
+        //                         case 'temporaryAddressId':
+        //                             $('#temporary-address-accordion').jstree('select_node', '#' + v.value);
+        //                             break;
+        //                         case 'birthPlaceId':
+        //                             $('#birth-place-accordion').jstree('select_node', '#' + v.value);
+        //                             break;
+        //                         case 'orgId':
+        //                             $('#headingFirst').attr('data-id', v.value);
+        //                             break;
+        //                         case 'uniAddressId':
+        //                             $('#university-address-accordion').jstree('select_node', '#' + v.value);
+        //                             break;
+        //                         case 'teacherLang':
+        //                             $('#teacher_languages').select2().val(JSON.parse("[" + v.value + "]")).trigger('change');
+        //                             break;
+
+        //                         default:
+        //                             $('[name="' + v.name + '"]').val(v.value);
+        //                             break;
+        //                     }
+
+
+        //                 }
+        //                 else if (v.type == 'select-one') {
+        //                     $('[name="' + v.name + '"]').find('option[value="' + v.value + '"]').prop('selected', true);
+
+        //                     switch (v.name) {
+        //                         case 'specialityLevel' :
+        //                             specialityLevels = v.value;
+        //                             break;
+
+        //                         case'specialityType' :
+        //                             specialityTypes = v.value;
+        //                             break;
+
+        //                         case 'specLine' :
+        //                             specialityId = v.value;
+        //                             break;
+        //                     }
+        //                 }
+        //             });
+        //             if (specialityLevels > 0) {
+        //                 Hsis.Proxy.loadDictionariesByTypeId(specialityLevels, specialityTypes, function (specialities) {
+        //                     if (specialities) {
+        //                         var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+        //                         $.each(specialities, function (i, v) {
+        //                             html += '<option value="' + v.id + '" code="' + v.code + '">' + v.value[Hsis.lang] + ' - ' + v.code + '</option>'
+        //                         });
+        //                         $('#org_name_select').html(html);
+        //                         $('#org_name_select').find('option[value="' + specialityId + '"]').prop('selected', true);
+        //                     }
+        //                 });
+        //             }
+
+
+        //         }
+        //     }, 1000);
+        // });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000023', 0, function (staffType) {
+            var html = Hsis.Service.parseDictionaryForSelect(staffType);
+            $('#staff_type').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000021', 0, function (academicName) {
+            var html = Hsis.Service.parseDictionaryForSelect(academicName);
+            $('#main-div #academic_name').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000020', 0, function (academicDegree) {
+            var html = Hsis.Service.parseDictionaryForSelect(academicDegree);
+            $('#main-div #advanced_academic_degree').html(html);
+
+
+        });
+
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000025', 1000258, function (actionStartDate) {
+            var html = Hsis.Service.parseDictionaryForSelect(actionStartDate);
+            $('#main-div #action_start_date').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000025', 1000259, function (actionStartDate) {
+            var html = Hsis.Service.parseDictionaryForSelect(actionStartDate);
+            $('#main-div #action_end_date').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000023', 0, function (researchTypes) {
+            var html = Hsis.Service.parseDictionaryForSelect(researchTypes);
+            $('#advanced_staff_type').html(html);
+        });
+
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000022', 0, function (staffType) {
+            var html = Hsis.Service.parseDictionaryForSelect(staffType);
+            $('#advanced_staff_position').html(html);
+        });
+
+
+        Hsis.Proxy.getEduYears(function (years) {
+            if (years) {
+                var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["edu_start_year"] + '</option>';
+                $.each(years, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('.edu_start_year_search').html(html);
+            }
+
+            if (sessionStorage.teacherSearch != undefined) {
+                var obj = JSON.parse(sessionStorage.teacherSearch);
+            
+
+                $.each(obj, function(i, v){
+
+                    $('body').find('.teacher-advanced-search-form [name="'+ v.name +'"]').val(v.value);
+
+                   
+                });
+                
+
+              
+            }
+        });
+
+        $("#main-div #permanent-address-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#permanent-address-h6').text(path);
+                $('#permanent-address-h6').siblings('div.clear_jstree').removeClass('hidden');
+                $('#main-div .permanent').val(data.node.id);
+                $('#main-div input[name=permanentName]').val(path);
+                
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#main-div #university-address-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingUniversity').attr('data-node-id', data.node.id);
+                $('#headingUniversity').attr('data-node-text', path);
+                $('#university-address-h6').text(path);
+                 $('#university-address-h6').siblings('div.clear_jstree').removeClass('hidden');
+                 $('#structure-h6').siblings('div.clear_jstree').addClass('hidden');
+                $('#collapseUniversity').removeClass('in');
+                $('#main-div input[name=uniAddressId]').val(data.node.id);
+                var structureId = Hsis.structureId ? Hsis.structureId : 0;
+
+                Hsis.Proxy.getFilteredStructureList(structureId, 1000418, data.node.id, function (result) {
+
+                    if (result) {
+                        if ($('#structure-accordion:jstree').length > 0) {
+                            $('#structure-h6').text('');
+                            $('#main-div .structure-acc-filter').val('');
+                            $('#main-div input[name=orgName]').val('');
+                        }
+                         var array = [];
+                            $.each(result, function (i, v) {
+                                var obj = {
+                                    id: v.id.toString(),
+                                    parent: (v.parent.id == 0) ? "#" : v.parent.id.toString(), text: v.name[Hsis.lang]
+                                };
+                                array.push(obj);
+                            });
+                        $('#structure-accordion').jstree(true).settings.core.data = array;
+                        $('#structure-accordion').jstree(true).refresh();
+
+                        setTimeout(function () {
+                            var uniId = $('#headingFirst').attr('data-id');
+                            if (uniId != undefined && $('#structure-accordion:jstree').length > 0) {
+                                $('#structure-accordion').jstree('select_node', '#' + uniId);
+                            }
+                        }, 1000);
+
+                    }
+
+                    //  console.log(result)
+                }, 0, 1);
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#main-div #temporary-address-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#temporary-address-h6').text(path);
+                $('#main-div .temporary').val(data.node.id);
+                $('#temporary-address-h6').siblings('div.clear_jstree').removeClass('hidden');
+                $('#main-div .temporary').val(data.node.id);
+                $('#main-div input[name=temporaryName]').val(path);
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        $("#main-div #birth-place-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#birth-place-h6').text(path);
+                $('#birth-place-h6').siblings('div.clear_jstree').removeClass('hidden');
+                $('#main-div .birth-place').val(data.node.id);
+                $('#main-div input[name=birthName]').val(path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#main-div #structure-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#structure-h6').text(path);
+                $('#structure-h6').siblings('div.clear_jstree').removeClass('hidden');
+                $('#main-div .structure-acc-filter').val(data.node.id);
+                $('#main-div input[name=orgName]').val(path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000035', 0, function (specialityTypes) {
+            var html = Hsis.Service.parseDictionaryForSelect(specialityTypes);
+            $('#speciality_types').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (teacherLanguages) {
+            var html = Hsis.Service.parseDictionaryForSelect(teacherLanguages);
+            $('#main-div #teacher_languages').html(html);
+            $('#main-div #teacher_languages option[value="0"]').remove();
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000039', 0, function (researchTypes) {
+            var html = Hsis.Service.parseDictionaryForSelect(researchTypes);
+            $('#main-div #teacher_research_type').html(html);
+        });
+
+        $('#main-div .combo').select2();
+
+        $('#main-div').on('click', '.clear_jstree', function (e) {
+            try {
+                var jstreeDiv = $(this).parents('div.panel-default').find('div.jstree');
+                jstreeDiv.jstree('deselect_all');
+                $(this).siblings('h6').text('');
+                $(this).addClass('hidden');
+                var divId = jstreeDiv.attr('id');
+                $('input[data-parent="' + divId + '"]').val('');
+                if (divId == "university-address-accordion") {
+                    Hsis.Proxy.loadOrgTree(function (tree) {
+                        if (tree) {
+                            var array = [];
+                            $.each(tree, function (i, v) {
+                                var obj = {
+                                    id: v.id.toString(),
+                                    parent: (v.parent.id == 0) ? "#" : v.parent.id.toString(), text: v.name[Hsis.lang]
+                                };
+                                array.push(obj);
+                            });
+                            $('#structure-h6').siblings('div.clear_jstree').addClass('hidden');
+                            $('#structure-accordion').jstree(true).settings.core.data = array;
+                            $('#structure-accordion').jstree(true).refresh();
+                        }
+                    });
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+
+
+
+        $('body').on('click', '.adres-modal-btn', function(){
+            var name = $(this).attr('data-modal-type');
+            $('#adres-change-modal').modal('show');
+            $('body').find('.adreses-modal-submit').attr('data-adres-type', name);
+            $('#adres-change-modal select').html('')
+            Hsis.Proxy.loadAdressTypes('1000051', function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #advanced-search-city').html(html);
+            });
+
+            return false
+        });
+
+        $('body').on('change', '#advanced-search-city', function(){
+            var id = $(this).val();
+            Hsis.Proxy.loadAdressTypes(id, function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #advanced-search-district').html(html);
+            });
+        });
+
+        $('body').on('change', '#advanced-search-district', function(){
+            var id = $(this).val();
+            Hsis.Proxy.loadAdressTypes(id, function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #advanced-search-street').html(html);
+            });
+        });
+
+
+
+
+
+
+
+        $('#atm_id').on('change', function() {
+            var id = $(this).val();
+            var levelId = $('body').find('#speciality_levels').val();
+            var startTypeId = $('body').find('#action_start_date').val();
+            var endTypeId = $('body').find('#action_end_date').val();
+            var startEduYearId = $('body').find('#edu_start_year_search').val();
+            var endEduYearId = $('body').find('#edu_end_year_search').val();
+            var text = $(this).find('option:selected').text();
+
+            $('body').find('input[name="orgId"]').val(id);
+
+            Hsis.Proxy.getStructureListByFilter(id, 0 ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var faculty = data.data.facultyList;
+                    var departmentList = data.data.departmentList;
+                    
+                    html = '<option value = "0">Fakültə</option>'
+                    $.each(faculty, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#advanced_faculty').html(html)
+
+                    var spec = data.data.specialityList;
+                    
+                    specHtml = '<option value = "0">İxtisas adı</option>'
+                    $.each(spec, function(i, v){
+                        specHtml += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_name_select_advanced').html(specHtml);
+
+
+               
+                    departmentHtml = '<option value = "0">Kafedra</option>'
+                    $.each(departmentList, function(i, v){
+                        departmentHtml += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#advanced_kafedra').html(departmentHtml)
+                 
+
+                }
+            })
+
+            if(startTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(startTypeId, id, startEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+            if(endTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(endTypeId, id, endEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+
+            
+        });
+
+        $('#action_start_date, #action_end_date, #edu_start_year_search, #edu_end_year_search').on('change', function() {
+            var orgId = $('body').find('#atm_id').val();
+            var startTypeId = $('body').find('#action_start_date').val();
+            var endTypeId = $('body').find('#action_end_date').val();
+            var startEduYearId = $('body').find('#edu_start_year_search').val();
+            var endEduYearId = $('body').find('#edu_end_year_search').val();
+            
+            if(startTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(startTypeId, orgId, startEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+            if(endTypeId > 0){
+                Hsis.Proxy.getOrderAdvancedSearch(endTypeId, orgId, endEduYearId ,function(data) {
+                    if(data && data.data) {
+                        var html = '';
+                        
+                        html = '<option value = "0" data-i18n="student.order">Əmr</option>'
+                        $.each(data.data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.serial + '/' + v.number +'</option>'
+                        })
+                        $('#start_order').html(html)
+
+                    }
+                })
+            }
+
+
+            
+        });
+
+
+
+        $('body').on('change', '#speciality_levels', function() {
+            var levelId = $(this).val();
+            var uniId = $('#atm_id').val();
+            var facultyId = $('#advanced_faculty').val();
+            
+            var id = facultyId == 0 ? uniId : facultyId;
+            
+            Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+                    
+                    html = '<option value = "0">İxtisas adı</option>'
+                    $.each(spec, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_name_select_advanced').html(html);
+                }
+            })
+            
+        });
+
+        $('body').on('change', '#advanced_faculty', function() {
+            var levelId = $('body').find('#speciality_levels').val();
+            var uniId = $('#atm_id').val();
+            var facultyId = $(this).val();
+            
+            var id = facultyId == 0 ? uniId : facultyId;
+            
+            Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+                    var departmentList = data.data.departmentList;
+
+                    html = '<option value = "0">İxtisas adı</option>'
+                    $.each(spec, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_name_select_advanced').html(html);
+
+                    departmentHtml = '<option value = "0">Kafedra</option>'
+                    $.each(departmentList, function(i, v){
+                        departmentHtml += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#advanced_kafedra').html(departmentHtml)
+                }
+            })
+            
+        });
+        $('body').on('keydown', '.teacher-advanced-search-form', function(event){
+           if(event.keyCode == 13) {
+             event.preventDefault();
+             return false;
+           }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $('body').on('click', '#close-search', function (e) {
+            $('.advanced-upd').css('right', '-100%');
+
+            // var eduLineId = $('#main-div .edu-line').val();
+            // if (eduLineId != null && eduLineId.length > 0) {
+            //     $('#main-div input[name="educationLineId"]').val(eduLineId);
+            // }
+
+            var form = $('#main-div .teacher-advanced-search-form').serializeArray();
+
+            sessionStorage.setItem('teacherSearch', JSON.stringify(form));
+
+
+            // Hsis.tempData.form = form + '&subModuleId=' + Hsis.subModuleId;
+            // var valArray = [];
+            // var formMap = $.map($('.student-advanced-search-form :input'), function (el, idx) {
+            //     if (el.value.length > 0 && el.value != 0 && el.name != 'searchAttr') {
+            //         valArray.push(el.value);
+            //     }
+            //     return {
+            //         type: el.type,
+            //         value: el.value,
+            //         name: el.name
+            //     };
+            // });
+
+            // if (valArray.length > 0) {
+            //     sessionStorage.setItem('studentSearch', JSON.stringify(formMap));
+            // }
+            // else {
+
+            //     return false;
+            // }
+
+
+
+
+
+
+
+            return false
+        });
+
+    });
+</script>
+
+
+

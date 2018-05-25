@@ -1,0 +1,532 @@
+
+<!-- Bootstrap modal -->
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="tech-base" placeholder="Tələbələr" class="hed-title">Texniki Baza</span><span  class="head-total"> <span data-group-count></span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search" id="technical_search" type="search" placeholder="Search">
+    
+        </div>
+
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+                <li><a id="registration" href="student_add.html">Item 1</a></li>
+                <li><a id="second-registration" href="#">Item 2</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="filters-block module_1000094">
+                <div class="btn-group">
+                    <div permanent-address class="tree-modal-container">
+                        <button  id="org-list" type="button" class="btn btn-default group-tree-modal  btn-block"><span data-i18n="structure">Structure</span></button>
+
+                    </div>
+                </div>
+
+    <!--            <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+                        <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="edu_level">Təhsil pilləsi</span> <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu edu-level-list-filter">
+
+                    </ul>
+                </div>-->
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+                        <i class="fa fa-ellipsis-horizontal"></i><span >Tipi</span> <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu technical_type">
+
+                    </ul>
+                </div>
+    <!--            <div class="btn-group">
+                    
+                    <input type="text" class="form-control datepicker order-start-date" data-date-format="dd/mm/yyyy" placeholder="Start date"/>
+                </div>-->
+
+                <form class="technical-search-form">
+                    <input type="hidden" name="orgId" />
+                    <input type="hidden" name="typeId" />
+                    <input type="hidden" name="name" />
+                </form>
+</div>
+<div class="row">
+<div class="col-sm-12 data">
+    <div class="panel panel-white table-scroll">
+
+        <div class=" table-responsive">
+            <table id="technical-list" class="table table-celled table-hover">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th data-i18n="university">Universitet</th>
+                        <th>Tipi</th>
+                        <th>Adı/nömrəsi</th>
+                        <th>Tutumu</th>
+                        <th>Sahəsi</th>
+                        <!-- <th></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="space-for-footer">
+            <div id="load_more_div" class=" flex-input">
+                <button data-i18n="load.more" data-table="technical_module" class="btn loading-margins btn-load-more">Daha çox yüklə</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-4 info">
+    <div class="panel panel-white">
+        <div class="panel-heading">
+            <h3  class="panel-title">Ətraflı</h3>
+            <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+            <div class="type_2_btns"></div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12  about-order">
+                <dl class="dl-horizontal">
+                    <p>ATM: <label class="label-atm-name"></label></p>
+                    <p>Asılılıq: <label class="label-technical-parent-name"></label></p>
+                    <p>Tipi: <label class="label-technical-type"></label></p>
+                    <p>Adı/nömrəsi: <label class="label-technical-name"></label></p>
+                    <p>Tutumu: <label class="label-technical-volume"></label></p>
+                    <p>Sahəsi: <label class="label-technical-area"></label></p>
+                    <p>Təyinatı: <label class="label-technical-appointment"></label></p>
+           
+                    <div class="view-file-list-div form-group">
+                        
+                    </div>
+                    
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--tree modal-->
+<div id="academicGroupTree" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="university" class="modal-title">Ali təhsil müəssisəsi</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="add-new">
+    <div class="search-scroll">
+        <div class="">
+            <div class="search-butons" style="margin: 0;">
+                <a data-i18n="ok"  class="add-technical-submit">OK</a>
+                <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+            </div>
+            <form class="add-technical-form">
+                <div class="">
+                    <h3 class="panel-title">Texniki baza əlavə et</h3>
+                </div>
+                <div class="">
+<!--                    <div class="form-group tree-modal-container">
+                        <button data-i18n="orgtree.organizations" id="org-list" type="button" class="btn btn-default tree-modal btn-block in" placeholder="Təşkilati struktur" check="1" style="padding-right: 17px;">Təşkilati struktur</button>
+                        
+                    </div>-->
+                    <input technical-required class="structure-id hidden" name = "orgId"/>
+                    <div class="form-group">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="">
+                                <div class="" role="tab" id="headingUniversity">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUniversity" aria-expanded="false" aria-controls="collapseUniversity">
+                                            Təşkilati struktur
+                                        </a>
+                                        <h6 id="university-list-h6"></h6>
+                                    </h4>
+                                </div>
+                                <div id="collapseUniversity" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUniversity">
+                                    <div class="panel-body scrollable tree-max-height org-list-accordion" id="org-list-accordion">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Tipi</label>
+                        <div class="prepend-icon">
+                            <select technical-required class="form-control technical-type no-padding" name = "typeId">
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-6">-->
+                    <div class="form-group">
+                        <label for="add-serial">Asılılıq</label>
+                        <div class="prepend-icon">
+                            <div class="row">
+                            <div class="col-md-6">
+                                <select class="form-control technical-type-filter no-padding">
+
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+
+                                <select class="form-control technical-type-parent no-padding" name = "parentId">
+
+                                </select>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                    <!--<div class="col-md-6">-->
+<!--                        <div class="form-group">
+                            
+                        </div>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <label for="add-number">Adı</label>
+                        <div class="prepend-icon">
+                            <input technical-required id="add-technical-name"  class="form-control no-padding" name = "name"/>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-number">Sahəsi</label>
+                        <div class="prepend-icon">
+                            <input id="add-technical-area"  class="form-control no-padding" name = "area"/>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-number">Tutumu</label>
+                        <div class="prepend-icon">
+                            <input technical-required id="add-technical-volume"  class="form-control no-padding" name = "volume"/>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Yaranma tarixi</label>
+                        <div class="prepend-icon">
+                            <input id="technical-start-date" class="form-control datepicker no-padding" data-date-format="dd/mm/yyyy" name = "startDate"/>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Dəyişmə tarixi</label>
+                        <div class="prepend-icon">
+                            <input id="technical-end-date" class="form-control datepicker no-padding" data-date-format="dd/mm/yyyy" name = "endDate"/>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Təyinat</label>
+                        <div class="prepend-icon">
+                            <select name = "subjects" id="appointment-subject" class="form-control" data-required multiple="multiple">
+
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+<!--                 <div class="modal-footer flex-img">
+                    <button data-i18n="ok" doc-confirm type="button" class="btn btn-primary add-technical-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/modal_drag.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $('body').find('.table-scroll').slimScroll();
+        Hsis.i18n();
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+            Hsis.Proxy.getTechnicalBaseList();
+            
+        });
+        $('body').on('click', '.close-student-search', function(){
+            $('.add-new').css('right', '-100%');
+        });
+
+        $('#main-div .sub_modules_div').remove();
+       // $('.module-list').find('li[data-id=1000094].sub-module-con').fadeIn();
+         $('.module-list').find('.sub-module-con').remove();
+      Hsis.Proxy.loadSubModules(1000094, function (data) {
+          var html = '<div class="sub_modules_div"><div class="sub_modules" >';
+
+          if (data) {
+              if (data.code == Hsis.statusCodes.OK) {
+                  if (data.data) {
+
+                    var testArray = [];
+                    var testHtml;
+                    var curH;
+                    $('.module-list').find('li.active').append('<div class="sub-module-con"></div>')
+                    $.each(data.data, function(i, v){
+                        if($.inArray(v.typeId, testArray) == -1){
+                             testArray.push(v.typeId);
+                             testHtml = '<div data-type="'+ v.typeId +'" class="sub-module-group"></div>'
+                        
+                             $('.module-list').find('li.active .sub-module-con').append(testHtml)
+                           
+                             curH = $('body').find('div.sub-module-group[data-type="'+ v.typeId +'"]');
+                        
+                             curH.append('<div class="chekbox-con"><input type="checkbox" checked="checked" data-type-id="'+ v.typeId +'" value="'+ v.id +'" id="id_'+ v.id +'" data-type-id="'+ v.typeId +'"><label for="id_'+ v.id +'" data-parent="'+ v.parentId +'">'+ v.name.az +'</label></div>')
+                        
+                        }else{
+                            curH = $('body').find('div.sub-module-group[data-type="'+ v.typeId +'"]');
+                        
+                            curH.append('<div class="chekbox-con"><input type="checkbox" checked="checked" data-type-id="'+ v.typeId +'" value="'+ v.id +'" id="id_'+ v.id +'" data-type-id="'+ v.typeId +'"><label for="id_'+ v.id +'" data-parent="'+ v.parentId +'">'+ v.name.az +'</label></div>')
+                            
+
+
+                        }
+                        
+
+                    })
+                    
+                      var subModuleGroups = $('.module-list').find('li.active .sub-module-group');
+                      $.each(subModuleGroups, function(i, v){
+                          $(this).prepend('<p>Group '+ (++i) +'</p>')
+                          
+
+                      })
+                        $.each(data.data, function (i, v) {
+                            html += '<li data-parent="' + v.parentId + '"  data-id = "' + v.id + '" class="sub-module-item sub_module_' + v.id + '"><a href="#">' +
+                                    '<span class="state-icon radio-check"></span>' +
+                                    '<span class="m-l-10">' + v.name[Hsis.lang] + '</span>' +
+                                    '<input type-id="' + v.typeId + '" value="' + v.id + '" class="hidden" type="checkbox">' +
+                                    '</a></li>'
+
+                        })
+                        html += '</div></div>'
+                        $('#main-div .sidebar-menu .module .mod-con').append(html);
+
+                        var subModuleId = [];
+                        var params = $('.main-content-upd .group-search-form').serialize();
+
+                        if ($('.sub_modules :checkbox')) {
+                            $.each($('.sub_modules :checkbox'), function () {
+                                subModuleId.push($(this).val());
+
+                            });
+                            Hsis.subModuleId = subModuleId;
+
+                            if (subModuleId.length > 0) {
+                                $('.btn-load-more').removeAttr('data-page');
+                                var text = Hsis.tempData.form != "" ? Hsis.tempData.form : params + '&subModuleId=' + subModuleId;
+                                Hsis.Proxy.loadAcademicGroups('', text );
+                            }
+
+                        }
+                    }
+                }
+            }
+        })
+        
+        
+        $('#academicGroupTree .modal-content').draggable({
+            cancel: '.scrollable'
+        });
+
+
+        $('#main-div').on('click', '#org-list', function (event) {
+            try {
+                $('#academicGroupTree').modal({
+                    backdrop: false
+                });
+
+                var treeObj = $(':jstree').length;
+//                if (treeObj == 0) {
+                    if ($('#org-list-tree').attr('data-check') !== '1') {
+                        Hsis.Proxy.loadOrgTreeByType(1000700, function (tree) {
+                            Hsis.Service.commonParseTree(tree, 'org-list-tree');
+                            $('.tree-preloader').remove();
+                        }, $('#org-list-tree'));
+                        var searchString = $('#main-div .tree-search').val();
+                        $('#org-list-tree').jstree('search', searchString);
+                    }
+//                }
+                ;
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        Hsis.Proxy.loadOrgTreeByType(1000700, function (tree) {
+                    Hsis.Service.commonParseTree(tree, 'org-list-accordion');
+        }, $('#org-list-accordion'));
+        
+        $("#main-div #org-list-accordion").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingOne').attr('data-node-id', data.node.id);
+                $('#headingOne').attr('data-node-text', path);
+                $('#university-list-h6').text(path);
+                $('#main-div .structure-id').val(data.node.id);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#org-list-tree').jstree('search', searchString);
+        });
+
+
+
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#org-list-tree li[aria-selected="true"]').attr('id');
+                var text = $('#org-list-tree li[aria-selected="true"]').find('a:first').text();
+                if (text.length > 0) {
+                    $('.btn.group-tree-modal').text(text);
+                    $('.btn.group-tree-modal').attr('data-id', id);
+                    $('#academicGroupTree').modal('hide');
+
+                    if (id !== 0) {
+                        $('.main-content-upd .technical-search-form input[name="orgId"]').val(id);
+                    }
+                    else {
+                        $('.main-content-upd .technical-search-form input[name="orgId"]').val('');
+                    }
+                    var params = $('.main-content-upd .technical-search-form').serialize();
+                    Hsis.Proxy.getTechnicalBaseList('',params);
+                    $('.btn-load-more').removeAttr('data-page');
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+            }
+            catch (err) {
+
+            }
+        });
+
+        
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000059, 0, function (technicalType) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+            $.each(technicalType, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.technical_type').html(html);
+            
+        });
+        
+        Hsis.Proxy.loadDictionariesByTypeId(1000059, 0, function (technicalType) {
+            
+            $('.technical-type').html(Hsis.Service.parseDictionaryForSelect(technicalType));
+            $('.technical-type-filter').html(Hsis.Service.parseDictionaryForSelect(technicalType));
+            $('.add-technical-type').html(Hsis.Service.parseDictionaryForSelect(technicalType));
+        });
+    });
+
+    $('#main-div').on('click', '.technical_type li', function (e) {
+        try {
+            var technicalType = $(this).attr('data-id');
+            if (technicalType !== 0) {
+                $('.main-content-upd .technical-search-form input[name="typeId"]').val(technicalType);
+            }
+            else {
+                $('.main-content-upd .technical-search-form input[name="typeId"]').val('');
+            }
+            $('.btn-load-more').removeAttr('data-page');
+            var params = $('.main-content-upd .technical-search-form').serialize()
+            Hsis.Proxy.getTechnicalBaseList('', params);
+            $('.btn-load-more').removeAttr('data-page');
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+    });
+
+    $('.datepicker').datepicker();
+    
+    
+    
+    $('#technical_number_search').on('change', function() {
+        var number = $(this).val();
+        $('.btn-load-more').removeAttr('data-page');
+        $('.main-content-upd .technical-search-form input[name="name"]').val(number);
+        var params = $('.main-content-upd .technical-search-form').serialize()
+        Hsis.Proxy.getTechnicalBaseList('', params);
+    })
+    
+    Hsis.Proxy.loadDictionariesByTypeId('1000038',0, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div #appointment-subject').html(html);
+            $('#main-div #appointment-subject option[value="0"]').remove();
+            $('.prepend-icon span').attr('style','padding-left:0px !important;')
+            $('.select2-container .select2-selection--multiple').attr('style','min-height:100px;padding-left:0px !important;')
+    });
+    
+    $('#appointment-subject').select2();
+    
+    $('.technical-type-filter').on('change', function() {
+        var id = $(this).val();
+        
+        Hsis.Proxy.getTechnicalBaseByTypeId(id, function (data) {
+            
+            var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>';
+            if (data && data.data) {
+                $.each(data.data, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+
+            }
+            $('.technical-type-parent').html(html);
+            
+        });
+    })
+
+</script>

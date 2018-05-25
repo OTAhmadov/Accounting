@@ -1,0 +1,994 @@
+
+
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <!--<a data-i18n="ok" id="confirmStudent" >OK</a>-->
+        <a href="" data-i18n="close" class="close-payment-add">Bağla</a>
+    </div>
+    <div class="col-md-12">
+        <div class="">
+            <div class="panel-heading">
+                <h3 data-i18n="main_info" class="panel-title">Main info</h3>
+                <!--<a href="#" class="save-button"><img src="assets/img/save-icon.png" alt="Save" width="20" height="20">-->
+                <!--</a>-->
+            </div>
+<!--            <div class="panel-body flex-panel">
+
+            </div>-->
+            <div class="panel-body" style="padding: 0">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="" for="">İxtisas</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="" class="form-control" id="pelc_spec_name" placeholder="" data-required disabled>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal  student-relationship-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="relation_info" class="modal-title">Relationship</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label  data-i18n="relation_type">Relationship type</label>
+                    <div class="prepend-icon">
+                        <select relation-required id="relation_type_id" class="form-control action-type">
+
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label data-i18n="name">Full name</label>
+                    <div class="prepend-icon">
+                        <input relation-required id="relation_fullname" type="text" class="form-control"/>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact_number">Contact number</label>
+                    <div class="prepend-icon">
+                        <input relation-required id="relation_contact" type="text" class="form-control" />
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok"  class="btn btn-primary relation_submit">OK</button>
+                <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="three-tabs col-md-12 panel-title">
+    <ul class="nav  col-md-12">
+        <li  class="col-sm-12 active">
+            <a data-toggle="tab" href="#tab1" class="spec-add-tab">
+                <span data-i18n="" class="panel-body" style="padding: 0">Məbləğ əlavə et</span>
+                <div class="add-payment"><img id="add_contact" src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="add_spec_payment_modal" class="modal " >
+    <div class="modal-dialog" >
+        <div  class="modal-content">
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="contacts" class="modal-title">Contacts</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body" style="padding: 0">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label data-i18n="" for="">Başlanğıc</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="" data-required id="start_date" type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="form-group">
+                                <label data-i18n="" for="">Bitiş</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="" data-required id="end_date" type="text" class="form-control" placeholder="">
+                                   </div>
+                            </div>
+                                </div>
+                            <div class="col-md-4">
+                            <div class="form-group">
+                                <label data-i18n="" for="">Məbləğ</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="" data-required id="amount" type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" confirm type="button" class="btn btn-primary" id="confirm_spec_payment">OK</button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="spec-payment-info">
+            <div class="col-md-12">
+                    <div id="append_payed_spec" class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+            </div>
+        </div>
+<script>
+
+    $(function () {
+        Accounting.i18n(Accounting.lang);
+//        Accounting.Proxy.getProfessions(function(data) {
+//            if(data){
+//                var result = data.data
+//            var html = '';
+//                    html = '<option value="0">'+Accounting.dictionary[Accounting.lang]["select"]+'</option>';
+//                    $.each(result, function(i, v){
+//                        html += '<option value = "' + v.id + '">' + v.name[Accounting.lang] + '</option>'
+//                    });
+//                    $('#ixtisas').html(html);
+//            }    
+//        });
+        
+        Accounting.Proxy.getEduYears(function (years) {
+            if (years) {
+                var html = '<option value="0">' + Accounting.dictionary[Accounting.lang]["select"] + '</option>';
+                $.each(years, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Accounting.lang] + '</option>';
+                });
+                $('#education_time').html(html);
+            }
+        });
+        cropForm = new FormData();
+        $('.datepicker').datepicker();
+        $('.progress-backdrop').removeClass('hidden');
+        // $('#modalOrgtree .modal-content, .tree-modal-container .modal-content').draggable({
+        //     cancel: '.scrollable'
+        // });
+        
+        $('body').on('click', '.close-student-search', function(){
+            $('.add-new').css('right', '-100%');
+        });
+
+        $('#order').select2({
+            placeholder: Accounting.dictionary[Accounting.lang]["select"],
+            language: {
+                noResults: function () {
+                    return Accounting.dictionary[Accounting.lang]["no_information"];
+                }
+            }
+        });
+
+
+        if (!$('#main-div').attr('data-check-work')) {
+            Accounting.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+                var html = Accounting.Service.parseDictionaryForSelect(citizenship);
+                $('#main-div #citizenship').html(html);
+            });
+
+            Accounting.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+                var html = Accounting.Service.parseDictionaryForSelect(gender);
+                $('#main-div #gender').html(html);
+            });
+
+            Accounting.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+                var html = Accounting.Service.parseDictionaryForSelect(maritalStatus);
+                $('#main-div #marital_status').html(html);
+            });
+        }
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000010', 0, function (disabilityDegree) {
+            var html = Accounting.Service.parseDictionaryForSelect(disabilityDegree);
+            $('#main-div #disability_degree').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000006', 0, function (nationality) {
+            var html = Accounting.Service.parseDictionaryForSelect(nationality);
+            $('#main-div #nationality').html(html);
+        });
+
+        $('#main-div').removeAttr('data-check-work');
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000002', '1000072', function (eduOrg) {
+            var html = Accounting.Service.parseDictionaryForSelect(eduOrg);
+            $('#main-div #eduOrg').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+            var html = Accounting.Service.parseDictionaryForSelect(maritalStatus);
+            $('#main-div #marital_status').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000008', 0, function (militaryStatus) {
+            var html = Accounting.Service.parseDictionaryForSelect(militaryStatus);
+            var militaryStatus = $('#main-div #military_status');
+            militaryStatus.html(html);
+            militaryStatus.find('option[value="0"]').prop('selected', true);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000009', 0, function (socialStatus) {
+            var html = Accounting.Service.parseDictionaryForSelect(socialStatus);
+            var socialStatus = $('#main-div #social_status');
+            socialStatus.html(html);
+            socialStatus.find('option[value="0"]').prop('selected', true);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000013', 0, function (orphanDegree) {
+            var html = Accounting.Service.parseDictionaryForSelect(orphanDegree);
+            var orphanDegree = $('#main-div #orphan_degree');
+            orphanDegree.html(html);
+            orphanDegree.find('option[value="0"]').prop('selected', true);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+            var html = Accounting.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div #edu_level').html(html);
+            $('#main-div #past_edu_level').html(html);
+            $('#main-div #edit_uni_action_edu_level').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000011', 0, function (contactType) {
+            var html = Accounting.Service.parseDictionaryForSelect(contactType);
+            $('#main-div #contact_type').html(html);
+        });
+
+//        Accounting.Proxy.loadDictionariesByTypeId('1000025',0, function (actionType) {
+//            var html = Accounting.Service.parseDictionaryForSelect(actionType);
+//            $('#main-div #action_type').html(html);
+//        })
+
+
+
+        Accounting.Proxy.loadAddressTree(function (addressTree) {
+            Accounting.Service.commonParseTree(addressTree, 'permanent_address_tree');
+            Accounting.Service.commonParseTree(addressTree, 'temporary_address_tree');
+            Accounting.Service.commonParseTree(addressTree, 'birth_place_tree');
+            Accounting.Service.commonParseTree(addressTree, 'address_tree_id');
+            Accounting.Service.commonParseTree(addressTree, 'address-tree-id');
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000032', 0, function (eduLine) {
+            var html = Accounting.Service.parseDictionaryForSelect(eduLine);
+            $('#main-div #edu_line').html(html);
+            $('#main-div #past_edu_line').html(html);
+            $('#main-div #edit_uni_action_edu_line').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduType) {
+            var html = Accounting.Service.parseDictionaryForSelect(eduType);
+            $('#main-div #edu_type').html(html);
+            $('#main-div #past_edu_type').html(html);
+            $('#main-div #edit_uni_action_edu_type').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+            var html = Accounting.Service.parseDictionaryForSelect(eduLang);
+            $('#main-div #edu_lang').html(html);
+            $('#main-div #past_edu_lang').html(html);
+            $('#main-div #edit_school_lang').html(html);
+            $('#main-div #edit_uni_action_edu_lang').html(html);
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000028', 0, function (eduPaytype) {
+            var html = Accounting.Service.parseDictionaryForSelect(eduPaytype);
+            $('#main-div #edu_pay_type').html(html);
+            $('#main-div #past_edu_pay_type').html(html);
+            $('#main-div #edit_uni_action_edu_pay_type').html(html);
+        });
+        
+//        Hsis.Proxy.getOrderDocumentsByType('1000260',Accounting.structureId,function(order) {
+//            if(order) {
+//                var html = '<option value="0">'+Accounting.dictionary[Accounting.lang]["select"]+'</option>';
+//                var st = '';
+//                $.each(order,function(i,v) {
+//                    st = v.startDate==null?'':'-'+(v.startDate).toString().slice(6,10);
+//                    html += '<option value="'+v.id+'">'+v.serial+v.number+st+'</option>';
+//                });
+//                $('#order').html(html);
+//            }
+//            
+//        });
+
+
+
+        Accounting.Proxy.loadAdressTypes('1000051', function (country) {
+            var html = Accounting.Service.parseDictionaryForSelect(country);
+            $('#main-div #student-search-city').html(html);
+        });
+
+
+        $('body').on('change', '#student-search-city', function(){
+            var id = $(this).val();
+            Accounting.Proxy.loadAdressTypes(id, function (country) {
+                var html = Accounting.Service.parseDictionaryForSelect(country);
+                $('#main-div #student-search-district').html(html);
+            });
+        });
+
+        $('body').on('change', '#student-search-district', function(){
+            var id = $(this).val();
+            Accounting.Proxy.loadAdressTypes(id, function (country) {
+                var html = Accounting.Service.parseDictionaryForSelect(country);
+                $('#main-div #student-search-street').html(html);
+            });
+        });
+
+
+        $('body').on('change', '.place-select', function(){
+
+            var cityId = $('body').find('#student-search-city option:selected').val();
+            var districtId = $('body').find('#student-search-district').val();
+            var streetId = $('body').find('#student-search-street').val();
+
+            var id = (!streetId || streetId == 0) ? ((!districtId || districtId == 0) ? cityId : districtId) : streetId;
+
+            Accounting.Proxy.getStructureListByAdress(id, function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    
+                    html = '<option value = "0">' + Accounting.dictionary[Accounting.lang]["select"] +'</option>'
+                    $.each(data.data, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.value[Accounting.lang]+'</option>'
+                    })
+                    $('#edu_org_list').html(html)
+
+                }
+            })
+              
+
+         
+        });
+
+        $("#main-div #permanent_address_tree").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#permanent_address').attr('data-node-id', data.node.id);
+                $('#permanent_address').attr('data-node-text', path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        $('body').on('click', '#get_permanent_address', function (e) {
+            try {
+                var street = $('#permanent_street').val().trim();
+                if ($('#permanent_address').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#permanent_address').attr('data-node-text');
+                    if (street.length > 0) {
+                        $('#permanent_address').text(nodeText + ',' + street);
+                        $('#permanent_address').attr('data-street', street);
+                        $('.tree-modal-container .modal-content').addClass('hidden');
+                    }
+                    else {
+                        $.notify(Accounting.dictionary[Accounting.lang]['fill_street'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                else {
+                    $.notify(Accounting.dictionary[Accounting.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#main-div #temporary_address_tree").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#temporary_address').attr('data-node-id', data.node.id);
+                $('#temporary_address').attr('data-node-text', path);
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        $('body').on('click', '#get_temporary_address', function (e) {
+            try {
+                var street = $('#temporary_street').val().trim();
+                if ($('#temporary_address').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#temporary_address').attr('data-node-text');
+                    if (street.length > 0) {
+                        $('#temporary_address').text(nodeText + ',' + street);
+                        $('#temporary_address').attr('data-street', street);
+                        $('.tree-modal-container .modal-content').addClass('hidden');
+                    }
+                    else {
+                        $.notify(Accounting.dictionary[Accounting.lang]['fill_street'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                else {
+                    $.notify(Accounting.dictionary[Accounting.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#birth_place_tree").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#birth_place').attr('data-node-id', data.node.id);
+                $('#birth_place').attr('data-node-text', path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('body').on('click', '#get_birth_place', function (e) {
+            try {
+                if ($('#birth_place').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#birth_place').attr('data-node-text');
+                    $('#birth_place').text(nodeText);
+                    $('.tree-modal-container .modal-content').addClass('hidden');
+                }
+                else {
+                    $.notify(Accounting.dictionary[Accounting.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('[data-dismiss="modal"]').on('click', function (event) {
+            $('.modal').modal('hide');
+        });
+
+        $('body').on('click', '#permanent_address', function (event) {
+            try {
+                $('[permanent-address] .modal-content').removeClass('hidden');
+                $('body').find('.scrollable .jstree').slimScroll();
+                $('[permanent-address] .close').on('click', function (e) {
+                    $('[permanent-address] .modal-content').addClass('hidden');
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('body').on('click', '#temporary_address', function (event) {
+            try {
+                $('[temporary-address] .modal-content').removeClass('hidden');
+                $('body').find('.scrollable .jstree').slimScroll();
+                $('[temporary-address] .close').on('click', function (e) {
+                    $('[temporary-address] .modal-content').addClass('hidden');
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('body').on('click', '#birth_place', function (event) {
+            try {
+                $('[birth-place] .modal-content').removeClass('hidden');
+                $('body').find('.scrollable .jstree').slimScroll();
+                $('[birth-place] .close').on('click', function (e) {
+                    $('[birth-place] .modal-content').addClass('hidden');
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $(".tree-search1").keyup(function () {
+            try {
+                var searchString = $(this).val();
+                var inputId = $(this).attr('data-tree-id');
+                $('#' + inputId).jstree('search', searchString);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+
+        //Img upload 'close-button' events
+        $('.user-photo .fa.fa-close').on('click', function (e) {
+            var thumbImg = $(this).closest('.user-photo').find('.thumbnail img')[0];
+            if (thumbImg) {
+                thumbImg.src = 'assets/img/guest.png';
+            }
+            else {
+                $(this).closest('.user-photo').find('.thumbnail').html('<img src="assets/img/guest.png">');
+            }
+            $(this).closest('.user-photo').find('.fileinput.fileinput-exists').removeClass('fileinput-exists').addClass('fileinput-new');
+        });
+
+        //"No information available" message
+        $(document).ajaxStop(function (e) {
+            var tabs = $('.tab-content').children();
+            tabs.each(function (i, v) {
+                var panels = $(v).children();
+                panels.each(function (i, v) {
+                    if ($(v).find('.panel-body').children().length == 0 || ($(v).find('.panel-body').children().length == 1 && $(v).find('.panel-body').children().is('.modal')))
+                        $(v).find('.panel-body').append('<div class="blank-panel"><h3>' + Accounting.dictionary[Accounting.lang]['no_information'] + '</h3></div>');
+                });
+            })
+        });
+
+        $(document).on('change', '.for-align.doc-item label input', function (e) {
+            var fileNames = '';
+            var self = this;
+
+            $.each(self.files, function (i, v) {
+                if (i != self.files.length - 1) {
+                    fileNames += self.files[i].name + ', ';
+                }
+                else {
+                    fileNames += self.files[i].name;
+                }
+
+            });
+            $(this).closest('label').find('span').text(fileNames);
+        });
+
+
+        $('[data-target="#myModalTree"]').on('click', function (e) {
+            $('#myModalTree').appendTo('body');
+        });
+
+        $("#address-tree-id").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#school_address').attr('data-node-id', data.node.id);
+                $('#school_address').attr('data-node-text', path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#address_tree_id").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingEduOrg').attr('data-node-id', data.node.id);
+                $('#headingEduOrg').attr('data-node-text', path);
+                $('#edu_org_address_h6').text(path);
+                $('#collapseEduOrg').removeClass('in');
+                var orgId = $('#eduOrg').find('option:selected').val();
+                var structureId = Accounting.structureId ? Accounting.structureId : 0;
+                Accounting.Proxy.getFilteredStructureList(structureId, orgId, data.node.id, function (eduOrg) {
+                    var html = '<option value="0">' + Accounting.dictionary[Accounting.lang]['select'] + '</option>';
+                    if (eduOrg) {
+                        $.each(eduOrg, function (i, v) {
+                            html += '<option  value="' + v.id + '">' + v.name[Accounting.lang] + '</option>';
+                        });
+
+                    }
+                    $('#edu_org_list').html(html);
+                }, 1);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('body').on('click', '#get_school_address', function (e) {
+            try {
+                if ($('#school_address').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#school_address').attr('data-node-text');
+                    $('#school_address').text(nodeText);
+                    $('#myModalTree').modal('hide');
+                    var addressTreeId = $('#school_address').attr('data-node-id');
+                    if (addressTreeId) {
+                        Accounting.Proxy.getFilteredStructureList(Accounting.structureId, '1000056', addressTreeId, function (schools) {
+                            var html = '<option value="0">' + Accounting.dictionary[Accounting.lang]['select'] + '</option>';
+                            if (schools) {
+                                $.each(schools, function (i, v) {
+                                    html += '<option value="' + v.id + '">' + v.name[Accounting.lang] + '</option>';
+                                })
+                            }
+                            ;
+                            $('#schoolId').html(html);
+                        }, 1);
+                    }
+                }
+                else {
+                    $.notify(Accounting.dictionary[Accounting.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        Accounting.Proxy.loadDictionariesByTypeId('1000014', 0, function (members) {
+            var html = Accounting.Service.parseDictionaryForSelect(members);
+            $('#relation_type_id').html(html);
+        });
+
+        var pin = $('#main-div').attr('pin');
+        
+//        Accounting.Proxy.getStudentInfoByTQDK(pin, function (data1) {
+//            if (data1 && data1.code == Accounting.statusCodes.OK && data1.data) {
+//                var data2 = data1.data;
+//                $('#main-div #birthdate').val(data2.birthDate).attr('disabled', 'disabled');
+//                $('#main-div #citizenship').attr('disabled', 'disabled').find('option[value="' + data2.citizenship.id + '"]').attr('selected', 'selected');
+//                $('#main-div #gender').attr('disabled', 'disabled').find('option[value="' + data2.gender.id + '"]').attr('selected', 'selected');
+//                $('#main-div #edu_lang').attr('disabled', 'disabled').find('option[value="' + data2.eduLangId.id + '"]').attr('selected', 'selected');
+//                $('#main-div #edu_type').attr('disabled', 'disabled').find('option[value="' + data2.eduType.id + '"]').attr('selected', 'selected');
+//                $('#main-div #edu_pay_type').attr('disabled', 'disabled').find('option[value="' + data2.eduPayType.id + '"]').attr('selected', 'selected');
+//                $('#main-div #edu_level').attr('disabled', 'disabled').find('option[value="' + data2.eduLevel.id + '"]').attr('selected', 'selected');
+//
+//                Accounting.Proxy.getFilteredStructureList(Accounting.structureId, data2.eduLevel.id, 0, function (specialities) {
+//                    if (specialities) {
+//                        var html = '<option value="0">' + Accounting.dictionary[Accounting.lang]['select'] + '</option>';
+//                        $.each(specialities, function (i, v) {
+//                            html += '<option value="' + v.id + '">' + v.name[Accounting.lang] + '</option>'
+//                        })
+//                    }
+//                    $('#main-div #orgId').html(html);
+//                   // $('#main-div #orgId').attr('disabled', 'disabled');
+//                    $('#main-div #orgId').find('option[value="' + data2.curOrgId.id + '"]').attr('selected', 'selected');
+//                    var specId = $('#orgId').find('option:selected').val();
+//                    var eduLevel = $('#edu_level').find('option:selected').val();
+//                    if (specId > 0 && eduLevel =='1000604') {
+//                        $('.sub_speciality').removeClass('hidden');
+//                        Accounting.Proxy.getFilteredStructureList(specId, '1002306', 0, function (subSpeciality) {
+//                            var html = '<option value="0">' + Accounting.dictionary[Accounting.lang]['select'] + '</option>';
+//                            if (subSpeciality) {
+//                                $.each(subSpeciality, function (i, v) {
+//                                    html += '<option  value="' + v.id + '">' + v.name[Accounting.lang] + '</option>';
+//                                });
+//
+//                            }
+//                            $('#sub_speciality').html(html);
+//                            $('.sub_speciality').removeClass('hidden');
+//                        });
+//                    }
+//                });
+//                $('#main-div #apply_score').val(data2.score).attr('disabled', 'disabled');
+////                    $('#main-div #action_date').val(data2.actionDate).attr('disabled', 'disabled');
+//            }
+//
+//        })
+
+
+        $('body').on('change', '#citizenship', function(){
+            var id = $(this).val();
+            if(id == 1000118){
+                $('body').find('input.new-add-doc-file').removeAttr('data-required');
+            }else{
+                $('body').find('input.new-add-doc-file').attr('data-required', '');                
+            }
+        });
+        
+        $('.modal').on('shown.bs.modal', function() {
+            $('select option:nth-child(1)').attr('disabled', 'disabled');
+        })
+        
+        
+//        $('#main-div').off('click').on('click', '#confirmStudent', function (e) {
+//            try {
+//                var formData = new FormData();
+//                var allValid = true;
+//                
+//                if(Accounting.Validation.validateRequiredFields('data-required') && Accounting.begin) {
+//                    Accounting.begin = false;
+//                    var student = {
+//                        pinCode: $('#main-div #pincode').val().trim(),
+//                        firstName: $('#main-div #firstname').val().trim(),
+//                        lastName: $('#main-div #lastname').val().trim(),
+//                        middleName: $('#main-div #middlename').val().trim(),
+//                        birthDate: $('#main-div #birthdate').val().trim(),
+//                        genderId: $('#main-div #gender').find('option:selected').val(),
+//                        citizenshipId: $('#main-div #citizenship').find('option:selected').val(),
+//                        socialStatusId: $('#main-div #social_status').find('option:selected').val(),
+//                        maritalStatusId: $('#main-div #marital_status').find('option:selected').val(),
+//                        orphanDegreeId: $('#main-div #orphan_degree').find('option:selected').val(),
+//                        militaryServiceId: $('#main-div #military_status').find('option:selected').val(),
+//                        nationalityId: $('#main-div #nationality').find('option:selected').val(),
+//                        disabilityDegree: $('#main-div #disability_degree').find('option:selected').val(),
+//                        addresses: [],
+//                        contacts: [],
+//                        documents: [],
+//                        relations: [],
+//                        eduLifeCycle: [],
+//                        token: Accounting.token,
+//                        operationId: Accounting.operationList[0].id
+//                    };
+//
+//
+//                    var index = 1;
+//
+//                    $('#main-div .add-doc-block .doc-item').each(function (e) {
+//                        student.documents.push({
+//                            id: index,
+//                            type: $(this).find('.add-doc-type').attr('data-id'),
+//                            serial: $(this).find('.add-doc-serial').text(),
+//                            number: $(this).find('.add-doc-number').text(),
+//                            startDate: $(this).find('.add-doc-start-date').text(),
+//                            endDate: $(this).find('.add-doc-end-date').text(),
+//                            documentType: $(this).parents('.panel-body').attr('data-doc-type')
+//                        });
+//
+//
+//                        if ($(this).find('.new-add-doc-file')[0].files) {
+//                            var wrongFiles = '';
+//                            var length = $(this).find('.new-add-doc-file')[0].files.length;
+//                            if (length <= 5) {
+//                                for (var i = 0; i < length; i++) {
+//                                    var files = $(this).find('.new-add-doc-file')[0].files;
+//                                    if (Accounting.Validation.checkFile(files[i].type, fileTypes.FILE_CONTENT_TYPE)) {
+//                                        if (files[i].size > 5 * 1024 * 1024) {
+//
+//                                            $.notify(files[i].name + Accounting.dictionary[Accounting.lang]['exceed_volume'], {
+//                                                type: 'warning'
+//                                            });
+//                                        }
+//                                        else {
+//                                            cropForm.append('doc_' + index, $(this).find('.new-add-doc-file')[0].files[i]);
+//                                        }
+//                                    }
+//                                    else {
+//                                        wrongFiles += wrongFiles != '' ? ', ' + files[i].name : files[i].name;
+//
+//                                    }
+//                                }
+//                                if (wrongFiles != '') {
+//                                    $.notify(Accounting.dictionary[Accounting.lang]['wrong_format'] + wrongFiles, {
+//                                        type: 'warning'
+//                                    });
+//                                    allValid = false;
+//
+//                                }
+//                            }
+//                            else {
+//                                $.notify(Accounting.dictionary[Accounting.lang]['file_limit'], {
+//                                    type: 'warning'
+//                                });
+//                                allValid = false;
+//                            }
+//
+//                        }
+//
+//                        index++;
+//                    });
+//
+//                    $('#main-div #append_contact table').each(function () {
+//                        var contact = {};
+//                        contact.typeId = $(this).find('tbody tr').attr('data-type-id');
+//                        contact.contact = $(this).find('tbody tr').attr('data-contact');
+//                        student.contacts.push(contact);
+//                    });
+//
+//                    $('#main-div button[data-address]').each(function () {
+//                        if (this.hasAttribute('data-node-id')) {
+//                            var address = {};
+//                            address.typeId = $(this).attr('data-type-id');
+//                            address.treeId = $(this).attr('data-node-id');
+//                            address.address = this.hasAttribute('data-street') ? $(this).attr('data-street') : '';
+//                            student.addresses.push(address);
+//                        }
+//                    });
+//
+//                    e.preventDefault();
+//
+//                    var subValue = $('#sub_speciality').find('option:selected').val();
+//                    var edu = {
+//                        //actionTypeId: $('#action_type').find('option:selected').val(),
+//                        actionTypeId: 1000260,
+//                        actionDate: $('#action_date').val().trim(),
+//                        orgId: (typeof subValue !== undefined && subValue > 0) ? subValue : $('#orgId').find('option:selected').val(),
+//                        orgName: '', //$('#org_name').val().trim(),
+//                        applyScore: $('#apply_score').val().trim(),
+//                        cardNo: $('#student_card_no').val().trim(),
+//                        note: $('#note').val(),
+//                        eduLineId: $('#edu_line').find('option:selected').val(),
+//                        eduTypeId: $('#edu_type').find('option:selected').val(),
+//                        edupayTypeId: $('#edu_pay_type').find('option:selected').val(),
+//                        eduLangId: $('#edu_lang').find('option:selected').val(),
+//                        eduLevelId: $('#edu_level').find('option:selected').val(),
+//                        eduBlock: 'academic',
+//                        status: 1000341,
+//                        endActionTypeId: 0,
+//                        endActionDate: '',
+//                        orderId: $('#order').find('option:selected').val()
+//                    };
+//
+//                    student.eduLifeCycle.push(edu);
+//
+//                    $('#main-div .relationship-item').each(function () {
+//                        var tr = $(this).find('tbody tr');
+//                        var relationTypeId = tr.attr('data-type-id');
+//                        var fullname = tr.attr('data-value');
+//                        var contactNumber = tr.attr('data-contact-no');
+//                        if (relationTypeId > 0 && fullname.trim().length > 0 && contactNumber.trim().length > 0) {
+//                            var relative = {
+//                                typeId: relationTypeId,
+//                                fullName: fullname,
+//                                contactNumber: contactNumber
+//                            };
+//                            student.relations.push(relative);
+//                        }
+//
+//
+//
+//                    });
+//
+//                    cropForm.append('student', new Blob([JSON.stringify(student)], {
+//                        type: "application/json"
+//
+//                    }));
+//                    
+//                    
+//                    
+//                    if (allValid) {
+//                        Accounting.Proxy.addStudent(cropForm, function (personId) {
+//                            if (personId > 0) {
+//                                
+//                                cropForm = new FormData();
+//                                $('#main-div').attr('data-id', personId);
+//                                Accounting.personId = personId;
+//                                $("#main-div div.past_edu_info").removeClass("hidden");
+//                                $('#main-div #confirmStudent').remove();
+//                                var queryparams = $('#main-div .main-content-upd .student-search-form').serialize();
+//                                Accounting.Proxy.loadStudents('', queryparams + '&subModuleId=' + Accounting.subModuleId);
+//                                $.alert({
+//                                    title: Accounting.dictionary[Accounting.lang]['warning'],
+//                                    content: Accounting.dictionary[Accounting.lang]['add_past_edu'],
+//                                    theme: 'material'
+//                                });
+//                                
+//                            }
+//                            Accounting.begin = true; 
+//                        });
+//                    } else {
+//                        
+//                        Accounting.begin = true; 
+//                    }
+//
+//                }
+//            }
+//            catch (err) {
+//                console.error(err);
+//            }
+//        });
+        
+        $('body').on('click', '.add-new-relation-submit', function (e) {
+            try {
+                e.preventDefault();
+
+                var $obj = $('#main-div .student-relationships-div');
+                var fullname = $('#main-div #relation_fullname').val();
+                var contactNo = $('#main-div #relation_contact').val();
+                var relationTpeId = $('#main-div #relation_type_id').find('option:selected').val();
+                var relationTypeName = $('#main-div #relation_type_id').find('option:selected').text();
+                var html = '<div class="col-md-12 for-align relationship-item">' +
+                        '<table class="table-block col-md-12">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th>' + Accounting.dictionary[Accounting.lang]['relation_type'] + '</th>' +
+                        '<th>' + Accounting.dictionary[Accounting.lang]['name'] + '</th>' +
+                        '<th>' + Accounting.dictionary[Accounting.lang]['contact_number'] + '</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>' +
+                        '<tr data-value="' + fullname + '" data-contact-no="' + contactNo + '" data-type-id="' + relationTpeId + '">' +
+                        '<td>' + relationTypeName + '</td>' +
+                        '<td>' + fullname + '</td>' +
+                        '<td>' + contactNo + '</td>' +
+                        '</tr>' +
+                        '</tbody>' +
+                        '</table>' +
+                        '<div class="operations-button">' +
+                        '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+                        '<span class="glyphicon glyphicon-list"></span>' +
+                        '</div>' +
+                        '<ul class="dropdown-menu">' +
+                        '<li><a edit-new-relation="" data-contact="samir.hasanov@pashabank.az" data-type-id="1000158" href="#" class="edit">' + Accounting.dictionary[Accounting.lang]['edit'] + '</a></li>' +
+                        '<li><a delete-relation="" href="#" class="erase">' + Accounting.dictionary[Accounting.lang]['erase'] + '</a></li>' +
+                        '</ul>' +
+                        '</div>' +
+                        '</div>';
+
+                if ($('#main-div .student-relationships-div .blank-panel')) {
+                    $obj.find('.blank-panel').remove();
+                }
+
+                if (Accounting.Validation.validateRequiredFields('relation-required')) {
+                    $obj.find('.panel-body').append(html);
+                    $('#main-div .student-relationship-modal').modal('hide');
+                }
+
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $('body').on('click', 'a[edit-new-relation]', function (e) {
+            $('#main-div .relationship-item').removeClass('selected');
+            $('#main-div .student-relationship-modal .blank-required-field').removeClass('blank-required-field');
+            $(this).parents('.relationship-item').addClass('selected');
+            var tr = $(this).parents('.relationship-item').find('tbody tr');
+            e.preventDefault();
+            var fullname = tr.attr('data-value');
+            var contactNo = tr.attr('data-contact-no');
+            var relationTypeId = tr.attr('data-type-id');
+
+            $('#main-div #relation_fullname').val(fullname);
+            $('#main-div #relation_contact').val(contactNo);
+            $('#main-div #relation_type_id').find('option[value="' + relationTypeId + '"]').prop('selected', true);
+            $('#main-div .student-relationship-modal .relation_submit').addClass('edit-new-relation-submit').removeClass('add-new-relation-submit');
+            $('#main-div .student-relationship-modal').modal('show');
+        });
+        
+        $('body').on('click', '.edit-new-relation-submit', function (e) {
+            try {
+                var tr = $('#main-div .relationship-item.selected').find('tbody tr');
+                var fullname = $('#main-div #relation_fullname').val();
+                var contactNo = $('#main-div #relation_contact').val();
+                var relationTpeId = $('#main-div #relation_type_id').find('option:selected').val();
+                var relationTypeName = $('#main-div #relation_type_id').find('option:selected').text();
+                tr.attr('data-value', fullname);
+                tr.attr('data-contact-no', contactNo);
+                tr.attr('data-type-id', relationTpeId);
+                var html = '<td>' + relationTypeName + '</td>' +
+                        '<td>' + fullname + '</td>' +
+                        '<td>' + contactNo + '</td>';
+
+                if (Accounting.Validation.validateRequiredFields('relation-required')) {
+                    tr.html(html);
+                    $('#main-div .student-relationship-modal').modal('hide');
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+    });
+</script>
+
+

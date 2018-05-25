@@ -1,0 +1,377 @@
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="orgtree.organizations"" placeholder="TƏŞKILATI STRUKTUR" class="hed-title"></span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search"  type="search" placeholder="Search" class="search-tree">
+    
+        </div>
+
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="filters-block module_1000009">
+
+    <div class="btn-group">
+        <select class="form-control " name="" id="orgType"></select>
+    </div>
+    <div class="btn-group">
+        <select class="form-control " id="atm_type">
+
+        </select>
+    </div>
+    <div class="org-switch">
+        <a href="" data-i18n="tree" class="active tree-view"></a><a href="" data-i18n="list" class="list-view"></a>
+    </div>
+
+    <div class="btn btn-info btn-lg btn-group top clear_search hidden " title="Ətraflı axtarışı Təmizlə">
+        <span class="glyphicon glyphicon-remove"></span>
+    </div>
+</div>
+
+
+<div class="row main-row no-margin org-tree-main-div view-type">
+    <div class="row">
+    <div class=" col-sm-12 top tree-div-9">
+        <div class="panel panel-white table-scroll">
+            <div class="panel-body ss div-org">
+                <div class="row ">
+                    <div id="jstree" >
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4  top  tree-div-3">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+                <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+            </div>
+            <div class="col-xs-12 definition-list">
+                <dl class="dl-horizontal">
+                    <dt><span data-i18n="name">Ad</span>:</dt>
+                    <dd name=""></dd>
+                    <dt><span data-i18n="short_name">Qısa ad</span>:</dt>
+                    <dd short-name=""></dd>
+                    <dt><span data-i18n="type">Tip</span>:</dt>
+                    <dd type=""></dd>
+                    <dt><span data-i18n="created_date">Yaranma tarixi</span>:</dt>
+                    <dd start-date=""></dd>
+                    <dt><span data-i18n="closed_date">Bağlanma tarixi</span>:</dt>
+                    <dd closed-date=""></dd>
+                </dl>
+                <div id="priviledged">
+                    
+                </div>
+                <div class=" div-info">
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</div>
+<div class="row main-row no-margin  org-list-main-div view-type" >
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 top p-l-0">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="orgtree.organizations" class="panel-title">Organizations</h3>
+            </div>
+            <div class="panel-body ss div-org table-responsive">
+
+                <table id="tree_list_table" class="table table-hover table-celled" style="display:table;table-layout:fixed;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Adı</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 top p-r-0">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+            </div>
+            <div class="panel-body ss table-responsive">
+
+
+                <table id="tree_list_child_table" class="table table-hover table-celled">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Adı</th>
+                            <th>Tipi</th>
+                            <!--<th>Asılılıq</th>-->
+                            <th>Kod</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="add-new">
+    <div class="search-scroll"></div>
+</div>
+<script type="text/javascript">
+    $(function (e) {
+        $('body').find('.table-scroll').slimScroll();
+        Hsis.i18n(Hsis.lang);
+        $('.search-scroll').slimScroll();
+        $('body').on('click', '.panel-close', function(){
+            $('body').find('.tree-div-3').fadeOut();
+            $('body').find('.tree-div-9').removeClass('col-sm-8').addClass('col-sm-12');
+        })
+
+        $('body').on('click', '.org-switch a.tree-view', function(){
+            $('.org-switch a').removeClass('active');
+            $(this).addClass('active');
+            $('.view-type').stop().fadeOut();
+            $('.org-tree-main-div').stop().fadeIn();
+            return false
+        });
+        $('body').on('click', '.org-switch a.list-view', function(){
+            $('.org-switch a').removeClass('active');
+            $(this).addClass('active');
+            $('.view-type').stop().fadeOut();
+            $('.org-list-main-div').stop().fadeIn();
+            var html = '';
+            if (Hsis.structureId == 1000001) {
+
+                Hsis.Proxy.getFilteredStructureList(1000001, 1000073, 0, function (data) {
+                    $.each(data, function (i, v) {
+                        html += '<tr data-id = "' + v.id + '">' +
+                                '<td>' + (++i) + '</td>' +
+                                '<td colspan="3" style="white-space:pre-line;">' + v.name[Hsis.lang] + '</td>' +
+                                '</tr>';
+                    })
+                    $('#tree_list_table tbody').html(html);
+                }, 0, 0);
+
+            }
+            else {
+                var structureName = $('#main-div .profile-data ul li[data-type="org"]').text();
+                html = '<tr data-id = "' + Hsis.structureId + '">' +
+                        '<td>1</td>' +
+                        '<td>' + structureName + '</td>' +
+                        '</tr>';
+                $('#tree_list_table tbody').html(html);
+            }
+            return false
+        });
+
+        $('#main-div').on('click', '#module_operations a[id^=operation_]', function () {
+            try {
+                var id = $(this).attr('id').split('_')[1];
+                if (id != "1000023" && id != "1000094" && id != "1001327") {
+                    Hsis.operationList = [];
+                    Hsis.operationList.push({id: id});
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('#main-div .sub_modules_div').remove();
+        var timeCode = setInterval(function () {
+            if ($('#jstree li').length != 0) {
+                $('#jstree').jstree("deselect_all");
+                clearInterval(timeCode);
+            }
+
+        }, 5);
+
+        try {
+            Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+
+                var tree = $('#jstree');
+                Hsis.Proxy.loadOrgTree(function (tree) {
+                    Hsis.Service.parseOrgTree(tree);
+
+                }, tree);
+
+            });
+
+            Hsis.Proxy.getDictionaryStructureTypes(function (types) {
+                if (types && types.code == Hsis.statusCodes.OK && types.data) {
+                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['filter.org_type'] + '</option>';
+                    $.each(types.data, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                    });
+
+                    $('body').find('#orgType').html(html);
+                }
+            });
+
+            $('.search-tree').on('keyup', function () {
+                var searchString = $(this).val();
+                $('body').find('#jstree').jstree('search', searchString);
+            });
+
+            $('.org-button-sort').on('click', function () {
+                var obj = $(this);
+                var type = obj.attr('data-type');
+
+                if (type === 'list') {
+                    obj.attr('data-type', 'tree');
+                    obj.attr('data-i18n', 'list');
+                    Hsis.i18n(Hsis.lang);
+//                    obj.text('List');
+                    $('.org-list-main-div').addClass('hidden');
+                    $('.org-tree-main-div').removeClass('hidden');
+
+
+                } else if (type === 'tree') {
+                    obj.attr('data-type', 'list');
+                    obj.attr('data-i18n', 'tree');
+                    Hsis.i18n(Hsis.lang);
+//                    obj.text('Tree')
+                    $('.org-list-main-div').removeClass('hidden');
+                    $('.org-tree-main-div').addClass('hidden');
+
+                    var html = '';
+                    if (Hsis.structureId == 1000001) {
+
+                        Hsis.Proxy.getFilteredStructureList(1000001, 1000073, 0, function (data) {
+                            $.each(data, function (i, v) {
+                                html += '<tr data-id = "' + v.id + '">' +
+                                        '<td>' + (++i) + '</td>' +
+                                        '<td colspan="3" style="white-space:pre-line;">' + v.name[Hsis.lang] + '</td>' +
+                                        '</tr>';
+                            })
+                            $('#tree_list_table tbody').html(html);
+                        }, 0, 0);
+
+                    }
+                    else {
+                        var structureName = $('#main-div .profile-data ul li[data-type="org"]').text();
+                        html = '<tr data-id = "' + Hsis.structureId + '">' +
+                                '<td>1</td>' +
+                                '<td>' + structureName + '</td>' +
+                                '</tr>';
+                        $('#tree_list_table tbody').html(html);
+                    }
+                }
+            })
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000049, 0, function (gender) {
+            var html = "<option value = '0'>ATM növü</option>";
+            $.each(gender, function (i, v) {
+                html += '<option value = "' + v.id + '">' + v.value[Hsis.lang] + '</option>'
+            });
+            $('#atm_type').html(html);
+
+        });
+
+
+        // $('#atm_type').on('change', function() {
+        //     var id = $(this).val();
+        //     var typeId = $('#orgType').attr('data-type');
+        //     if(typeId == undefined){
+        //         typeId = '';
+        //     }
+        //     Hsis.Proxy.loadOrgTreeByATMType(typeId, id, function (tree) {
+        //         $('body').find('#jstree').jstree('destroy').empty();
+        //         Hsis.Service.parseOrgTree(tree);
+        //         var structureId = $('#main-div #tree_list_child_table').attr("data-structure-id");
+        //         if (structureId) {
+        //             Hsis.Proxy.getFilteredStructureList(structureId, id, 0, function (data) {
+        //                 var html = '';
+        //                 $.each(data, function (i, v) {
+        //                     html += '<tr data-id= "' + v.id + '">' +
+        //                             '<td>' + (++i) + '</td>' +
+        //                             '<td>' + (v.parent.name ? v.parent.name[Hsis.lang] + ' / ' + v.name[Hsis.lang] : v.name[Hsis.lang]) + '</td>' +
+        //                             '<td>' + v.type.value[Hsis.lang] + '</td>' +
+        //                             '<td>' + (v.code ? v.code : '-') + '</td>' +
+        //                             '</tr>';
+        //                 });
+
+        //                 $('#main-div  #tree_list_child_table tbody').html(html);
+        //             }, 0, 0);
+        //         }
+        //     }); 
+
+        // });
+
+        $('body').on('change', '#orgType, #atm_type', function (e) {
+            try {
+                // var name = $(this).html();
+                // $('body').find('#orgTypeName').html(name);
+                var typeId = $('#orgType').val();
+                var atmType = $('#atm_type').val();
+                $('#main-div #orgType').attr('data-type', typeId);
+                // if (typeId == "0") {
+                    // $('.module-block[data-id="' + Hsis.currModule + '"] a').click();
+                // }
+                // else {
+                    Hsis.Proxy.loadOrgTreeByTypeAndATM(typeId, atmType, function (tree) {
+                        $('body').find('#jstree').jstree('destroy').empty();
+                        Hsis.Service.parseOrgTree(tree);
+                        var structureId = $('#main-div #tree_list_child_table').attr("data-structure-id");
+                        if (structureId) {
+                            Hsis.Proxy.getFilteredStructureList(structureId, typeId, 0, function (data) {
+                                var html = '';
+                                $.each(data, function (i, v) {
+                                    html += '<tr data-id= "' + v.id + '">' +
+                                            '<td>' + (++i) + '</td>' +
+                                            '<td>' + (v.parent.name ? v.parent.name[Hsis.lang] + ' / ' + v.name[Hsis.lang] : v.name[Hsis.lang]) + '</td>' +
+                                            '<td>' + v.type.value[Hsis.lang] + '</td>' +
+                                            '<td>' + (v.code ? v.code : '-') + '</td>' +
+                                            '</tr>';
+                                });
+
+                                $('#main-div  #tree_list_child_table tbody').html(html);
+                            }, 0, 0);
+                        }
+                    });
+                // }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+
+
+    });
+
+</script>
+
+

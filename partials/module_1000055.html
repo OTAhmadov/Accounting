@@ -1,0 +1,161 @@
+
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="shares" placeholder="Tələbələr" class="hed-title">Elanlar</span>
+    </div>
+    <div class="con-head-right">
+
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+                <li><a id="registration" href="student_add.html">Item 1</a></li>
+                <li><a id="second-registration" href="#">Item 2</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="filters-block module_1000038">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+            <i  class="fa fa-ellipsis-horizontal"></i><span data-i18n="share-type">Elan tipi</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul class="dropdown-menu share-type-list-filter">
+
+        </ul>
+    </div>
+    
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+            <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="share-priority">Elan dərəcəsi</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul class="dropdown-menu share-priority-list-filter">
+
+        </ul>
+    </div>
+
+    <form class="share-search-form">
+        <input type="hidden" name="id" />
+        <input type="hidden" name="typeId" />
+        <input type="hidden" name="priorityId" />
+    </form>
+</div>
+<!-- Bootstrap modal -->
+<div class="row">
+<div class="col-sm-12 data">
+    <div class="panel panel-white table-scroll">
+<!--         <div class="panel-heading">
+            <h3 data-i18n="shares" class="panel-title">Elanlar</h3>
+        </div> -->
+            <div class="table-responsive">
+            <table id="share-list" class="table table-celled table-hover">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th data-i18n="share">Elan tipi</th>
+                        <th data-i18n="share-content">Qısa məzmun</th>
+                        <th data-i18n="share-priority">Elan dərəcəsi</th>
+                        <th data-i18n="share-visible-to">Başlama vaxtı</th>
+                        <th data-i18n="share-visible-to">Bitmə vaxtı</th>
+                
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+            </div>
+            <div class="space-for-footer">
+                <div id="load_more_div" class="flex-input">
+                    <button data-i18n="load.more" data-table="share" class="btn loading-margins btn-load-more">Daha çox yüklə</button>
+                </div>
+            </div>
+
+    </div>
+</div>
+<div class="col-sm-4 info">
+    <div class="panel panel-white">
+        <div class="panel-heading">
+            <h3 data-i18n="share-about" class="panel-title">Elan barəsində</h3>
+            <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+            <div class="type_2_btns"></div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12  definition-list">
+                <dl class="dl-horizontal">
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="add-new">
+    <div class="search-scroll"></div>
+</div>
+<script src="assets/js/modal_drag.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $('body').find('.table-scroll').slimScroll();
+        $('#main-div .sub_modules_div').remove();
+        $('.modal-content').draggable();
+        Hsis.i18n();
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+            Hsis.Proxy.loadShares();//todo
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000051, 0, function (gender) {
+        var html = "<li data-id = '0'><a href='#'>"+Hsis.dictionary[Hsis.lang]['all']+"</a></li>";
+            $.each(gender, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.share-type-list-filter').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000052, 0, function (gender) {
+        var html = "<li data-id = '0'><a href='#'>"+Hsis.dictionary[Hsis.lang]['all']+"</a></li>";
+            $.each(gender, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.share-priority-list-filter').html(html);
+        });
+    });
+
+    $('.main-content-upd ').on('click', '.share-type-list-filter li', function () {
+
+        var id = $(this).attr('data-id');
+        if (id !== 0) {
+            $('.main-content-upd .share-search-form input[name="typeId"]').val(id);
+        }
+        else {
+            $('.main-content-upd .share-search-form input[name="typeId"]').val('');
+        }
+        $('.btn-load-more').removeAttr('data-page');
+        var params = $('.main-content-upd .share-search-form').serialize();
+        Hsis.Proxy.loadShares('', params);
+    });
+
+    $('.main-content-upd ').on('click', '.share-priority-list-filter li', function () {
+
+        var id = $(this).attr('data-id');
+        if (id !== 0) {
+            $('.main-content-upd .share-search-form input[name="priorityId"]').val(id);
+        }
+        else {
+            $('.main-content-upd .share-search-form input[name="priorityId"]').val('');
+        }
+        $('.btn-load-more').removeAttr('data-page');
+        var params = $('.main-content-upd .share-search-form').serialize();
+        Hsis.Proxy.loadShares('', params);
+    });
+
+    $('.datepicker').datepicker();
+
+</script>

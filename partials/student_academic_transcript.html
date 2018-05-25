@@ -1,0 +1,137 @@
+
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+
+                        <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+
+                    </div>
+    <div class="">
+        <div class=" ">
+            <div class="">
+                <h3 data-i18n="main_info" class="panel-title">Main info</h3>
+            </div>
+            <div class=" flex-panel">
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="input-file-con">
+                        <div class="new-img-con"><img src="" alt="" class="img-responsive"></div>
+                    </div>
+                    <div><button class="btn btn-primary get-iamas-photo">Iamasdan gətir</button></div>
+                </div>
+
+                <div class="col-md-6 user-forms">
+
+                    <div class="form-group">
+                        <label data-i18n="name" for="firstname">First name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="name" common-required class="form-control" id="firstname" placeholder="First name" disabled="disabled">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="surname" for="lastname">Last name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="surname" common-required class="form-control" id="lastname" placeholder="Last name" disabled="disabled">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="middlename" for="firstname">Middle name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="middlename" common-required class="form-control" id="middlename" placeholder="Middle name" disabled="disabled">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="panel-body" style="padding: 0">
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="citizenship" for="citizenship">Citizenship</label>
+                        <div class="prepend-icon">
+                            <select name="" id="citizenship" class="form-control" disabled="disabled">
+
+                            </select>
+                            <i class="fa fa-street-view"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="pincode" for="firstname">Pin code</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="pincode" common-required type="text" class="form-control" id="pincode" placeholder="Pin code" disabled="disabled">
+                            <i class="fa fa-lock circular"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="tab-content col-md-12"></div>
+    <div id ="tab1" class="tab-pane fade in active">
+        <div class="first-info">
+            <div class="">
+                <div class="">
+                    <div class="panel-heading">
+                        <h3 class="panel-title edu_plan_name">Tədris planı</h3>
+                        <h4 class="eduplan_name"></h4>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="row">
+                            
+                            <div class="col-md-12 table-responsive">
+                                <table id="subject_list" class="table table-celled table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Fənnin adı</th>
+                                        <th>Fənnin kodu</th>
+                                        <th>Səbəb</th>
+                                        <th>Qiymət</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>  
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            Hsis.i18n(Hsis.lang);
+            $('.progress-backdrop').removeClass('hidden');
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+                var html = Hsis.Service.parseDictionaryForSelect(citizenship);
+                $('#main-div #citizenship').html(html);
+            });
+           
+            $(".dropdown-menu a").on('click', function (e) {
+                e.preventDefault();
+            });
+
+            $('.three-tabs').on('click', function (e) {
+                setTimeout(function () {
+                    if (!$('.personal-info').hasClass('active'))
+                        $('.edit-common-info').addClass('hidden');
+                    else
+                        $('.edit-common-info').removeClass('hidden');
+                }, 0);
+            });
+        });
+    </script>

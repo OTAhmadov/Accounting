@@ -1,0 +1,823 @@
+<div style="display: none; padding-right: 17px;" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" id="exportModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-pdf col-md-4">
+                        <a class="export" data-value="pdf" href="#"><img class="a-export" src="assets/img/pdf-icon.png" width="150" height="150" alt="pdf"></a>
+                    </div>
+                    <div class="modal-excel col-md-4">
+                        <a class="export"  data-value="xls" href="#"><img class="a-export" src="assets/img/excel-icon.png" width="150" height="150" alt="xls"></a>
+                    </div>
+                    <div class="modal-html col-md-4">
+                        <a class="export" data-value="html" href="#"><img class="a-export" src="assets/img/html-icon.png" width="150" height="150" alt="html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<div class="content-header">
+    <div class="con-head-left">
+        <span data-i18n="foreign_students" placeholder="Tələbələr" class="hed-title"></span><span  class="head-total"> <span data-student-count></span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search" id="foreign_student_search" type="search" placeholder="Search">
+
+        </div>
+        <button  type="button" class="btn btn-default clear_search_button_foreign_student clear_search_button">
+            <span data-i18n="advanced_search">Advanced search</span>
+
+        </button>
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+                <li><a id="registration" href="student_add.html">Item 1</a></li>
+                <li><a id="second-registration" href="#">Item 2</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form class="foreign-student-form">
+    <input type="hidden" name="orgId">
+    <input type="hidden" name="uniOrg">
+    <input type="hidden" name="eduTypeId">
+    <input type="hidden" name="statusId">
+    <input type="hidden" name="citizenshipId">
+    <input type="hidden" name="subActionTypeId">
+    <input type="hidden" name="keyword">
+</form>
+
+
+<div class="filters-block module_1000011">
+    <div class="btn-group">
+        <select class="form-control " id="org_uni_filter" multiple="multiple">
+
+        </select>
+    </div>
+<!--     <div class="btn-group">
+        <select class="form-control " id="org_faculty_filter">
+
+        </select>
+    </div>
+    <div class="btn-group">
+        <select class="form-control " id="org_spec_level_filter">
+
+        </select>
+    </div>
+    <div class="btn-group">
+        <select class="form-control " id="org_spec_filter">
+
+        </select>
+    </div> -->
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+            <i  class="fa fa-ellipsis-horizontal"></i><span data-i18n="edu_type">Təhsil forması</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul data-name="eduTypeId" id="edu_type" class="dropdown-menu  dropdown-filter ">
+
+        </ul>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="status" >Status</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul data-name="statusId" id="student_status" class="dropdown-menu dropdown-filter ">
+
+        </ul>
+    </div>
+
+    <div class="btn-group">
+<!--         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="citizenship" >Vətəndaşlıq</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul data-name="citizenshipId" id="citizenship" class="dropdown-menu dropdown-filter ">
+
+        </ul> -->
+        <select name="" id="citizenship" class="select-with-search"></select>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="action_type">Action type</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul id="student_action_type" class="dropdown-menu dropdown-filter">
+
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="sub_action_type">Alt hərəkətlər</span> <i class="fa fa-angle-down"></i>
+        </button>
+        <ul data-name="subActionTypeId" id="student_sub_action_type" class="dropdown-menu dropdown-filter ">
+
+        </ul>
+    </div>
+
+
+
+
+
+
+    <div class="btn-group groups" style="clear: both">
+        <select id="edu_levels">
+
+        </select>
+    </div>
+
+
+
+
+</div>
+
+
+<!-- <div class="modal fade search-pincode-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="search_student" class="modal-title">Search student</h4>
+            </div>
+            <div class="modal-body">
+                <div class="pincode-div-first">
+                    <label data-i18n="pincode">Pincode</label>
+                    <input class= "search-pincode" type="text" placeholder="#########" maxlength="7" />
+                </div>
+                <div class="pincode-div-second hidden">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-lg-8">
+                            <div><label data-i18n="pincode" >Pincode:</label>&nbsp;<b><label class="pincode"></label></b></div>
+                            <div><label class="pincode-label"></label></div>
+
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-lg-4 iamas-search hidden">
+                            <div class="form-group">
+                                <div class="radio">
+                                    <label>
+                                        <input name="form-field-radio2" class="check-iamas-input" checked="checked" type="checkbox">
+                                        <span data-i18n="iamas" class="text">IAMAS </span>
+                                    </label>
+                                </div>
+                                <div class="radio" >
+                                    <label>
+                                        <input name="form-field-radio2"  type="checkbox" disabled="disabled">
+                                        <span data-i18n="myi" class="text">Müvəqqəti Yaşayış İcazəsi - Seriya</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button data-i18n="back" type="submit" class="btn btn-primary btn-block pincode-button-back hidden">Back</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button data-i18n="next" type="submit" class="btn btn-primary btn-block pincode-button-next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<div class="row">
+    <div class="col-sm-12 data">
+        <div  class="panel panel-white table-scroll">
+
+            <div class="table-responsive">
+
+                <table id="foreign_student_list" class="table table-celled table-hover">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th data-i18n="fullname">Name</th>
+                            <th data-i18n="citizenship">Vətəndaşlığı</th>
+                            <th data-i18n="university">Ali təhsil müəssisəsi</th>
+                            <th>İxtisas</th>
+                            <th data-i18n="edu_level">Təhsil səviyyəsi</th>
+                            <th data-i18n="edu_type">Təhsil forması</th>
+                            <th data-i18n="education_line">Qəbul forması</th>
+                            <th data-i18n="edu_start_year">Qəbul ili</th>
+                            <th data-i18n="edu_course_year">Tədris ili - sayı</th>
+                            <th data-i18n="passport_number">Pasport nömrəsi</th>
+                            <th data-i18n="residence_permission">Yaşayış icazəsi"</th>
+                            <th data-i18n="status">Status</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>        
+            <div class="space-for-footer">
+                <div id="load_more_div" class="flex-input">
+                    <button  data-i18n="load.more" data-table="foreignStudents" class="btn loading-margins btn-load-more">Load more</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-4 info te">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+                <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+                <div class="type_2_btns"></div>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-12 flex-img">
+                    <img id="studentphoto" src="assets/img/guest.png" alt="" >
+                </div>
+                <div class="col-xs-12 definition-list">
+                    <dl class="dl-horizontal">
+                        <dt ><span data-i18n="name">Name</span>:</dt>
+                        <dd data-firstname></dd>
+                        <dt ><span data-i18n="surname">Surname</span>:</dt>
+                        <dd data-lastname></dd>
+                        <dt ><span data-i18n="speciality">Speciaity</span>:</dt>
+                        <dd data-speciality></dd>
+                        <dt ><span data-i18n="edu_level">Edu level</span>:</dt>
+                        <dd data-edu-level></dd>
+                        <dt ><span data-i18n="edu_type">Edu type</span>:</dt>
+                        <dd data-edu-type></dd>
+                        <dt ><span data-i18n="edu_pay_type">Edu pay type</span>:</dt>
+                        <dd data-edu-pay-type></dd>
+
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--tree modal-->
+<div class="modal tree-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="structure" class="modal-title">Structures</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="structures-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new-upd">
+    <div class="search-scroll">
+        <div class="text-right">
+            <button data-i18n="close" type="submit" class="btn btn-primary btn-block new-close ">CLose</button>
+        </div>
+        <h2 data-i18n="search_student" class="panel-title">Search student</h2>
+
+        <div class="pincode-div-first">
+            <label data-i18n="pincode">Pincode</label>
+            <input class="search-pincode" type="text" placeholder="#########"/>
+        </div>
+        <div class="pincode-div-second hidden">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <div><label data-i18n="pincode" >Pincode:</label> &nbsp;<b><label class="pincode"></label></b></div>
+                    <div><label class="pincode-label"></label></div>
+
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 iamas-search hidden">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input name="form-field-radio2" class="check-iamas-input" checked="checked" type="checkbox">
+                                <span data-i18n="iamas" class="text">IAMAS </span>
+                            </label>
+                        </div>
+                        <div class="radio" >
+                            <label>
+                                <input name="form-field-radio2"  type="checkbox" disabled="disabled">
+                                <span data-i18n="myi" class="text">Müvəqqəti Yaşayış İcazəsi - Seriya</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button data-i18n="back" type="submit" class="btn btn-primary btn-block pincode-button-back hidden">Back</button>
+            </div>
+            <div class="col-md-6">
+                <button data-i18n="next" type="submit" class="btn btn-primary btn-block pincode-button-next">Next</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="add-new">
+    <div class="search-scroll"></div>
+</div>
+
+
+
+<script>
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+        $('body').find('.table-scroll').slimScroll();
+        $('.search-scroll').slimScroll();
+
+        var queryparams = $('.foreign-student-form').serialize() + '&eduLevels=' + Hsis.eduLevels + '&universities=' + Hsis.universities;
+        Hsis.Proxy.loadForeignStudents('', queryparams);
+
+        // $('#edu_levels').select2({
+        //     placeholder: Hsis.dictionary[Hsis.lang]["edu_level"],
+        //     language: {
+        //         noResults: function () {
+        //             return Hsis.dictionary[Hsis.lang]["no_information"];
+        //         }
+        //     }
+        // });
+        $('#org_uni_filter').select2({
+            placeholder: Hsis.dictionary[Hsis.lang]["university"],
+            language: {
+                noResults: function () {
+                    return Hsis.dictionary[Hsis.lang]["no_information"];
+                }
+            }
+        });
+
+
+        $('.select-with-search').select2()
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000016, 0, function (eduLevels) {
+            if (eduLevels) {
+                var html = '';
+                $.each(eduLevels, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#edu_levels').html(html);
+
+            }
+        });
+        
+        Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+            if(eduLevel) {
+                var html = '<option value="0">İxtisas səviyyəsi</option>';
+                $.each(eduLevel, function (i, v) {
+                    html += '<option parent="' + v.parentId + '" code="' + v.code + '" value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#main-div #org_spec_level_filter').html(html);
+            }
+                
+        });
+        
+        Hsis.Proxy.getStructureListByFilter(0, 0,function(data) {
+            if(data && data.data) {
+                var html = '';
+                var uni = data.data.universityList;
+                var faculty = data.data.facultyList;
+                var spec = data.data.specialityList;
+                var uniCount = data.data.universityList.length;
+                var facultyCount = data.data.facultyList.length;
+                var specCount = data.data.specialityList.length;
+                
+                if(uniCount <= 1) {
+                    $('#org_uni_filter').attr('disabled', 'disabled')
+                    $.each(uni, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_uni_filter').html(html)
+                } else {
+                    html = '<option value = "0">Universitet</option>'
+                    $.each(uni, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_uni_filter').html(html)
+                }
+                if(facultyCount <= 1) {
+                    html = '';
+                    $('#org_faculty_filter').attr('disabled', 'disabled')
+                    // $.each(faculty, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_faculty_filter').html(html)
+                }else {
+                    html = '<option value = "0">Fakültə</option>'
+                    // $.each(faculty, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_faculty_filter').html(html)
+                }
+                if(specCount <= 1) {
+                    html = '';
+                    $('#org_spec_filter').attr('disabled', 'disabled')
+                    // $.each(spec, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_spec_filter').html(html)
+                } else {
+                    html = '<option value = "0">İxtisas</option>'
+                    // $.each(spec, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_spec_filter').html(html)
+                }
+                
+                
+                
+            }
+            
+        });
+        
+        $('#org_uni_filter').on('change', function() {
+            var id = $(this).val().toString();
+            var text = $(this).find('option:selected').text();
+            var levelId = $('#org_spec_level_filter').val();
+            // Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+            //     if(data && data.data) {
+            //         var html = '';
+            //         var faculty = data.data.facultyList;
+            //         var spec = data.data.specialityList;
+                    
+            //         html = '<option value = "0">Fakültə</option>'
+            //         $.each(faculty, function(i, v){
+            //             html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+            //         })
+            //         $('#org_faculty_filter').html(html)
+
+
+            //         html = '<option value = "0">İxtisas</option>'
+            //         $.each(spec, function(i, v){
+            //             html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+            //         })
+            //         $('#org_spec_filter').html(html)
+
+            //         if (id != 1000001 || id != 0) {
+            //             $('.main-content-upd .foreign-student-form input[name="orgId"]').val(id);
+            //             $('.main-content-upd .foreign-student-form input[name="uniOrg"]').val(id);
+            //             $('.main-content-upd .foreign-student-form input[name="uniName"]').val(text);
+            //         }
+            //         else {
+            //             $('.main-content-upd .foreign-student-form input[name="orgId"]').val('');
+            //             $('.main-content-upd .foreign-student-form input[name="uniOrg"]').val('');
+            //             $('.main-content-upd .foreign-student-form input[name="uniName"]').val('');
+            //         }
+                    
+            //         $('.btn-load-more').removeAttr('data-page');
+            //         var queryparams = $('.main-content-upd .foreign-student-form').serialize();
+            //         Hsis.Proxy.loadForeignStudents('', queryparams);
+
+            //     }
+            // })
+                    var queryparams = $('.main-content-upd .foreign-student-form').serialize();
+                    Hsis.Proxy.loadForeignStudents('', queryparams + '&universities=' + id + '&eduLevels=' + Hsis.eduLevels);
+        });
+        
+        $('#org_faculty_filter').on('change', function() {
+            var facultyId = $(this).val();
+            var uniId = $('#org_uni_filter').val();
+            var uniname = $('#org_uni_filter').find('option:selected').text();
+            var facultyName = $(this).find('option:selected').text();
+            var levelId = $('#org_spec_level_filter').val();
+            var id = facultyId == 0 ? uniId: facultyId
+            var text = facultyId == 0 ? uniname: facultyName
+            
+            Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+                    
+                    html = '<option value = "0">İxtisas</option>'
+                    $.each(spec, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+                    $('#org_spec_filter').html(html)
+                    
+                    if (id != 0) {
+                        $('.main-content-upd .foreign-student-form input[name="orgId"]').val(id);
+                        $('.main-content-upd .foreign-student-form input[name="uniOrg"]').val(id);
+                        $('.main-content-upd .foreign-student-form input[name="uniName"]').val(text);
+                    }
+                    else {
+                        $('.main-content-upd .foreign-student-form input[name="orgId"]').val('');
+                        $('.main-content-upd .foreign-student-form input[name="uniOrg"]').val('');
+                        $('.main-content-upd .foreign-student-form input[name="uniName"]').val('');
+                    }
+                    
+                    $('.btn-load-more').removeAttr('data-page');
+                    var queryparams = $('.main-content-upd .foreign-student-form').serialize();
+                    Hsis.Proxy.loadForeignStudents('', queryparams);
+
+                }
+            })
+            
+        });
+        
+        $('#org_spec_level_filter').on('change', function() {
+            var levelId = $(this).val();
+            var uniId = $('#org_uni_filter').val();
+            var uniName = $('#org_uni_filter').find('option:selected').text();
+            var facultyId = $('#org_faculty_filter').val();
+            var facultyName = $('#org_faculty_filter').find('option:selected').text();
+            
+            var id = facultyId == 0 ? uniId : facultyId;
+            var text = facultyId == 0 ? uniName : facultyName;
+            
+            Hsis.Proxy.getStructureListByFilter(id, levelId ,function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+                    
+                    html = '<option value = "0">İxtisas səviyyəsi</option>'
+                    $.each(spec, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    })
+
+                }
+            })
+            
+        });
+        
+        $('#org_spec_filter').on('change', function() {
+            var specId = $(this).val();
+            var specName = $(this).find('option:selected').text();
+            var uniId = $('#org_uni_filter').val();
+            var uniName = $('#org_uni_filter').find('option:selected').text();
+            var facultyId = $('#org_faculty_filter').val();
+            var facultyName = $('#org_faculty_filter').find('option:selected').text();
+            var id = specId == 0 ? (facultyId == 0 ? uniId : facultyId) : specId;
+            var text = specId == 0 ? (facultyId == 0 ? uniName : facultyName) : specName;
+            
+                    
+            if (id != 0) {
+                $('.main-content-upd .foreign-student-form input[name="orgId"]').val(id);
+                $('.main-content-upd .foreign-student-form input[name="uniOrg"]').val(id);
+                $('.main-content-upd .foreign-student-form input[name="uniName"]').val(text);
+            }
+            else {
+                $('.main-content-upd .foreign-student-form input[name="orgId"]').val('');
+                $('.main-content-upd .foreign-student-form input[name="uniOrg"]').val('');
+                $('.main-content-upd .foreign-student-form input[name="uniName"]').val('');
+            }
+
+            $('.btn-load-more').removeAttr('data-page');
+            var queryparams = $('.main-content-upd .foreign-student-form').serialize();
+            Hsis.Proxy.loadForeignStudents('', queryparams);
+            
+        });
+
+
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+
+        });
+
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000016, 0, function (eduLevels) {
+            if (eduLevels) {    
+                var html = '<option value="0">Təhsil səviyyəsi</option>';
+                $.each(eduLevels, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#edu_levels').html(html);
+
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000017, 0, function (eduType) {
+            if (eduType) {
+                var html = '';
+                $.each(eduType, function (i, v) {
+                    html += '<li data-id="' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>';
+                });
+                $('#edu_type').html(html);
+
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000044, 0, function (status) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+            $.each(status, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('#student_status').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000037, 0, function (actionType) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['select'] + "</a></li>";
+            $.each(actionType, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('#student_action_type').html(html);
+            var subhtml = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['active_students'] + "</a></li>";
+            $('#student_sub_action_type').html(subhtml);
+
+        });
+
+        Hsis.Proxy.loadOrgTreeByType('1000073', function (universities) {
+            if (universities) {
+                var html = "";
+                $.each(universities, function (i, v) {
+                    html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                });
+                $('#universities').html(html);
+            }
+        });
+
+        // Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+        //     if (citizenship) {
+        //         var html = '';
+        //         $.each(citizenship, function (i, v) {
+        //             html += '<li data-id ="' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>';
+        //         });
+        //     }
+
+        //     $('#citizenship').html(html);
+        // });
+
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000004, 0, function (eduLevels) {
+            if (eduLevels) {
+                var html = '<option value="0">Vətəndaşlıq</option>';
+                $.each(eduLevels, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#citizenship').html(html);
+                $('#citizenship').find('option[value="'+ 1000118 +'"]').remove();
+
+            }
+        });
+
+
+
+
+// ------------------------------------------events---------------------------
+
+        $('body').on('click', '.new-close', function () {
+            $('body').find('.new-upd').css('right', '-100%');
+        });
+        
+        $('#edu_levels').on('change', function (evt) {
+            Hsis.eduLevels = $(this).val();
+                $('.btn-load-more').removeAttr('data-page');
+                var queryparams = $('.foreign-student-form').serialize() + '&universities=' + Hsis.universities + '&eduLevels=' + Hsis.eduLevels;
+                Hsis.Proxy.loadForeignStudents('', queryparams);
+    
+        });
+
+        $('#edu_levels').on('select2:unselecting', function (e) {
+            Hsis.eduLevels = $(this).val();
+            $('.btn-load-more').removeAttr('data-page');
+            var universities = $('input[name="universities"]').val();
+            var queryparams = $('.foreign-student-form').serialize() + '&universities=' + Hsis.universities + '&eduLevels=' + Hsis.eduLevels;
+            Hsis.Proxy.loadForeignStudents('', queryparams);
+        });
+
+        $('#edu_levels,#universities, #org_uni_filter').on('change', function (e) {
+            var uldiv = $(this).siblings('span.select2').find('ul');
+            var count = uldiv.find('li').length - 1;
+            uldiv.html('<li class="modified">' + Hsis.dictionary[Hsis.lang]["selected_count"] + ": " + count + "</li>");
+        });
+
+        // $('#org_uni_filter').on('select2:select', function (evt) {
+        //     Hsis.universities = $(this).val();
+
+        //     var last = evt.params.data.id;
+        //     if (last > 0) {
+        //         $('.btn-load-more').removeAttr('data-page');
+        //         var queryparams = $('.foreign-student-form').serialize() + '&universities=' + Hsis.universities + '&eduLevels=' + Hsis.eduLevels;
+        //         Hsis.Proxy.loadForeignStudents('', queryparams);
+        //     }
+        // });
+
+        // $('#org_uni_filter').on('select2:unselecting', function (e) {
+        //     $('.btn-load-more').removeAttr('data-page');
+        //     Hsis.universities = $(this).val();
+        //     var queryparams = $('.foreign-student-form').serialize() + '&universities=' + Hsis.universities + '&eduLevels=' + Hsis.eduLevels;
+        //     Hsis.Proxy.loadForeignStudents('', queryparams);
+        // });
+
+        $('body').on('click', '#student_action_type li', function () {
+            try {
+                var id = $(this).attr('data-id');
+                var html = "";
+                if (id == 0) {
+                    html += "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['active_students'] + "</a></li>";
+                    $('#student_sub_action_type').html(html);
+                }
+                else {
+                    Hsis.Proxy.loadDictionariesByTypeId(1000025, id, function (actionType) {
+                        $.each(actionType, function (i, v) {
+                            html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+                        });
+                        $('#student_sub_action_type').html(html);
+                    });
+                }
+                $('#student_sub_action_type').siblings('button').find('span').text(Hsis.dictionary[Hsis.lang]['sub_action_type']);
+            }
+            catch (err) {
+                console.error(err)
+            }
+        });
+
+
+
+        $('#main-div').on('click', '.dropdown-filter li', function () {
+            try {
+                var id = $(this).attr('data-id');
+                var name = $(this).parent('ul').attr('data-name');
+                if (id != 0) {
+                    $('.foreign-student-form input[name="' + name + '"]').val(id);
+                }
+                else {
+                    $('.foreign-student-form input[name="' + name + '"]').val('');
+                }
+                $('.btn-load-more').removeAttr('data-page');
+                var queryparams = $('.foreign-student-form').serialize() + '&universities=' + Hsis.universities + '&eduLevels=' + Hsis.eduLevels;
+                Hsis.Proxy.loadForeignStudents('', queryparams);
+
+
+            }
+            catch (err) {
+                console.error(err)
+            }
+        });
+
+        $('body').on('keypress', '#foreign_student_search', function (e) {
+            try {
+
+                if (e.keyCode == 13) {
+                    var keyword = $('#foreign_student_search').val();
+
+                    if (keyword.trim().length > 2) {
+                        $('.btn-load-more').removeAttr('data-page');
+                        $('.foreign-student-form input[name="keyword"]').val(keyword);
+                        var queryparams = $('.foreign-student-form').serialize() + '&eduLevels=' + Hsis.eduLevels + '&universities=' + Hsis.universities;
+                        Hsis.Proxy.loadForeignStudents('', queryparams);
+                    }
+                    else if (keyword.trim().length == 0) {
+                        $('.btn-load-more').removeAttr('data-page');
+                        $('.foreign-student-form input[name="keyword"]').val('');
+                        var params = $('.main-content-upd .foreign-student-form').serialize();
+                        Hsis.Proxy.getStudentsInAbroad('', params + '&eduLevels=' + Hsis.subModuleId);
+                    }
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $('#main-div').on('change', '#citizenship', function() {
+            var id = $(this).val();
+            $('#main-div .foreign-student-form input[name="citizenshipId"]').val(id);
+            
+            $('.btn-load-more').removeAttr('data-page');
+            var queryparams = $('.foreign-student-form').serialize() + '&universities=' + Hsis.universities + '&eduLevels=' + Hsis.eduLevels;
+            Hsis.Proxy.loadForeignStudents('', queryparams);
+        })
+
+
+    });
+</script>

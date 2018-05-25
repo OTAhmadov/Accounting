@@ -1,0 +1,1120 @@
+<link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+<style>
+    .fileinput-new .fileinput-exists {
+        display: block;
+    }
+    .fileinput-new .fileinput-exists.fa-close {
+        top: 8px !important;
+        right: 155px !important;
+    }
+</style>
+<script src="assets/js/bootstrap-datepicker.min.js"></script>
+
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok" id="confirmStudent" >OK</a>
+        <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+    </div>
+    <div class="col-md-12">
+        <div class="">
+            <div class="">
+                <h3 data-i18n="main_info"  class="panel-title">Main info</h3>
+
+            </div>
+            <div class=" flex-panel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-file-con">
+                            <!--<input type="file" accept="image/*" id="inputImage">-->
+                            <!--<div class="fake-input"><em class="fa fa-user"></em></div>-->
+                            <div class="new-img-con"><img src="" alt="" class="img-responsive"></div>
+                        </div>
+                        <div><button class="btn btn-primary get-iamas-photo">Iamasdan gətir</button></div>
+                    </div>
+
+                    <div class="col-md-6 user-forms">
+
+                        <div class="form-group">
+                            <label data-i18n="name" for="firstname">First name</label>
+                            <div class="prepend-icon">
+                                <label class="form-control" id="firstname"  ></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="surname" for="lastname">Last name</label>
+                            <div class="prepend-icon">
+                                <label class="form-control" id="lastname" ></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="middlename" for="middlename">Middlename</label>
+                            <div class="prepend-icon">
+                                <label class="form-control" id="middlename" ></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body" style="padding: 0">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="citizenship" for="citizenship">Citizenship</label>
+                            <div class="prepend-icon">
+                                <label name="" id="citizenship" class="form-control" </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="pincode" for="pincode">Pin code</label>
+                            <div class="prepend-icon">
+                                <label  class="form-control" id="pincode"  ></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="three-tabs ">
+    <ul class="nav panel-title">
+        <li  class="col-sm-6 personal-info active">
+            <a data-toggle="tab" href="#tab1"  class=" first-tab">
+                <span data-i18n="personal_info" class="panel-body" style="padding: 0">Personal info</span>
+            </a>
+        </li>
+        <li class="col-sm-6 academic-info">
+            <a data-toggle="tab" href="#tab2" class=" second-tab">
+                <span data-i18n="academic_info" class="panel-body" style="padding: 0">Academic info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="tab-content col-md-12">
+    <div id ="tab1" class="tab-pane fade in active">
+        <div class="first-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="common_innfo" class="panel-title">Common info</h3>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="gender" for="gender">Gender</label>
+                                <div class="prepend-icon">
+                                    <label  id="gender" name="gender" class="form-control"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="marital_status" for="marital_status">Marital status</label>
+                                <div class="prepend-icon">
+                                    <label id="marital_status" name="" class="form-control"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="social_status" for="social_status">Social status</label>
+                                <div class="prepend-icon">
+                                    <label id="social_status" name="" class="form-control"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="nationality" for="nationality">Nationality</label>
+                                <div class="prepend-icon">
+                                    <label id="nationality" name="" class="form-control"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="birthdate" for="birthdate">Birthdate</label>
+                                <div class="prepend-icon">
+                                    <label  id="birthdate"  class="form-control "></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="orphan_degree" for="orphan_degree">Orphan degree</label>
+                                <div class="prepend-icon">
+                                    <label id="orphan_degree" name="" class="form-control"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="military_service" for="military_status">Military status</label>
+                                <div class="prepend-icon">
+                                    <label id="military_status" class="form-control"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="disability_degree" for="nationality">Disability degree</label>
+                                <div class="prepend-icon">
+                                    <label id="disability_degree" name="" class="form-control"></label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="contact_info" class="panel-title">Contact info</h3>
+
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="address-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="address_info" class="panel-title">Address info</h3>
+
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="col-md-12 for-align">
+                            <div class="col-md-3 explanation">
+                                <p  class="col-sm-12"><span data-i18n="birth_place">Birth place</span>: </p>
+                            </div>
+                            <div class="col-md-9">
+                                <div birth-place-edit class="form-group tree-modal-container">
+                                    <label id="birth_place_edit"  class="form-control " data-address-type-id = "1000199" data-id="0"></label>
+                                </div>                                                    
+                            </div>
+                        </div>
+                        <div class="col-md-12 for-align">
+                            <div class="col-md-3 explanation">
+                                <p  class="col-sm-12"><span data-i18n="permanent_address">Permanent place of residence</span>: </p>
+                            </div>
+                            <div class="col-md-9">
+                                <div permanent-address-edit class="form-group tree-modal-container">
+                                    <label id="permanent_address_edit"  class="form-control " data-address-type-id = "1000178" data-id="0"></label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 for-align">
+                            <div class="col-md-3 explanation">
+                                <p  class="col-sm-12"><span data-i18n="temporary_address">Temporary residence</span>: </p>
+                            </div>
+                            <div class="col-md-9">
+                                <div temporary-address-edit class="form-group tree-modal-container">
+                                    <label id="temporary_address_edit"  class="form-control " data-address-type-id = "1000198" data-id="0"></label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="docs-row1 add-doc-block for-edit">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="doc_info" class="panel-title">Doc info</h3>
+
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="docs-row3 student-relationships-div">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="relation_info" class="panel-title">Relation info</h3>
+
+                    </div>
+                    <div  class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="tab2" class="tab-pane fade">
+        <div class="second-info">
+            <div class="">
+                <div class="">
+                    <div class=" acad_act">
+                        <h3 data-i18n="action_student" class="panel-title">Action Student</h3>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class=" action-students">
+                            <div class=" act_name">
+                                <h3 data-i18n="actions" class="panel-title">Actions</h3>
+                            </div>
+                            <div class="panel-body" style="padding: 0">
+                                <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                            </div>
+                        </div>
+
+                        <div class=" activity_name">
+                            <div class=" aca_info">
+                                <h3 data-i18n="current_university" class="panel-title">Current University</h3>
+
+                            </div>
+                            <div class="panel-body equal-height-cols">
+                                <div class="row">
+                                    <div class="col-md-6 hidden">
+                                        <div class="form-group">
+                                            <label data-i18n="action_type" >Action type</label>
+                                            <div class="prepend-icon">
+                                                <label  id="action_type" class="form-control "></label>
+
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="education_line" for="">Edu line</label>
+                                            <div class="prepend-icon">
+                                                <select data-required id="edu_line" class="form-control ">
+
+                                                </select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="student.card_number" for="student_card_no">Student card number</label>
+                                            <div class="prepend-icon">
+                                                <input data-i18n="student.card_number"  id="student_card_no" type="text" class="form-control student-card-number" placeholder="Student card number" data-required>
+                                                <i class="fa fa-credit-card"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="date" for="action_date">Action Date</label>
+                                            <div class="prepend-icon">
+                                                <input data-i18n="date" id="action_date" type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" data-required>
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="edu_lang" for="">Edu lang</label>
+                                            <div class="prepend-icon">
+                                                <select data-required  id="edu_lang" class="form-control ">
+
+                                                </select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="education_type" for="">Edu type</label>
+                                            <div class="prepend-icon">
+                                                <select data-required id="edu_type" class="form-control ">
+
+                                                </select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="edu_pay_type" for="">Edu pay type</label>
+                                            <div class="prepend-icon">
+                                                <select data-required id="edu_pay_type" class="form-control ">
+
+                                                </select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                    <!--                 <div class="col-md-6">
+                                        <div class="form-group pos-r">
+                                            <label data-i18n="order">Əmr</label>
+                                            <div class="prepend-icon sel2" ><i class="fa fa-university"></i></div>
+                                            <select data-required id="order" class="form-control select-with-search"></select>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="score" for="student_card_no">Apply Score</label>
+                                            <div class="prepend-icon">
+                                                <input data-i18n="score"  id="score" type="text" class="form-control apply-score" placeholder="Score" data-required>
+                                                <i class="fa fa-credit-card"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="edu_level" for="edu_level">Education level</label>
+                                            <div class="prepend-icon">
+                                                <select  id="edu_level" name="" class="form-control education-degree" data-required>
+
+                                                </select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div org-id class="form-group">
+                                            <label data-i18n="speciality" for="orgId">Speciality</label>
+                                            <div class="prepend-icon">
+                                                <select data-required id ="orgId" class="form-control"></select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div  class="col-md-6 sub_speciality hidden">
+                                        <div class="form-group ">
+                                            <label  >Ixtisaslaşma</label>
+                                            <div class="prepend-icon">
+                                                <select id="sub_speciality" class="form-control" type="text" >
+
+                                                </select>
+                                                <i class="fa fa-university"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="note" for="note">Note</label>
+                                            <div class="prepend-icon">
+                                                <textarea id="note" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="docs-row2">
+                                        <div class="col-md-12">
+                                            <div class="">
+                                                <div class="">
+                                                    <h3 data-i18n="related_documents" class="panel-title">Related documents</h3>
+                                                    <div data-type-id ="1000040" data-doc-type="academic"  class="add-new add-new-document"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                                                </div>
+                                                <div data-doc-type="academic" class="panel-body" style="padding: 0">
+                                                    <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal  student-pelc-action-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="action" class="modal-title">Action</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><b data-i18n="structure">Structure</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_university"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="action_type">Action type</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_type"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="date">Action date</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_date"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="student.card_umber">Student card no</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_card_no" ></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="education_line">Edu line</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_edu_line"></label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><b data-i18n="edu_lang">Edu lang</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_edu_lang"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="education_type">Edu type</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_edu_type"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="edu_pay_type">Edupay type</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_edupay_type"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="edu_level">Edu level</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_edu_level"></label>
+                            </div>
+                            <div class="form-group">
+                                <label><b data-i18n="score">Score</b>:</label>&nbsp;&nbsp;
+                                <label id="pelc_action_score"></label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-12 pelc-action-doc-block">
+                                <div class="">
+                                    <div class="">
+                                        <h3 data-i18n="doc_info" class="panel-title">Doc info</h3>
+
+                                    </div>
+                                    <div  id="pelc_action_academic-document" class="panel-body" style="padding: 0">
+                                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button data-i18n="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--     <div class="buttons-row col-md-12">
+        <div class="col-md-6">
+            <a data-i18n="ok" id="confirmStudent" class="btn btn-block btn-success">OK</a>
+        </div>
+        <div data-page="student_action_accept" class="col-md-6">
+            <a data-i18n="close" class="btn btn-block btn-danger" href="index.html">Close</a>
+        </div>
+    </div> -->
+
+
+    <!----------------------Document modal-------------------->
+
+    <div class="modal add-document-modal">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <form class="add-doc-form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 data-i18n="add_documents" class="modal-title">Add documents</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label data-i18n="doc_type">Add document type</label>
+                            <div class="prepend-icon">
+                                <select document-required  name="add-document-type" class="form-control">
+
+                                </select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="serial_number" for="add-serial">Serial number</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="serial_number" document-required id="add-serial" name="add-document-serial" class="form-control" placeholder="Serial number">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="doc_number" for="add-number">Document number</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="doc_number" document-required id="add-number" name="add-document-number" class="form-control" placeholder="Document number">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="issue_date" for="start-date">Start date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="issue_date" document-required id="start-date" name="add-document-start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="end_date" for="end-date">End date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="end_date" id="end-date" name="add-document-end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="End date">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer flex-img">
+                        <button doc-confirm type="button" class="btn btn-primary add-document-submit">OK</button>
+                        <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--                  Edit student action -->
+    <div class="modal  student-edit-school-action-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="action" class="modal-title">Action</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group tree-modal-container">
+                                <button data-i18n="address"   id="school_address" type="button" class="btn btn-default tree-modal btn-block" data-toggle="modal" data-target="#myModalTree">Address</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="school_graduation"  >School Graduation</label>
+                                <div class="prepend-icon">
+                                    <select  name="" id="schoolId" class="form-control" edit-data-required>
+
+                                    </select>
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="edu_lang" for="school_lang">School lang</label>
+                                <div class="prepend-icon">
+                                    <select  id="edit_school_lang" class="form-control" ></select>
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="start_date" for="start_date">Start Date</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="start_date"  id="edit_school_action_date"  type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" edit-data-required>
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="end_date" for="end_date">End Date</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="end_date" edit-data-required id="edit_school_end_action_date"  type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" >
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-i18n="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button data-i18n="edit" type="button" class="btn btn-default edit-school-action" >Edit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--              Edit uni action-->
+    <div class="modal  student-edit-uni-action-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="action" class="modal-title">Action</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div org-id class="form-group" >
+                                <label data-i18n="structure" for="orgId">Structure</label>
+                                <div class="prepend-icon " >
+                                    <select id ="edit_edu_org_list" class="form-control" edit-data-required></select> 
+                                    <i class="fa fa-institution"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="education_line" for="">Edu line</label>
+                                <div class="prepend-icon">
+                                    <select id="edit_uni_action_edu_line" class="form-control " edit-data-required>
+
+                                    </select>
+                                    <i class="fa fa-institution"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="student.card_number" for="student_card_no">Student card number</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="student.card_number" id="edit_uni_action_student_card_no" type="text" class="form-control previous_student-card-number" placeholder="Student card number" edit-data-required>
+                                    <i class="fa fa-credit-card"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="start_date" for="start_date">Action Date</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="start_date" id="edit_uni_action_action_date" type="text" class="form-control second-info-date datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" edit-data-required>
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="end_date" >Bitmə tarixi</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="end_date"  edit-data-required id="edit_uni_action_end_date" name="end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="edu_lang" for="">Edu lang</label>
+                                <div class="prepend-icon">
+                                    <select id="edit_uni_action_edu_lang" class="form-control " edit-data-required>
+
+                                    </select>
+                                    <i class="fa fa-institution"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="education_type" >Edu type</label>
+                                <div class="prepend-icon">
+                                    <select id="edit_uni_action_edu_type" class="form-control " edit-data-required>
+
+                                    </select>
+                                    <i class="fa fa-institution"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="edu_pay_type" for="">Edu pay type</label>
+                                <div class="prepend-icon">
+                                    <select id="edit_uni_action_edu_pay_type" class="form-control " edit-data-required>
+
+                                    </select>
+                                    <i class="fa fa-institution"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="edu_level" for="edu_level">Education level</label>
+                                <div class="prepend-icon">
+                                    <select id="edit_uni_action_edu_level" name="" class="form-control education-degree" edit-data-required>
+
+                                    </select>
+                                    <i class="fa fa-institution"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                    <div class="col-md-6">
+                                                <div org-id class="form-group" >
+                                                    <label data-i18n="speciality" for="orgId">Speciality</label>
+                                                    <div class="prepend-icon " >
+                                                        <select id ="edit_uni_action_orgId" class="form-control" edit-data-required></select> 
+                                                        <i class="fa fa-institution"></i>
+                                                    </div>
+                        
+                                                </div>
+                                            </div>-->
+
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="score" for="action_date">Apply score</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="score" edit-data-required id="edit_uni_action_apply_score" type="text" class="form-control "  placeholder="Apply score" >
+                                    <i class="fa fa-university"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-i18n="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button data-i18n="edit" type="button" class="btn btn-default edit-uni-action" >Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModalTree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="address" class="modal-title" id="myModalLabel">Address</h4>
+                </div>
+                <div class="modal-body scrollable">
+                    <div id="address-tree-id" >
+
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" id="get_school_address" type="button" class="btn btn-primary">OK</button>
+                    <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            Hsis.i18n(Hsis.lang);
+            $('.datepicker').datepicker();
+            $('.progress-backdrop').removeClass('hidden');
+
+            $('#order').select2({
+                placeholder: Hsis.dictionary[Hsis.lang]["select"],
+                language: {
+                    noResults: function () {
+                        return Hsis.dictionary[Hsis.lang]["no_information"];
+                    }
+                }
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+                $('#main-div #edu_level').html(html);
+            });
+
+            $('#main-div').on('change', '#edu_level', function () {
+                var eduLevel = $(this).find('option:selected').val();
+                if (eduLevel > 0) {
+                    Hsis.Proxy.getFilteredStructureList(Hsis.structureId, eduLevel, 0, function (specialities) {
+                        if (specialities) {
+                            var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                            $.each(specialities, function (i, v) {
+                                html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                            })
+                        }
+                        $('#orgId').html(html);
+                    });
+                } else if (eduLevel == 0) {
+                    $('#orgId').html('');
+                }
+            });
+
+//            Hsis.Proxy.loadDictionariesByTypeId('1000025', 0, function (actionType) {
+//                var html = Hsis.Service.parseDictionaryForSelect(actionType);
+//                $('#main-div #action_type').html(html);
+//            })
+
+//            Hsis.Proxy.getFilteredStructureList(Hsis.structureId, '1000057', 0, function (specialities) {
+//                if (specialities) {
+//                    var html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+//                    $.each(specialities, function (i, v) {
+//                        html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+//                    })
+//                }
+//                $('#orgId').html(html);
+//            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000032', 0, function (eduLine) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLine);
+                $('#main-div #edu_line').html(html);
+                $('#main-div #edit_uni_action_edu_line').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduType) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduType);
+                $('#main-div #edu_type').html(html);
+                $('#main-div #edit_uni_action_edu_type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLang);
+                $('#main-div #edu_lang').html(html);
+                $('#main-div #edit_school_lang').html(html);
+                $('#main-div #edit_uni_action_edu_lang').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000028', 0, function (eduPaytype) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduPaytype);
+                $('#main-div #edu_pay_type').html(html);
+                $('#main-div #edit_uni_action_edu_pay_type').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000014', 0, function (members) {
+                var html = Hsis.Service.parseDictionaryForSelect(members);
+                $('#relation_type_id').html(html);
+            });
+
+            Hsis.Proxy.loadAddressTree(function (addressTree) {
+                Hsis.Service.commonParseTree(addressTree, 'address-tree-id');
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+                var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+                $('#main-div #edit_uni_action_edu_level').html(html);
+            });
+
+
+
+            $('.three-tabs').on('click', function (e) {
+                setTimeout(function () {
+                    if (!$('.personal-info').hasClass('active'))
+                        $('.edit-common-info').addClass('hidden');
+                    else
+                        $('.edit-common-info').removeClass('hidden');
+                }, 0);
+            });
+
+            $('#main-div').on('click', '#confirmStudent', function (e) {
+
+                try {
+                    var allValid = true;
+                    var formData = new FormData();
+                    var student = {
+                        documents: [],
+                        eduLifeCycle: [],
+                        token: Hsis.token,
+                    };
+
+                    var index = 1;
+
+                    if ($('.add-doc-block .doc-item')) {
+                        $('.add-doc-block .doc-item').each(function (e) {
+                            if ($(this).attr('doc-type') != "personal") {
+                                student.documents.push({
+                                    id: index,
+                                    type: $(this).find('.add-doc-type').attr('data-id'),
+                                    serial: $(this).find('.add-doc-serial').text(),
+                                    number: $(this).find('.add-doc-number').text(),
+                                    startDate: $(this).find('.add-doc-start-date').text(),
+                                    endDate: $(this).find('.add-doc-end-date').text(),
+                                    documentType: $(this).parents('.panel-body').attr('data-doc-type')
+                                });
+                            }
+
+
+                            if ($(this).find('.new-add-doc-file') && $(this).find('.new-add-doc-file')[0] && $(this).find('.new-add-doc-file')[0].files) {
+                                var wrongFiles = '';
+                                var length = $(this).find('.new-add-doc-file')[0].files.length;
+                                if (length <= 5) {
+                                    for (var i = 0; i < length; i++) {
+                                        var files = $(this).find('.new-add-doc-file')[0].files;
+                                        if (Hsis.Validation.checkFile(files[i].type, fileTypes.FILE_CONTENT_TYPE)) {
+                                            if (files[i].size > 5 * 1024 * 1024) {
+
+                                                $.notify(files[i].name + Hsis.dictionary[Hsis.lang]['exceed_volume'], {
+                                                    type: 'warning'
+                                                });
+                                                allValid = false;
+                                            }
+                                            else {
+                                                formData.append('doc_' + index, $(this).find('.new-add-doc-file')[0].files[i]);
+                                            }
+                                        }
+                                        else {
+                                            wrongFiles += wrongFiles != '' ? ', ' + files[i].name : files[i].name;
+
+                                        }
+                                    }
+                                    if (wrongFiles != '') {
+                                        $.notify(Hsis.dictionary[Hsis.lang]['wrong_format'] + wrongFiles, {
+                                            type: 'warning'
+                                        });
+                                        allValid = false;
+                                    }
+                                }
+                                else {
+                                    $.notify(Hsis.dictionary[Hsis.lang]['file_limit'], {
+                                        type: 'warning'
+                                    });
+                                    allValid = false;
+                                }
+                            }
+
+                            index++;
+                        });
+                    }
+
+
+                    e.preventDefault();
+                    var operationType = $(this).attr('data-type');
+                    var actionType = 1000260;
+                    if (operationType == 'transfer') {
+                        actionType = 1000271;
+                    }
+                    else if (operationType == 'furlough') {
+                        actionType = 1000301;
+                    }
+                    else if (operationType == 'restore') {
+                        actionType = 1000273;
+                    }
+                    var personId = $('#action_type').attr('data-person-id');
+                    var subValue = $('#sub_speciality').find('option:selected').val();
+                    var edu = {
+                        actionTypeId: actionType,
+                        actionDate: $('#action_date').val().trim(),
+                        orgId: (typeof subValue !== undefined && subValue > 0) ? subValue : $('#orgId').find('option:selected').val(),
+                        orgName: '', //$('#org_name').val().trim(),
+                        applyScore: $('#score').val().trim(),
+                        cardNo: $('#student_card_no').val().trim(),
+                        note: $('#note').val(),
+                        eduLineId: $('#edu_line').find('option:selected').val(),
+                        eduTypeId: $('#edu_type').find('option:selected').val(),
+                        edupayTypeId: $('#edu_pay_type').find('option:selected').val(),
+                        eduLangId: $('#edu_lang').find('option:selected').val(),
+                        eduLevelId: $('#edu_level').find('option:selected').val(),
+                        eduBlock: 'academic',
+                        status: 1000341,
+                    };
+
+
+                    student.eduLifeCycle.push(edu);
+
+
+                    formData.append('student', new Blob([JSON.stringify(student)], {
+                        type: "application/json"
+
+                    }));
+
+
+                    if (Hsis.Validation.validateRequiredFields('data-required') && allValid) {
+                        Hsis.Proxy.addAcceptedStudent(formData, personId != '' ? personId : 0);
+                    }
+
+
+
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('[data-target="#myModalTree"]').on('click', function (e) {
+                $('#myModalTree').appendTo('body');
+            });
+
+            $("#address-tree-id").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#school_address').attr('data-node-id', data.node.id);
+                    $('#school_address').attr('data-node-text', path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $("#address_tree_id").on("select_node.jstree", function (evt, data) {
+                try {
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#headingEduOrg').attr('data-node-id', data.node.id);
+                    $('#headingEduOrg').attr('data-node-text', path);
+                    $('#edu_org_address_h6').text(path);
+                    $('#collapseEduOrg').removeClass('in');
+                    var orgId = $('#eduOrg').find('option:selected').val();
+                    var structureId = Hsis.structureId ? Hsis.structureId : 0;
+                    Hsis.Proxy.getFilteredStructureList(structureId, orgId, data.node.id, function (eduOrg) {
+                        var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                        if (eduOrg) {
+                            $.each(eduOrg, function (i, v) {
+                                html += '<option  value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                            });
+
+                        }
+                        $('#edu_org_list').html(html);
+                    }, 1);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('body').on('click', '#get_school_address', function (e) {
+                try {
+                    if ($('#school_address').get(0).hasAttribute("data-node-id")) {
+                        var nodeText = $('#school_address').attr('data-node-text');
+                        $('#school_address').text(nodeText);
+                        $('#myModalTree').modal('hide');
+                        var addressTreeId = $('#school_address').attr('data-node-id');
+                        if (addressTreeId) {
+                            Hsis.Proxy.getFilteredStructureList(Hsis.structureId, '1000056', addressTreeId, function (schools) {
+                                var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                                if (schools) {
+                                    $.each(schools, function (i, v) {
+                                        html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                                    })
+                                }
+                                ;
+                                $('#schoolId').html(html);
+                            }, 1);
+                        }
+                    }
+                    else {
+                        $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+
+        });
+    </script>
