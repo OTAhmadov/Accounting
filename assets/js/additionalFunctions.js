@@ -8,20 +8,20 @@ $('document').ready(function() {
     var sidebarMenu = $('.sidebar.menu');
     var contentMainHeader = $('.content-main-header');
  var setb = $('.content-upper-header .settings-button')
-    userInfo.addClass('hidden');
+    // userInfo.addClass('hidden');
 
 
 
-    $('.main-img, .header-arrow').click(function(e) {
-        userInfo.removeClass('hidden');
-
-        e.stopPropagation();
-
-    });
-
-    cancelButton.click(function(e) {
-       userInfo.addClass('hidden');
-    });
+    // $('.main-img, .header-arrow').click(function(e) {
+    //     userInfo.removeClass('hidden');
+    //
+    //     e.stopPropagation();
+    //
+    // });
+    //
+    // cancelButton.click(function(e) {
+    //    userInfo.addClass('hidden');
+    // });
 
     setb.click(function(e) {
       $('#main-div .last-password').val('');
@@ -42,13 +42,13 @@ $('document').ready(function() {
 
 
     // });
-    userInfo.click(function(e){
-        e.stopPropagation();
-    });
-
-    $(document).click(function(){
-        userInfo.addClass('hidden');
-    });
+    // userInfo.click(function(e){
+    //     e.stopPropagation();
+    // });
+    //
+    // $(document).click(function(){
+    //     userInfo.addClass('hidden');
+    // });
 
     $('body').click(function(event) {
         // if(!event.target.closest('.user-info') && event.target != $('.main-img').get(0)) {

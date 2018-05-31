@@ -6,7 +6,7 @@
 var cropForm = new FormData();
 
 var Accounting = {
-    // token: '40705983e00d4f25b28b9573d16140ad8234201a05da4625a4a4b78a1d06bd70',
+    // token: 'b2b35e6683f9415e927efe01c998b55c5243f0e59853443e9cdceb2f147c8237',
     lang: 'az',
     appId: 1000015,
     currModule: '',
@@ -845,10 +845,10 @@ var Accounting = {
                                 try {
                                     if (data.data) {
                                         var user = data.data;
-                                        $('.profile-data li[data-type="name"]').text(user.person.name + ' ' + user.person.surname + ' ' + user.person.patronymic);
-                                        $('.welcome-text p span').text(user.person.name);
-                                        $('.profile-data li[data-type="role"]').text(user.role.value[Accounting.lang]);
-                                        $('.profile-data li[data-type="org"]').text(user.structure.name[Accounting.lang]);
+                                        $('.user-notify-content h6[data-type="name"]').text(user.person.name + ' ' + user.person.surname + ' ' + user.person.patronymic);
+                                        // $('.welcome-text p span').text(user.person.name);
+                                        $('.user-notify-content p[data-type="role"]').text(user.role.value[Accounting.lang]);
+                                        $('.user-notify-content p[data-type="org"]').text(user.structure.name[Accounting.lang]);
                                         $('.side-title-block p').text(user.orgName.value[Accounting.lang]);
                                         $('.main-img img').attr('src', Accounting.urls.AdminRest + 'users/' + user.id + '/image?token=' + Accounting.token);
                                         $('.side-title-block img').attr('src', Accounting.urls.HSIS + 'structures/' + user.orgName.id + '/logo?token=' + Accounting.token);
