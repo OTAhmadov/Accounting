@@ -34,12 +34,12 @@
 
 
 header.header-upd{
-    height: 55px;
+    height: 50px;
     background-color: #338bf8;
 }
 .logo-upd{
     display: inline-block;
-    padding: 19px 0 0 0;
+    padding: 16px 0 0 0;
 }
 .logo-upd img{
     height: 21px;
@@ -55,7 +55,7 @@ header.header-upd{
     width: 30px;
     height: 30px;
     border: solid 3px #ffffff;
-    margin: 13px 0 0 0;
+    margin: 10px 0 0 0;
     float: left
 }
 .content-upper-header .main-img img{
@@ -109,7 +109,7 @@ main.main-upd{
 .sidebar-upd{
     height: calc(100vh - 70px);
     background-color: #ffffff;
-    border: solid 1px #ece9fa;
+    /*border: solid 1px #ece9fa;*/
 }
 .main-content-upd{
     height: calc(100vh - 70px);
@@ -140,7 +140,7 @@ main.main-upd{
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: -12px;
+    bottom: -17px;
     z-index: 2;
     height: 3px;
     background: #fff;
@@ -362,7 +362,7 @@ main.main-upd{
     border-radius: 6px;
     background-color: #ffffff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
-    padding: 17px 30px 18px;
+    padding: 18px 30px 18px;
     display: inline-block;
     width: 100%;
     margin-bottom: 7px;
@@ -375,11 +375,11 @@ main.main-upd{
     float: right;
 }
 .con-head-right button{
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
 }
 
 .hed-title{
-    font: 22px/26px 'HelveticaNeue',sans-serif;
+    font: 22px/22px 'HelveticaNeue',sans-serif;
     text-align: left;
     color: #333333;
     display: inline-block;
@@ -387,7 +387,7 @@ main.main-upd{
 }
 .head-total{
     /*opacity: 0.3;*/
-    font: 14px/16px 'HelveticaNeue',sans-serif;
+    font: 14px/14px 'HelveticaNeue',sans-serif;
     text-align: left;
     color: #888;
 }
@@ -425,7 +425,7 @@ main.main-upd{
     background-size: contain;
 }
 .clear_search_button, .clear_search_button_foreign_student{
-    height: 32px;
+    height: 34px;
     border-radius: 24px;
     background-color: #338bf8 !important;
     border: solid 1px #338bf8 !important;
@@ -439,21 +439,22 @@ main.main-upd{
     display: block;
     position: absolute;
     left: 10px;
-    top: 6px;
+    top: 8px;
     background: url('../img/upd/white-search.svg') center no-repeat;
     background-size: contain;
     width: 17.5px;
     height: 17.5px;
 }
 .prepend-icon input{
-    width: 293px;
-    height: 38px;
+    width: 220px;
+    height: 34px;
     border-radius: 100px;
     background-color: #f3f5f9;
     padding: 0 40px 0 16px;
     border: none;
-    font: 300 14px/17px 'HelveticaNeue',sans-serif;
+    font: 300 14px/14px 'HelveticaNeue',sans-serif;
     text-align: left;
+    vertical-align: middle;
     color: #6b7897;
     outline: none !important;
 }
@@ -1719,10 +1720,11 @@ div[class$="-info"] .panel-body .add-new[data-doc-type="academic"]{
     margin-right: 0
 }
 .app-con li {
-    padding: 0 10px;
-    width: 109px;
-    height: 55px;
-    line-height: 55px;
+    /*padding: 0 10px;*/
+    /*width: 109px;*/
+    height: 50px;
+    margin-right: 20px;
+    line-height: 50px;
 }
 .app-con li a {
     font: 12px/15px 'HelveticaNeue',sans-serif;
@@ -1880,7 +1882,7 @@ div[class$="-info"] .panel-body .add-new[data-doc-type="academic"]{
     margin-right: 6px;
 }
 button.filter-res{
-    height: 32px;
+    height: 34px;
     border-radius: 24px;
     background-color: #338bf8 !important;
     border: solid 1px #338bf8 !important;
@@ -1948,7 +1950,7 @@ span[data-uni-name] {
     display: none;
     float: right;
     width: 34px;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 .hide-menu i{
     color: #fff;
@@ -1968,6 +1970,7 @@ span[data-uni-name] {
         /*height: 0;*/
         float: none;
         padding: 10px 15px;
+        margin-right: 0;
         text-align: center;
         margin-top: 10px;
         width: 200px;
@@ -2221,6 +2224,7 @@ button:hover {
 .ems-tab a{
     padding: 15px 30px !important;
     font-size: 15px;
+    height: 50px;
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
@@ -2293,4 +2297,7 @@ li.ems-tab.active>a,li.ems-tab.active>a:hover, li.ems-tab.active>a:focus{
     top: 25px;
     height: 50px;
     left: 32px;
+}
+.sdie-c{
+    top: 0 !important;
 }

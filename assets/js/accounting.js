@@ -6,7 +6,7 @@
 var cropForm = new FormData();
 
 var Accounting = {
-    token: 'b2b35e6683f9415e927efe01c998b55c5243f0e59853443e9cdceb2f147c8237',
+    token: '97660b9379144e3b8553d7fb748fed45b7e87af2cf2548d6be635b6e5d44a1f4',
     lang: 'az',
     appId: 1000015,
     currModule: '',
